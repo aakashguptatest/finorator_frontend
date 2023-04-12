@@ -1,0 +1,15 @@
+body {
+    padding-top: 5rem;
+}
+
+.starter-template {
+    padding: 3rem 1.5rem;
+    text-align: center;
+}
+.navbar-toggler-icon {
+    background-image: url("assets/ic_baseline-menu.svg");
+  }
+
+.card-body{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;   
+}
