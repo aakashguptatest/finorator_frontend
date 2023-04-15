@@ -4,10 +4,11 @@ import "./Homepage.css"
 import "./static/css/main.css"
 import "./static/bootstrap/css/bootstrap.css"
 import "./static/css/starter-template.css"
-
+import Typewriter from "typewriter-effect";
 import SliderAffiliations from './Affiliations';
 import SliderSegment from './Sliderhome';
 import Sliderreview from './SliderReview';
+import SliderLearnandexplore from './SliderLearnandexplore';
 export default function Homepage() {
   const [index, setIndex] = useState(0);
 
@@ -58,100 +59,6 @@ export default function Homepage() {
     }, delta);
   };
 
-  window.onload = function () {
-    var elements = document.getElementsByClassName("typewrite");
-    for (var i = 0; i < elements.length; i++) {
-      var toRotate = elements[i].getAttribute("data-type");
-      var period = elements[i].getAttribute("data-period");
-      if (toRotate) {
-        new TxtType(elements[i], JSON.parse(toRotate), period);
-      }
-    }
-    // INJECT CSS
-    var css = document.createElement("style");
-    css.type = "text/css";
-    css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
-    document.body.appendChild(css);
-  };
-  document.addEventListener("DOMContentLoaded", function() {
-    document.querySelectorAll('a.test').forEach(link => {
-      link.addEventListener('click', function (event) {
-        const ulElement = this.nextElementSibling;
-        ulElement.style.display = ulElement.style.display === 'none' ? 'block' : 'none';
-        event.stopPropagation();
-        event.preventDefault();
-      });
-    });
-    
-  });
- 
-  const LEARN_AND_EXPLORE_CAROUSEL_DIV = document.querySelector('#learn_and_explore_carousel');
-
-
-  document.addEventListener('DOMContentLoaded', function() {
-      let  url = "https://api.finorator.com/api/zoho_crm/post_list/";
-         // url = "http://localhost:8000/api/zoho_crm/post_list/"   
-
-         const xhr = new XMLHttpRequest();
-         xhr.open('GET', url);
-         xhr.responseType = 'json';
-         xhr.onload = function () {
-           if (xhr.status === 200) {
-             console.log(xhr.response.post_list);
-             const post_list = xhr.response.post_list;
-             let str_html = "";
-             for (let i = 0; i < post_list.length; i++) {
-               console.log(i);
-               console.log(post_list[i].title);
-               if (i == 0 || i % 3 == 0) {
-                 if (i == 0) str_html = `<div class="carousel-item active">`;
-                 else str_html += `<div class="carousel-item">`;
-                 str_html += `<div class="row justify-content-center">
-                                                 <div class="col-xl-3 col-lg-3 col-12">
-                                                     <div class="blog-card" style="height: 97%">
-                                                  <a href="${post_list[i].url}" target="_blank" class="text-decoration-none">
-                                                         <div class="theme-bg">
-                                                             <h3>${post_list[i].title}</h3>
-                                                         </div>
-                                                         <div>
-                                                            <p class="theme-p px-2 trucket mb-0">${post_list[i].description} <span> read more</span></p>
-                                                             <p class=" theme-p float-right mt-0 mr-3">continue reading</p>
-                                                         </div>
-                                                     </a>
-                                                     </div>
-                                                 </div>`;
-               } else {
-                 str_html += `<div class="col-xl-3 col-lg-3 col-12">
-                                                     <div class="blog-card mb-3" style="height: 97%">
-                                                     <a href="${post_list[i].url}" target="_blank" class="text-decoration-none">
-                                                         <div class="theme-bg">
-                                                             <h3>${post_list[i].title}</h3>
-                                                         </div>
-                                                         <div>
-                                                             <p class="theme-p px-2 trucket mb-0">${post_list[i].description} <span> read more</span></p>
-                                                             <p class=" theme-p float-right mt-0 mr-3">continue reading</p>
-                                                         </div>
-                                                     </a>
-                                                     </div>
-                                                 </div>`;
-               }
-         
-               if (i == 2 || (i + 1) % 3 == 0 || i + 1 == post_list.length)
-                 str_html += `</div></div>`;
-             }
-             console.log(str_html);
-             LEARN_AND_EXPLORE_CAROUSEL_DIV.innerHTML += str_html;
-           } else {
-             console.log('Error: ' + xhr.status);
-           }
-         };
-         xhr.onerror = function () {
-           console.log('Error: Network Error');
-         };
-         xhr.send();
-         
-  });
-
   return (
     <div>
       <div className="hero">
@@ -160,13 +67,15 @@ export default function Homepage() {
           <div className="col-lg-7 col-md-6 col-xl-6">
             <div>
               <h1 className="theme-h1 text-white">
-                All financial Solutions<br /><a
-                  className="typewrite"
-                  data-period="2000"
-                  data-type='[ "Under One Roof.", "with Single Click." ]'
-                  style={{color: "yellow"}}
-                ></a>
-              </h1>
+                All financial Solutions<br />
+                <Typewriter
+  options={{
+    strings: ['Hello', 'World'],
+    autoStart: true,
+    loop: true,
+    pausefor: 500
+  }}
+/>         </h1>
               <p className="theme-p mb-4 text-light">
                 Get access to all financial products and services of different
                 segments in a single platform
@@ -174,6 +83,7 @@ export default function Homepage() {
               <a
                 className="theme-btn btn my-2 my-sm-0 theme-bg2"
                 href="#features-main"
+                style={{backgroundColor: "orange", width: 180, fontsize: 30, borderRadius: 10, color: "white"}}
                 >Learn More</a
               >
             </div>
@@ -373,7 +283,7 @@ export default function Homepage() {
     <div className="section-body">
       <div className="container">
         <div className="theme-head text-center">Who can use Finorator?</div>
-        <div className="row" style={{justifycontent: "center"}}>
+        <div className="row" style={{display: 'flex', alignContent: "center", justifyContent: "center"}}>
           <div className="col-lg-6 col-md-12 col-xl-6">
             <ul className="list-group eligible-list">
               <li className="list-group-item">
@@ -397,7 +307,7 @@ export default function Homepage() {
       <div className="theme-head text-center">Learn & Explore</div>
       <div>
           <div className="carousel-inner" id="learn_and_explore_carousel">
-            
+                  <SliderLearnandexplore />
                       </div>
       </div>
     </div>
@@ -411,8 +321,6 @@ export default function Homepage() {
         <div className="carousel-inner">
         <Carousel activeIndex={index} onSelect={handleSelect}>
         <Carousel.Item> 
-          <div className="carousel-item active">
-            <div className="container">
               <div className="theme-head text-center">
                 Our Mutual Funds Partners
               </div>
@@ -562,12 +470,9 @@ export default function Homepage() {
                   </div>
                 </marquee>
               </div>
-            </div>
-            </div>
+
             </Carousel.Item>
             <Carousel.Item>
-          <div className="carousel-item">
-            <div className="container">
               <div className="theme-head text-center">Our Loan Partners</div>
               <div className="segment-main">
                 <marquee width="80%" direction="left" scrollamount="12">
@@ -725,12 +630,9 @@ export default function Homepage() {
                   </div>
                 </marquee>
               </div>
-            </div>
-          </div>
+
           </Carousel.Item>
           <Carousel.Item>
-          <div className="carousel-item">
-            <div className="container">
               <div className="theme-head text-center">Our Insurance Partners</div>
               <div className="segment-main">
                 <marquee width="80%" direction="left" scrollamount="12">
@@ -853,8 +755,6 @@ export default function Homepage() {
                   </div>
                 </marquee>
               </div>
-            </div>
-          </div>
           </Carousel.Item>
           </Carousel>
         </div>

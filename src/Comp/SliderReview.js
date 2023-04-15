@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
+import "./App.css"
 
-export default function Sliderreview() {
-    const [index, setIndex] = useState(0);
+function Sliderreview() {
+  const [index, setIndex] = useState(0);
 
-    const handleSelect = (selectedIndex, e) => {
-      setIndex(selectedIndex);
-    };
+  const handleSelect = (selectedIndex, e) => {
+    setIndex(selectedIndex);
+  };
+
   
-    return (
-      <Carousel activeIndex={index} onSelect={handleSelect}>
-        <Carousel.Item> 
-        <div className="carousel-item active">
+  return (
+    <Carousel activeIndex={index} onSelect={handleSelect}>
+      <Carousel.Item>
                   <div className="testimony-card">
                     <div className="testimony-body">
                       <img src={require("./static/assets/testimony-icon.svg").default} />
@@ -37,10 +38,8 @@ export default function Sliderreview() {
                       </div>
                     </div>
                   </div>
-                </div>
         </Carousel.Item>
         <Carousel.Item>
-        <div className="carousel-item">
                   <div className="testimony-card">
                     <div className="testimony-body">
                       <img src={require("./static/assets/testimony-icon.svg").default} />
@@ -62,11 +61,9 @@ export default function Sliderreview() {
                       </div>
                     </div>
                   </div>
-                </div>
 
         </Carousel.Item>
         <Carousel.Item>
-        <div className="carousel-item">
                   <div className="testimony-card">
                     <div className="testimony-body">
                       <img src={require("./static/assets/testimony-icon.svg").default} />
@@ -92,11 +89,9 @@ export default function Sliderreview() {
                       </div>
                     </div>
                   </div>
-                </div>
         </Carousel.Item>      
       
         <Carousel.Item>
-        <div className="carousel-item">
                   <div className="testimony-card">
                     <div className="testimony-body">
                       <img src={require("./static/assets/testimony-icon.svg").default} />
@@ -118,11 +113,9 @@ export default function Sliderreview() {
                       </div>
                     </div>
                   </div>
-                </div>
 
         </Carousel.Item>      
         <Carousel.Item>
-        <div className="carousel-item">
                   <div className="testimony-card">
                     <div className="testimony-body">
                       <img src={require("./static/assets/testimony-icon.svg").default} />
@@ -145,10 +138,8 @@ export default function Sliderreview() {
                       </div>
                     </div>
                   </div>
-                </div>
         </Carousel.Item>      
         <Carousel.Item>
-        <div className="carousel-item">
                   <div className="testimony-card">
                     <div className="testimony-body">
                       <img src={require("./static/assets/testimony-icon.svg").default} />
@@ -173,10 +164,8 @@ export default function Sliderreview() {
                       </div>
                     </div>
                   </div>
-                </div>
         </Carousel.Item> 
         <Carousel.Item>
-        <div className="carousel-item">
                   <div className="testimony-card">
                     <div className="testimony-body">
                     <img src={require('./static/assets/testimony-icon.svg')} alt="Testimony Icon" />
@@ -200,10 +189,8 @@ export default function Sliderreview() {
                       </div>
                     </div>
                   </div>
-                </div>
             </Carousel.Item>
             <Carousel.Item>
-            <div className="carousel-item">
                   <div className="testimony-card">
                     <div className="testimony-body">
                       <img src={require("./static/assets/testimony-icon.svg").default} />
@@ -225,11 +212,9 @@ export default function Sliderreview() {
                       </div>
                     </div>
                   </div>
-                </div>
 
                 </Carousel.Item>
                 <Carousel.Item>
-                <div className="carousel-item">
                   <div className="testimony-card">
                     <div className="testimony-body">
                       <img src={require("./static/assets/testimony-icon.svg").default} />
@@ -252,10 +237,9 @@ export default function Sliderreview() {
                       </div>
                     </div>
                   </div>
-                </div>
-
                     </Carousel.Item>     
         </Carousel>
       
     );
   }
+  export default Sliderreview;

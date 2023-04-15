@@ -10,16 +10,21 @@ export default function SliderAffiliations() {
   
     return (
       <Carousel activeIndex={index} onSelect={handleSelect}>
-        <Carousel.Item> 
+        <Carousel.Item > <div style={{
+                  display: 'flex',
+                  alignContent: "center", alignContent: "center",
+                
+        }}>
         <div
-                className="row affiliations"
+                className="row"
                 style={{
+                  display: "flex", 
                   alignitems: "center",
                   justifycontent: "center",
                   paddingbottom: "4em"
 
                 }}
-              >
+               >
                 <div className="col-lg-2 col-12 col-sm-6 col-xl-2">
                   <div className="step-card">
                     <img src={require("./static/assets/startuplogo_trans.png")} />
@@ -41,12 +46,13 @@ export default function SliderAffiliations() {
                   </div>
                 </div>
               </div>
-
+              </div>
         </Carousel.Item>
         <Carousel.Item>
         <div
                 className="row"
                 style={{
+                  display: "flex", 
                   alignitems: "center",
                   justifycontent: "center",
                   paddingbottom: "4em"
@@ -83,8 +89,6 @@ export default function SliderAffiliations() {
                 </div>
               </div>
         </Carousel.Item>
-        <Carousel.Item>
-        </Carousel.Item>      
       </Carousel>
     );
   }

@@ -13,7 +13,6 @@ export default function SliderSegment() {
         <>
       <Carousel activeIndex={index} onSelect={handleSelect}>
         <Carousel.Item> 
-        <div className="carousel-item active">
               <div className="row car-row">
                 <div className="col-lg-2 col-12 col-sm-6 col-xl-2">
                   <div className="segment-card">
@@ -60,12 +59,11 @@ export default function SliderSegment() {
                   </div>
                 </div>
               </div>
-            </div>
+            
 
         </Carousel.Item>
         <Carousel.Item>
-        <div className="carousel-item">
-              <div className="row car-row">
+                      <div className="row car-row">
                 <div className="col-lg-2 col-12 col-sm-6 col-xl-2">
                   <div className="segment-card">
                     <div className="card-holder">
@@ -85,7 +83,7 @@ export default function SliderSegment() {
                   </div>
                 </div>
               </div>
-            </div>
+          
         </Carousel.Item>
               </Carousel>
               </>

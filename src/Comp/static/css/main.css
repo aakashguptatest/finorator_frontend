@@ -57,7 +57,6 @@ body {
     background: #FAFAFD;
     padding-top: 8em;
     padding-bottom: 10em;
-    background-image: url('../assets/Group%20510.png');
     background-repeat: no-repeat;
     background-position: center top;
     background-size: cover;
@@ -199,8 +198,7 @@ body {
     padding-top: 1em;
 }
 
-.title {
-}
+
 
 .feature-smallcard .title {
     font-family: Avenir;

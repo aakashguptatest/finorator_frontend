@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
+import "./App.css"
 
 export default function SliderLearnandexplore() {
     const [index, setIndex] = useState(0);
@@ -9,12 +10,13 @@ export default function SliderLearnandexplore() {
     };
   
     return (
+        <div>
       <Carousel activeIndex={index} onSelect={handleSelect}>
         
             <Carousel.Item>
-            <div class="carousel-item active"><div class="row justify-content-center">
+        <div class="row justify-content-center">
                                             <div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card" style="height: 97%">
+                                                <div class="blog-card" >
                                              <a href="https://finoratorandinvestment.blogspot.com/2022/07/make-your-budget-in-4-easy-steps.html" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>How to make a BUDGET in 4 Simple Steps!!</h3>
@@ -26,7 +28,7 @@ export default function SliderLearnandexplore() {
                                                 </a>
                                                 </div>
                                             </div><div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card mb-3" style="height: 97%">
+                                                <div class="blog-card mb-3" style={{height: "97%"}}>
                                                 <a href="https://finoratorandinvestment.blogspot.com/2022/07/6-musts-for-your-financial-management.html" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>6 musts for financial management</h3>
@@ -38,7 +40,7 @@ export default function SliderLearnandexplore() {
                                                 </a>
                                                 </div>
                                             </div><div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card mb-3" style="height: 97%">
+                                                <div class="blog-card mb-3" style={{height: "97%"}}>
                                                 <a href="https://www.instagram.com/p/Cgezl5ZpM6X/?igshid=YmMyMTA2M2Y=" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>3 master tips to pay off debt like a pro</h3>
@@ -49,9 +51,10 @@ export default function SliderLearnandexplore() {
                                                     </div>
                                                 </a>
                                                 </div>
-                                            </div></div></div><div class="carousel-item"><div class="row justify-content-center">
+                                            </div></div></Carousel.Item>
+                                            <Carousel.Item><div class="row justify-content-center">
                                             <div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card" style="height: 97%">
+                                                <div class="blog-card" style={{height: "97%"}}>
                                              <a href="https://www.instagram.com/p/CgZ4a5JBp_I/?igshid=YmMyMTA2M2Y=" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>4 reasons to invest in mutual funds</h3>
@@ -63,7 +66,7 @@ export default function SliderLearnandexplore() {
                                                 </a>
                                                 </div>
                                             </div><div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card mb-3" style="height: 97%">
+                                                <div class="blog-card mb-3" style={{height: "97%"}}>
                                                 <a href="https://www.instagram.com/reel/CgXWh0JBO_9/?igshid=YmMyMTA2M2Y=" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>5 types of stocks you should never trade on</h3>
@@ -75,7 +78,7 @@ export default function SliderLearnandexplore() {
                                                 </a>
                                                 </div>
                                             </div><div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card mb-3" style="height: 97%">
+                                                <div class="blog-card mb-3" style={{height: "97%"}}>
                                                 <a href="https://www.instagram.com/p/CgSMNQaNlA-/?igshid=YmMyMTA2M2Y=" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>6 tasks to do before this year ends</h3>
@@ -86,9 +89,10 @@ export default function SliderLearnandexplore() {
                                                     </div>
                                                 </a>
                                                 </div>
-                                            </div></div></div><div class="carousel-item"><div class="row justify-content-center">
+                                            </div></div> </Carousel.Item>
+                                            <Carousel.Item><div class="row justify-content-center">
                                             <div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card" style="height: 97%">
+                                                <div class="blog-card" style={{height: "97%"}}>
                                              <a href="https://www.instagram.com/p/CgPlTv6NPnQ/?igshid=YmMyMTA2M2Y=" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>3 in-demand skills you must learn today</h3>
@@ -100,7 +104,7 @@ export default function SliderLearnandexplore() {
                                                 </a>
                                                 </div>
                                             </div><div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card mb-3" style="height: 97%">
+                                                <div class="blog-card mb-3" style={{height: "97%"}}>
                                                 <a href="https://www.instagram.com/reel/CgKdmgeh3EY/?igshid=YmMyMTA2M2Y=" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>5 money habits you teach your kids</h3>
@@ -112,7 +116,7 @@ export default function SliderLearnandexplore() {
                                                 </a>
                                                 </div>
                                             </div><div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card mb-3" style="height: 97%">
+                                                <div class="blog-card mb-3" style={{height: "97%"}}>
                                                 <a href="https://www.instagram.com/p/CgHuPvftmdp/?igshid=YmMyMTA2M2Y=" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>FinoQuote of the day</h3>
@@ -123,9 +127,10 @@ export default function SliderLearnandexplore() {
                                                     </div>
                                                 </a>
                                                 </div>
-                                            </div></div></div><div class="carousel-item"><div class="row justify-content-center">
+                                            </div></div></Carousel.Item>
+                                            <Carousel.Item> <div class="row justify-content-center">
                                             <div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card" style="height: 97%">
+                                                <div class="blog-card" style={{height: "97%"}}>
                                              <a href="https://www.instagram.com/p/CgCvxKkhWQ3/?igshid=YmMyMTA2M2Y=" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>FinoFact of the day</h3>
@@ -137,7 +142,7 @@ export default function SliderLearnandexplore() {
                                                 </a>
                                                 </div>
                                             </div><div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card mb-3" style="height: 97%">
+                                                <div class="blog-card mb-3" style={{height: "97%"}}>
                                                 <a href="https://www.instagram.com/p/CgACQ6FN81a/?igshid=YmMyMTA2M2Y=" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>Do I need a Life Insurance</h3>
@@ -149,7 +154,7 @@ export default function SliderLearnandexplore() {
                                                 </a>
                                                 </div>
                                             </div><div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card mb-3" style="height: 97%">
+                                                <div class="blog-card mb-3" style={{height: "97%"}}>
                                                 <a href="https://www.instagram.com/p/Cf65bEUhMAP/?igshid=YmMyMTA2M2Y=" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>No fails in Stock market</h3>
@@ -160,11 +165,11 @@ export default function SliderLearnandexplore() {
                                                     </div>
                                                 </a>
                                                 </div>
-                                            </div></div></div>
+                                            </div></div>
                                             </Carousel.Item>
-                                            <Carousel.Item><div class="carousel-item"><div class="row justify-content-center">
+                                            <Carousel.Item><div class="row justify-content-center">
                                             <div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card" style="height: 97%">
+                                                <div class="blog-card" style={{height: "97%"}}>
                                              <a href="https://www.instagram.com/p/Cf4c7JPh8dy/?igshid=YmMyMTA2M2Y=" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>FinoQuote if the day</h3>
@@ -176,7 +181,7 @@ export default function SliderLearnandexplore() {
                                                 </a>
                                                 </div>
                                             </div><div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card mb-3" style="height: 97%">
+                                                <div class="blog-card mb-3" style={{height: "97%"}}>
                                                 <a href="https://www.instagram.com/p/CfzTFRmtw77/?igshid=YmMyMTA2M2Y=" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>6 musts for your financial management</h3>
@@ -188,7 +193,7 @@ export default function SliderLearnandexplore() {
                                                 </a>
                                                 </div>
                                             </div><div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card mb-3" style="height: 97%">
+                                                <div class="blog-card mb-3" style={{height: "97%"}}>
                                                 <a href="https://www.instagram.com/reel/CfwfOXJjqJD/?igshid=YmMyMTA2M2Y=" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>FinoQuote you must know</h3>
@@ -199,12 +204,12 @@ export default function SliderLearnandexplore() {
                                                     </div>
                                                 </a>
                                                 </div>
-                                            </div></div></div>
+                                            </div></div>
                                             </Carousel.Item>
                                             <Carousel.Item>
-                                            <div class="carousel-item"><div class="row justify-content-center">
+                                            <div class="row justify-content-center">
                                             <div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card" style="height: 97%">
+                                                <div class="blog-card" style={{height: "97%"}}>
                                              <a href="https://www.linkedin.com/posts/fi-norator_finances-savings-investments-activity-6953407406064164864-v0Kq?utm_source=linkedin_share&amp;utm_medium=android_app" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>6 ways to refresh your finances</h3>
@@ -216,7 +221,7 @@ export default function SliderLearnandexplore() {
                                                 </a>
                                                 </div>
                                             </div><div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card mb-3" style="height: 97%">
+                                                <div class="blog-card mb-3" style={{height: "97%"}}>
                                                 <a href="https://www.instagram.com/reel/Cfo_NOohekC/?igshid=YmMyMTA2M2Y=" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>I am 30+ can I start investing now?</h3>
@@ -228,7 +233,7 @@ export default function SliderLearnandexplore() {
                                                 </a>
                                                 </div>
                                             </div><div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card mb-3" style="height: 97%">
+                                                <div class="blog-card mb-3" style={{height: "97%"}}>
                                                 <a href="https://www.instagram.com/p/Cfmc78FhKRa/?igshid=YmMyMTA2M2Y=" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>3 investment rules to live by</h3>
@@ -239,11 +244,11 @@ export default function SliderLearnandexplore() {
                                                     </div>
                                                 </a>
                                                 </div>
-                                            </div></div></div></Carousel.Item>
+                                            </div></div></Carousel.Item>
                                             <Carousel.Item>
-                                            <div class="carousel-item"><div class="row justify-content-center">
+                                            <div class="row justify-content-center">
                                             <div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card" style="height: 97%">
+                                                <div class="blog-card" style={{height: "97%"}}>
                                              <a href="https://www.instagram.com/reel/CfhVKVwhpOP/?igshid=YmMyMTA2M2Y=" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>5 skills that will help you earn money through social media</h3>
@@ -255,7 +260,7 @@ export default function SliderLearnandexplore() {
                                                 </a>
                                                 </div>
                                             </div><div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card mb-3" style="height: 97%">
+                                                <div class="blog-card mb-3" style={{height: "97%"}}>
                                                 <a href="https://youtube.com/shorts/MfNYrI33osw?feature=share" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>6 soft skills to develop in your 20s</h3>
@@ -267,7 +272,7 @@ export default function SliderLearnandexplore() {
                                                 </a>
                                                 </div>
                                             </div><div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card mb-3" style="height: 97%">
+                                                <div class="blog-card mb-3" style={{height: "97%"}}>
                                                 <a href="https://youtube.com/shorts/InC82D7M4ug?feature=share" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>6 highest paying jobs in finance</h3>
@@ -278,10 +283,10 @@ export default function SliderLearnandexplore() {
                                                     </div>
                                                 </a>
                                                 </div>
-                                            </div></div></div></Carousel.Item>
-                                            <Carousel.Item><div class="carousel-item"><div class="row justify-content-center">
+                                            </div></div></Carousel.Item>
+                                            <Carousel.Item><div class="row justify-content-center">
                                             <div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card" style="height: 97%">
+                                                <div class="blog-card" style={{height: "97%"}}>
                                              <a href="https://youtube.com/shorts/Re5z1WD1ZVg?feature=share" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>Best podcasts to listen to for personal finance</h3>
@@ -293,7 +298,7 @@ export default function SliderLearnandexplore() {
                                                 </a>
                                                 </div>
                                             </div><div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card mb-3" style="height: 97%">
+                                                <div class="blog-card mb-3" style={{height: "97%"}}>
                                                 <a href="https://youtube.com/shorts/DUNawjtdZ-U?feature=share" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>5 social skills for workplace success</h3>
@@ -305,7 +310,7 @@ export default function SliderLearnandexplore() {
                                                 </a>
                                                 </div>
                                             </div><div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card mb-3" style="height: 97%">
+                                                <div class="blog-card mb-3" style={{height: "97%"}}>
                                                 <a href="https://www.instagram.com/p/CfW-t3GtHF_/?igshid=YmMyMTA2M2Y=" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>Finorator compares 35+ insurance companies</h3>
@@ -316,11 +321,11 @@ export default function SliderLearnandexplore() {
                                                     </div>
                                                 </a>
                                                 </div>
-                                            </div></div></div></Carousel.Item>
+                                            </div></div></Carousel.Item>
                                             <Carousel.Item>
-                                            <div class="carousel-item"><div class="row justify-content-center">
+                                            <div class="row justify-content-center">
                                             <div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card" style="height: 97%">
+                                                <div class="blog-card" style={{height: "97%"}}>
                                              <a href="https://www.instagram.com/p/CfPOKwRpQZc/?igshid=YmMyMTA2M2Y=" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>Tax on Junk food!?</h3>
@@ -332,7 +337,7 @@ export default function SliderLearnandexplore() {
                                                 </a>
                                                 </div>
                                             </div><div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card mb-3" style="height: 97%">
+                                                <div class="blog-card mb-3" style={{height: "97%"}}>
                                                 <a href="https://www.instagram.com/p/CfMr6BUhnYx/?igshid=YmMyMTA2M2Y=" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>7 types of life insurance</h3>
@@ -344,7 +349,7 @@ export default function SliderLearnandexplore() {
                                                 </a>
                                                 </div>
                                             </div><div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card mb-3" style="height: 97%">
+                                                <div class="blog-card mb-3" style={{height: "97%"}}>
                                                 <a href="https://www.instagram.com/reel/CfKO570hFrJ/?igshid=YmMyMTA2M2Y=" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>Get Insured by following these really simple steps</h3>
@@ -355,9 +360,9 @@ export default function SliderLearnandexplore() {
                                                     </div>
                                                 </a>
                                                 </div>
-                                            </div></div></div></Carousel.Item><Carousel.Item><div class="carousel-item"><div class="row justify-content-center">
+                                            </div></div></Carousel.Item><Carousel.Item><div class="row justify-content-center">
                                             <div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card" style="height: 97%">
+                                                <div class="blog-card" style={{height: "97%"}}>
                                              <a href="https://www.instagram.com/p/CfHj2wor_CM/?igshid=YmMyMTA2M2Y=" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>FinoQuote of the day</h3>
@@ -369,7 +374,7 @@ export default function SliderLearnandexplore() {
                                                 </a>
                                                 </div>
                                             </div><div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card mb-3" style="height: 97%">
+                                                <div class="blog-card mb-3" style={{height: "97%"}}>
                                                 <a href="https://youtube.com/shorts/IQeiHCQ0gr4?feature=share" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>5 things you must do before travelling abroad</h3>
@@ -381,7 +386,7 @@ export default function SliderLearnandexplore() {
                                                 </a>
                                                 </div>
                                             </div><div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card mb-3" style="height: 97%">
+                                                <div class="blog-card mb-3" style={{height: "97%"}}>
                                                 <a href="https://www.instagram.com/p/Ce_1cHPt8Wf/?igshid=YmMyMTA2M2Y=" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>FinoTip of the day!!</h3>
@@ -392,9 +397,9 @@ export default function SliderLearnandexplore() {
                                                     </div>
                                                 </a>
                                                 </div>
-                                            </div></div></div></Carousel.Item><Carousel.Item><div class="carousel-item"><div class="row justify-content-center">
+                                            </div></div></Carousel.Item><Carousel.Item><div class="row justify-content-center">
                                             <div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card" style="height: 97%">
+                                                <div class="blog-card" style={{height: "97%"}}>
                                              <a href="https://www.instagram.com/p/Ce9kB-ytbrT/?igshid=YmMyMTA2M2Y=" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>4 money lessons to learn from your father</h3>
@@ -406,7 +411,7 @@ export default function SliderLearnandexplore() {
                                                 </a>
                                                 </div>
                                             </div><div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card mb-3" style="height: 97%">
+                                                <div class="blog-card mb-3" style={{height: "97%"}}>
                                                 <a href="https://www.instagram.com/p/CemFXaPBfm2/?igshid=YmMyMTA2M2Y=" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>What is Balloon Mortgage?</h3>
@@ -418,7 +423,7 @@ export default function SliderLearnandexplore() {
                                                 </a>
                                                 </div>
                                             </div><div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card mb-3" style="height: 97%">
+                                                <div class="blog-card mb-3" style={{height: "97%"}}>
                                                 <a href="https://www.instagram.com/p/CeeTyLWDiVj/?igshid=YmMyMTA2M2Y=" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>FinoTip of the day!!</h3>
@@ -429,9 +434,9 @@ export default function SliderLearnandexplore() {
                                                     </div>
                                                 </a>
                                                 </div>
-                                            </div></div></div></Carousel.Item><Carousel.Item><div class="carousel-item"><div class="row justify-content-center">
+                                            </div></div></Carousel.Item><Carousel.Item><div class="row justify-content-center">
                                             <div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card" style="height: 97%">
+                                                <div class="blog-card" style={{height: "97%"}}>
                                              <a href="https://www.instagram.com/reel/Ceb2ugGB7Ov/?igshid=YmMyMTA2M2Y=" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>5 Money Mistakes to avoid in your 30s</h3>
@@ -443,7 +448,7 @@ export default function SliderLearnandexplore() {
                                                 </a>
                                                 </div>
                                             </div><div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card mb-3" style="height: 97%">
+                                                <div class="blog-card mb-3" style={{height: "97%"}}>
                                                 <a href="https://www.instagram.com/p/CeWkTXLNHtL/" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>What is Repo Rate</h3>
@@ -455,7 +460,7 @@ export default function SliderLearnandexplore() {
                                                 </a>
                                                 </div>
                                             </div><div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card mb-3" style="height: 97%">
+                                                <div class="blog-card mb-3" style={{height: "97%"}}>
                                                 <a href="https://www.instagram.com/p/CeO2A3pDI00/" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>6 best Podcasts on Personal Finance</h3>
@@ -466,9 +471,9 @@ export default function SliderLearnandexplore() {
                                                     </div>
                                                 </a>
                                                 </div>
-                                            </div></div></div></Carousel.Item><Carousel.Item><div class="carousel-item"><div class="row justify-content-center">
+                                            </div></div> </Carousel.Item><Carousel.Item><div class="row justify-content-center">
                                             <div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card" style="height: 97%">
+                                                <div class="blog-card" style={{height: "97%"}}>
                                              <a href="https://www.instagram.com/p/CeJvnQWIQsw/" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>What is an Emergency Fund?</h3>
@@ -480,7 +485,7 @@ export default function SliderLearnandexplore() {
                                                 </a>
                                                 </div>
                                             </div><div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card mb-3" style="height: 97%">
+                                                <div class="blog-card mb-3" style={{height: "97%"}}>
                                                 <a href="https://www.instagram.com/p/Cd85k6mhIpY/" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>6 highest paying Finance jobs in India</h3>
@@ -492,7 +497,7 @@ export default function SliderLearnandexplore() {
                                                 </a>
                                                 </div>
                                             </div><div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card mb-3" style="height: 97%">
+                                                <div class="blog-card mb-3" style={{height: "97%"}}>
                                                 <a href="https://www.instagram.com/p/Cd6UnrHKZ7d/" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>What is TINA?</h3>
@@ -503,9 +508,9 @@ export default function SliderLearnandexplore() {
                                                     </div>
                                                 </a>
                                                 </div>
-                                            </div></div></div></Carousel.Item><Carousel.Item><div class="carousel-item"><div class="row justify-content-center">
+                                            </div></div> </Carousel.Item><Carousel.Item><div class="row justify-content-center">
                                             <div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card" style="height: 97%">
+                                                <div class="blog-card" style={{height: "97%"}}>
                                              <a href="https://www.instagram.com/p/Cd3yxP0hKdX/" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>6 Soft skills to develop in your 20s</h3>
@@ -517,7 +522,7 @@ export default function SliderLearnandexplore() {
                                                 </a>
                                                 </div>
                                             </div><div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card mb-3" style="height: 97%">
+                                                <div class="blog-card mb-3" style={{height: "97%"}}>
                                                 <a href="https://www.instagram.com/p/Cd1C571qs4H/" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>What is Credit Rating?</h3>
@@ -529,7 +534,7 @@ export default function SliderLearnandexplore() {
                                                 </a>
                                                 </div>
                                             </div><div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card mb-3" style="height: 97%">
+                                                <div class="blog-card mb-3" style={{height: "97%"}}>
                                                 <a href="https://www.instagram.com/p/CdoUcNOIq3T/" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>Who are Sandwich generation?</h3>
@@ -540,9 +545,9 @@ export default function SliderLearnandexplore() {
                                                     </div>
                                                 </a>
                                                 </div>
-                                            </div></div></div></Carousel.Item><Carousel.Item><div class="carousel-item"><div class="row justify-content-center">
+                                            </div></div> </Carousel.Item><Carousel.Item><div class="row justify-content-center">
                                             <div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card" style="height: 97%">
+                                                <div class="blog-card" style={{height: "97%"}}>
                                              <a href="https://www.instagram.com/p/CdlxzKeB4-Y/" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>4 Money traps millennials fall into easily</h3>
@@ -554,7 +559,7 @@ export default function SliderLearnandexplore() {
                                                 </a>
                                                 </div>
                                             </div><div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card mb-3" style="height: 97%">
+                                                <div class="blog-card mb-3" style={{height: "97%"}}>
                                                 <a href="https://www.instagram.com/p/CdjLITuIrla/" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>What is Term Life Insurance</h3>
@@ -566,7 +571,7 @@ export default function SliderLearnandexplore() {
                                                 </a>
                                                 </div>
                                             </div><div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card mb-3" style="height: 97%">
+                                                <div class="blog-card mb-3" style={{height: "97%"}}>
                                                 <a href="https://www.instagram.com/p/CdfJ62jJaUF/" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>5 myths about Investing</h3>
@@ -577,9 +582,9 @@ export default function SliderLearnandexplore() {
                                                     </div>
                                                 </a>
                                                 </div>
-                                            </div></div></div></Carousel.Item><Carousel.Item><div class="carousel-item"><div class="row justify-content-center">
+                                            </div></div> </Carousel.Item><Carousel.Item><div class="row justify-content-center">
                                             <div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card" style="height: 97%">
+                                                <div class="blog-card" style={{height: "97%"}}>
                                              <a href="https://www.instagram.com/p/CdWNLOkJD12/" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>What is SHRINKFLATION?</h3>
@@ -597,7 +602,7 @@ And Follow for more!! <span> read more</span></p>
                                                 </a>
                                                 </div>
                                             </div><div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card mb-3" style="height: 97%">
+                                                <div class="blog-card mb-3" style={{height: "97%"}}>
                                                 <a href="https://www.instagram.com/p/CdR8J_wpZM6/" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>Happy MOTHER's Day</h3>
@@ -611,7 +616,7 @@ A very Happy Mother's Day!!!
                                                 </a>
                                                 </div>
                                             </div><div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card mb-3" style="height: 97%">
+                                                <div class="blog-card mb-3" style={{height: "97%"}}>
                                                 <a href="https://www.instagram.com/p/CdOi621hBHe/" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>5 money mistakes to avoid in your 20s</h3>
@@ -623,9 +628,9 @@ you must be doing some mistakes <span> read more</span></p>
                                                     </div>
                                                 </a>
                                                 </div>
-                                            </div></div></div></Carousel.Item><Carousel.Item><div class="carousel-item"><div class="row justify-content-center">
+                                            </div></div> </Carousel.Item><Carousel.Item><div class="row justify-content-center">
                                             <div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card" style="height: 97%">
+                                                <div class="blog-card" style={{height: "97%"}}>
                                              <a href="https://www.instagram.com/p/CdJGilIPbIP/" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>Your Ultimate Savings Checklist</h3>
@@ -637,7 +642,7 @@ you must be doing some mistakes <span> read more</span></p>
                                                 </a>
                                                 </div>
                                             </div><div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card mb-3" style="height: 97%">
+                                                <div class="blog-card mb-3" style={{height: "97%"}}>
                                                 <a href="https://www.instagram.com/p/CdEPrL0Bmma/" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>5 must read BOOKS on personal finance</h3>
@@ -649,7 +654,7 @@ you must be doing some mistakes <span> read more</span></p>
                                                 </a>
                                                 </div>
                                             </div><div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card mb-3" style="height: 97%">
+                                                <div class="blog-card mb-3" style={{height: "97%"}}>
                                                 <a href="https://www.instagram.com/p/Cc0lV2Evv7k/" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>What "NEEDS" really mean in Money Management</h3>
@@ -660,9 +665,9 @@ you must be doing some mistakes <span> read more</span></p>
                                                     </div>
                                                 </a>
                                                 </div>
-                                            </div></div></div></Carousel.Item><Carousel.Item><div class="carousel-item"><div class="row justify-content-center">
+                                            </div></div> </Carousel.Item><Carousel.Item><div class="row justify-content-center">
                                             <div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card" style="height: 97%">
+                                                <div class="blog-card" style={{height: "97%"}}>
                                              <a href="https://www.instagram.com/p/CcyLCUCh42j/" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>5 Free Sources To learn Stock Market Basics</h3>
@@ -674,7 +679,7 @@ you must be doing some mistakes <span> read more</span></p>
                                                 </a>
                                                 </div>
                                             </div><div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card mb-3" style="height: 97%">
+                                                <div class="blog-card mb-3" style={{height: "97%"}}>
                                                 <a href="https://www.instagram.com/p/CcqGtfHIdr2/" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>This is what FINORATOR does for you</h3>
@@ -686,7 +691,7 @@ you must be doing some mistakes <span> read more</span></p>
                                                 </a>
                                                 </div>
                                             </div><div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card mb-3" style="height: 97%">
+                                                <div class="blog-card mb-3" style={{height: "97%"}}>
                                                 <a href="https://www.instagram.com/p/CclPWuMJe0P/" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>5 Skills To Learn in 2022</h3>
@@ -697,9 +702,9 @@ you must be doing some mistakes <span> read more</span></p>
                                                     </div>
                                                 </a>
                                                 </div>
-                                            </div></div></div></Carousel.Item><Carousel.Item><div class="carousel-item"><div class="row justify-content-center">
+                                            </div></div> </Carousel.Item><Carousel.Item><div class="row justify-content-center">
                                             <div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card" style="height: 97%">
+                                                <div class="blog-card" style={{height: "97%"}}>
                                              <a href="https://www.instagram.com/p/CccWOUGJbqa/" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>The Save Route For Your Next Trip</h3>
@@ -711,7 +716,7 @@ you must be doing some mistakes <span> read more</span></p>
                                                 </a>
                                                 </div>
                                             </div><div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card mb-3" style="height: 97%">
+                                                <div class="blog-card mb-3" style={{height: "97%"}}>
                                                 <a href="https://www.instagram.com/p/CcShXT-Jo3c/" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>5 Money Rules</h3>
@@ -723,7 +728,7 @@ you must be doing some mistakes <span> read more</span></p>
                                                 </a>
                                                 </div>
                                             </div><div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card mb-3" style="height: 97%">
+                                                <div class="blog-card mb-3" style={{height: "97%"}}>
                                                 <a href="https://www.instagram.com/p/Cbmm2yol4c7/" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>5 questions to ask before buying a stock</h3>
@@ -734,9 +739,9 @@ you must be doing some mistakes <span> read more</span></p>
                                                     </div>
                                                 </a>
                                                 </div>
-                                            </div></div></div></Carousel.Item><Carousel.Item><div class="carousel-item"><div class="row justify-content-center">
+                                            </div></div> </Carousel.Item><Carousel.Item><div class="row justify-content-center">
                                             <div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card" style="height: 97%">
+                                                <div class="blog-card" style={{height: "97%"}}>
                                              <a href="https://finoratorandinvestment.blogspot.com/2022/03/rights-and-duties-of-smart-customer.html" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>Know your rights!!</h3>
@@ -748,7 +753,7 @@ you must be doing some mistakes <span> read more</span></p>
                                                 </a>
                                                 </div>
                                             </div><div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card mb-3" style="height: 97%">
+                                                <div class="blog-card mb-3" style={{height: "97%"}}>
                                                 <a href="https://www.instagram.com/p/CbhGms8pFdZ/" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>5 tips to buy your DREAM house at young age</h3>
@@ -761,7 +766,7 @@ here are some tips <span> read more</span></p>
                                                 </a>
                                                 </div>
                                             </div><div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card mb-3" style="height: 97%">
+                                                <div class="blog-card mb-3" style={{height: "97%"}}>
                                                 <a href="https://finoratorandinvestment.blogspot.com/2022/03/types-of-fire-insurance-and-its-benefits.html" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>Are you Fire Insured?</h3>
@@ -772,10 +777,10 @@ here are some tips <span> read more</span></p>
                                                     </div>
                                                 </a>
                                                 </div>
-                                            </div></div></div></Carousel.Item>
-                                            <Carousel.Item><div class="carousel-item"><div class="row justify-content-center">
+                                            </div></div></Carousel.Item>
+                                            <Carousel.Item><div class="row justify-content-center">
                                             <div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card" style="height: 97%">
+                                                <div class="blog-card" style={{height: "97%"}}>
                                              <a href="https://www.instagram.com/p/Cbb1rk6JMaZ/" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>Top 5 series to watch if you are a finance geek!!</h3>
@@ -787,7 +792,7 @@ here are some tips <span> read more</span></p>
                                                 </a>
                                                 </div>
                                             </div><div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card mb-3" style="height: 97%">
+                                                <div class="blog-card mb-3" style={{height: "97%"}}>
                                                 <a href="https://finoratorandinvestment.blogspot.com/2022/03/health-insurance-its-types-and-its.html" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>Health Insurance - Types and benefits</h3>
@@ -799,7 +804,7 @@ here are some tips <span> read more</span></p>
                                                 </a>
                                                 </div>
                                             </div><div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card mb-3" style="height: 97%">
+                                                <div class="blog-card mb-3" style={{height: "97%"}}>
                                                 <a href="https://finoratorandinvestment.blogspot.com/2022/03/motor-insurance-its-types-and-its.html" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>Motor Insurance - Types and benefits</h3>
@@ -810,10 +815,10 @@ here are some tips <span> read more</span></p>
                                                     </div>
                                                 </a>
                                                 </div>
-                                            </div></div></div></Carousel.Item>
-                                            <Carousel.Item><div class="carousel-item"><div class="row justify-content-center">
+                                            </div></div></Carousel.Item>
+                                            <Carousel.Item><div class="row justify-content-center">
                                             <div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card" style="height: 97%">
+                                                <div class="blog-card" style={{height: "97%"}}>
                                              <a href="https://www.instagram.com/p/CbM-xkaJMot/" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>How will Life Insurance benefit you?</h3>
@@ -825,7 +830,7 @@ here are some tips <span> read more</span></p>
                                                 </a>
                                                 </div>
                                             </div><div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card mb-3" style="height: 97%">
+                                                <div class="blog-card mb-3" style={{height: "97%"}}>
                                                 <a href="https://www.instagram.com/p/Ca6gbaevker/" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>BETTER SAFE THAN SORRY!</h3>
@@ -837,7 +842,7 @@ here are some tips <span> read more</span></p>
                                                 </a>
                                                 </div>
                                             </div><div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card mb-3" style="height: 97%">
+                                                <div class="blog-card mb-3" style={{height: "97%"}}>
                                                 <a href="https://finoratorandinvestment.blogspot.com/2022/03/7-common-mistakes-to-avoid-while.html" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>7 types of Life Insurance you  didn't know about</h3>
@@ -848,10 +853,10 @@ here are some tips <span> read more</span></p>
                                                     </div>
                                                 </a>
                                                 </div>
-                                            </div></div></div></Carousel.Item>
-                                            <Carousel.Item><div class="carousel-item"><div class="row justify-content-center">
+                                            </div></div></Carousel.Item>
+                                            <Carousel.Item><div class="row justify-content-center">
                                             <div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card" style="height: 97%">
+                                                <div class="blog-card" style={{height: "97%"}}>
                                              <a href="https://www.instagram.com/p/CbEzaB7p2kj/" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>How do INDIANS spend their money?</h3>
@@ -863,7 +868,7 @@ here are some tips <span> read more</span></p>
                                                 </a>
                                                 </div>
                                             </div><div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card mb-3" style="height: 97%">
+                                                <div class="blog-card mb-3" style={{height: "97%"}}>
                                                 <a href="https://www.instagram.com/p/Ca_0ulwJmul/" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>Death Claims that Insurance Policies covers and does not cover!</h3>
@@ -875,7 +880,7 @@ here are some tips <span> read more</span></p>
                                                 </a>
                                                 </div>
                                             </div><div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card mb-3" style="height: 97%">
+                                                <div class="blog-card mb-3" style={{height: "97%"}}>
                                                 <a href="https://finoratorandinvestment.blogspot.com/2022/03/7-common-mistakes-to-avoid-while.html" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>7 mistakes to avoid while buying Insurance Policies</h3>
@@ -886,9 +891,9 @@ here are some tips <span> read more</span></p>
                                                     </div>
                                                 </a>
                                                 </div>
-                                            </div></div></div></Carousel.Item><Carousel.Item><div class="carousel-item"><div class="row justify-content-center">
+                                            </div></div> </Carousel.Item><Carousel.Item><div class="row justify-content-center">
                                             <div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card" style="height: 97%">
+                                                <div class="blog-card" style={{height: "97%"}}>
                                              <a href="https://www.instagram.com/p/Ca1D4bzpT3N/" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>Finorator wishes all those incredible females out their a Very Happy Women's Day</h3>
@@ -900,7 +905,7 @@ here are some tips <span> read more</span></p>
                                                 </a>
                                                 </div>
                                             </div><div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card mb-3" style="height: 97%">
+                                                <div class="blog-card mb-3" style={{height: "97%"}}>
                                                 <a href="https://finoratorandinvestment.blogspot.com/2022/03/insurance-introduction-8-major-types-of.html" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>8 Types of Insurance</h3>
@@ -912,7 +917,7 @@ here are some tips <span> read more</span></p>
                                                 </a>
                                                 </div>
                                             </div><div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card mb-3" style="height: 97%">
+                                                <div class="blog-card mb-3" style={{height: "97%"}}>
                                                 <a href="https://finoratorandinvestment.blogspot." target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>8 Types of Insurance</h3>
@@ -923,9 +928,9 @@ here are some tips <span> read more</span></p>
                                                     </div>
                                                 </a>
                                                 </div>
-                                            </div></div></div></Carousel.Item><Carousel.Item><div class="carousel-item"><div class="row justify-content-center">
+                                            </div></div> </Carousel.Item><Carousel.Item><div class="row justify-content-center">
                                             <div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card" style="height: 97%">
+                                                <div class="blog-card" style={{height: "97%"}}>
                                              <a href="https://finoratorandinvestment.blogspot.com/2022/02/mutual-funds-best-form-of-investment.html" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>Mutual Funds: the best investment?</h3>
@@ -937,7 +942,7 @@ here are some tips <span> read more</span></p>
                                                 </a>
                                                 </div>
                                             </div><div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card mb-3" style="height: 97%">
+                                                <div class="blog-card mb-3" style={{height: "97%"}}>
                                                 <a href="https://www.instagram.com/p/CaM8JqkpV7m/" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>6 habits of a good investor</h3>
@@ -949,7 +954,7 @@ here are some tips <span> read more</span></p>
                                                 </a>
                                                 </div>
                                             </div><div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card mb-3" style="height: 97%">
+                                                <div class="blog-card mb-3" style={{height: "97%"}}>
                                                 <a href="https://finoratorandinvestment.blogspot.com/2022/02/who-regulates-stock-market-of-india.html" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>Who regulates India's Stock Market?</h3>
@@ -960,9 +965,9 @@ here are some tips <span> read more</span></p>
                                                     </div>
                                                 </a>
                                                 </div>
-                                            </div></div></div></Carousel.Item><Carousel.Item><div class="carousel-item"><div class="row justify-content-center">
+                                            </div></div> </Carousel.Item><Carousel.Item><div class="row justify-content-center">
                                             <div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card" style="height: 97%">
+                                                <div class="blog-card" style={{height: "97%"}}>
                                              <a href="https://finoratorandinvestment.blogspot.com/2022/02/dos-and-donts-of-investing.html" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>The do's and don'ts of INVESTING</h3>
@@ -974,7 +979,7 @@ here are some tips <span> read more</span></p>
                                                 </a>
                                                 </div>
                                             </div><div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card mb-3" style="height: 97%">
+                                                <div class="blog-card mb-3" style={{height: "97%"}}>
                                                 <a href="https://www.blogger.com/u/0/blog/post/edit/4025261019025676995/738816382733671042" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>5 best ways to plan your first invsetment!</h3>
@@ -987,7 +992,7 @@ don't worry, FINORATOR will guide you step by step! <span> read more</span></p>
                                                 </a>
                                                 </div>
                                             </div><div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card mb-3" style="height: 97%">
+                                                <div class="blog-card mb-3" style={{height: "97%"}}>
                                                 <a href="https://www.instagram.com/p/CaHd-XrvQtz/" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>The next time you get a salary, try this out!</h3>
@@ -998,9 +1003,9 @@ don't worry, FINORATOR will guide you step by step! <span> read more</span></p>
                                                     </div>
                                                 </a>
                                                 </div>
-                                            </div></div></div></Carousel.Item><Carousel.Item><div class="carousel-item"><div class="row justify-content-center">
+                                            </div></div> </Carousel.Item><Carousel.Item><div class="row justify-content-center">
                                             <div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card" style="height: 97%">
+                                                <div class="blog-card" style={{height: "97%"}}>
                                              <a href="https://www.instagram.com/p/CaFBJjYPzMj/" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>6 best financial books to give your loved ones according to their age</h3>
@@ -1012,7 +1017,7 @@ don't worry, FINORATOR will guide you step by step! <span> read more</span></p>
                                                 </a>
                                                 </div>
                                             </div><div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card mb-3" style="height: 97%">
+                                                <div class="blog-card mb-3" style={{height: "97%"}}>
                                                 <a href="https://www.instagram.com/p/CZ4EmLXpqWR/" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>Still not sure where to invest your money?</h3>
@@ -1024,7 +1029,7 @@ don't worry, FINORATOR will guide you step by step! <span> read more</span></p>
                                                 </a>
                                                 </div>
                                             </div><div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card mb-3" style="height: 97%">
+                                                <div class="blog-card mb-3" style={{height: "97%"}}>
                                                 <a href="https://www.instagram.com/p/CZyiSbtJ61_/" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>What are NFTs exactly!?</h3>
@@ -1035,9 +1040,9 @@ don't worry, FINORATOR will guide you step by step! <span> read more</span></p>
                                                     </div>
                                                 </a>
                                                 </div>
-                                            </div></div></div></Carousel.Item><Carousel.Item><div class="carousel-item"><div class="row justify-content-center">
+                                            </div></div> </Carousel.Item><Carousel.Item><div class="row justify-content-center">
                                             <div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card" style="height: 97%">
+                                                <div class="blog-card" style={{height: "97%"}}>
                                              <a href="https://www.linkedin.com/pulse/8-types-investment-instruments-available-india-fi-norator" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>8 Types of Investment Instruments available in India</h3>
@@ -1049,7 +1054,7 @@ don't worry, FINORATOR will guide you step by step! <span> read more</span></p>
                                                 </a>
                                                 </div>
                                             </div><div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card mb-3" style="height: 97%">
+                                                <div class="blog-card mb-3" style={{height: "97%"}}>
                                                 <a href="https://www.instagram.com/p/CZoY_wmJJYC/" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>The right age to start investing!?</h3>
@@ -1061,7 +1066,7 @@ don't worry, FINORATOR will guide you step by step! <span> read more</span></p>
                                                 </a>
                                                 </div>
                                             </div><div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card mb-3" style="height: 97%">
+                                                <div class="blog-card mb-3" style={{height: "97%"}}>
                                                 <a href="https://www.instagram.com/p/CZm62Slv7PB/" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>Decrypting CRYPTOCURRENCIES!!</h3>
@@ -1072,9 +1077,9 @@ don't worry, FINORATOR will guide you step by step! <span> read more</span></p>
                                                     </div>
                                                 </a>
                                                 </div>
-                                            </div></div></div></Carousel.Item><Carousel.Item><div class="carousel-item"><div class="row justify-content-center">
+                                            </div></div> </Carousel.Item><Carousel.Item><div class="row justify-content-center">
                                             <div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card" style="height: 97%">
+                                                <div class="blog-card" style={{height: "97%"}}>
                                              <a href="https://www.instagram.com/p/CZhkSPHBuxR/" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>Know everything about the DIGI RUPEE</h3>
@@ -1086,7 +1091,7 @@ don't worry, FINORATOR will guide you step by step! <span> read more</span></p>
                                                 </a>
                                                 </div>
                                             </div><div class="col-xl-3 col-lg-3 col-12">
-                                                <div class="blog-card mb-3" style="height: 97%">
+                                                <div class="blog-card mb-3" style={{height: "97%"}}>
                                                 <a href="https://www.youtube.com/watch?v=sQDTVjZdlHw" target="_blank" class="text-decoration-none">
                                                     <div class="theme-bg">
                                                         <h3>Why Choose Finorator?</h3>
@@ -1100,7 +1105,7 @@ With Finorator, you need to register digitally only once for all your financial 
                                                     </div>
                                                 </a>
                                                 </div>
-                                            </div></div></div></Carousel.Item>
-</Carousel>
+                                            </div></div></Carousel.Item>
+</Carousel></div>
     );
   }

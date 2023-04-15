@@ -1,6 +1,7 @@
 .trucket {
-    display: -webkit-box;
+    display: "-webkit-box";
     max-width: 100%;
+    height: 1000;
     line-height: 28px;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
@@ -18,12 +19,4 @@ body {
 .starter-template {
   padding: 3rem 1.5rem;
   text-align: center;
-}
-.carousel-control-prev{
-  background-image: url('./static/assets/dashicons_arrow-left-alt2.png')
-  repeating-linear-gradient()
-
-}
-.carousel-control-next-icon{
-  background-image: url('./static/assets/dashicons_arrow-left-alt1.png')
 }
