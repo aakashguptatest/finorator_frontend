@@ -9,6 +9,15 @@ import SliderAffiliations from './Affiliations';
 import SliderSegment from './Sliderhome';
 import Sliderreview from './SliderReview';
 import SliderLearnandexplore from './SliderLearnandexplore';
+import a from "./static/assets/610-indian-flag.json"
+import b from "./static/assets/74304-man1.json"
+import c from "./static/assets/139269-career.json"
+import d from "./static/assets/98297-book-idea.json"
+import e from "./static/assets/17506-timer-hour-glass-loader.json"
+import f from "./static/assets/95978-customer-care.json"
+import partner from "./static/assets/100534-partnership.json"
+import review from "./static/assets/115712-leadership-talent-review.json"
+import Lottie from "lottie-react"
 export default function Homepage() {
   const [index, setIndex] = useState(0);
 
@@ -61,8 +70,8 @@ export default function Homepage() {
 
   return (
     <div>
-      <div className="hero">
-      <div className="container">
+      <div className="hero" >
+      <div className="container" >
         <div className="row" style={{alignItems: "center"}}>
           <div className="col-lg-7 col-md-6 col-xl-6">
             <div>
@@ -92,7 +101,7 @@ export default function Homepage() {
       </div>
     </div>
     <div className="segments section-body" id="segment" style={{paddingbottom: "3em"}}>
-      <div className="theme-head text-center">Choose your Segment & Compare</div>
+      <div className="theme-head text-center" >Choose your Segment & Compare</div>
       <div>
           <div className="carousel-inner">
           <SliderSegment />                      
@@ -111,7 +120,7 @@ export default function Homepage() {
         <div className="row mb-5">
           <div className="col-xl-4 col-lg-4 col-sm-6">
             <div className="feature-bigcard">
-              <img src={require("./static/assets/main-feature1.svg").default} />
+            <Lottie loop = {true} animationData= {d} style={{height : 200}}/>
               <div className="description">
                 To be a Financially Literate person and increase your knowledge
                 bank gaining financial wisdom
@@ -120,8 +129,7 @@ export default function Homepage() {
           </div>
           <div className="col-xl-4 col-lg-4 col-sm-6">
             <div className="feature-bigcard">
-              <img src={require("./static/assets/main-feature2.svg" ).default}/>
-              <div className="description">
+                   <Lottie loop = {true} animationData= {e} style={{height : 200}}/>              <div className="description">
                 To spend less time and money on otherwise financial applications
                 of different financial sectors
               </div>
@@ -129,8 +137,7 @@ export default function Homepage() {
           </div>
           <div className="col-xl-4 col-lg-4 col-sm-12">
             <div className="feature-bigcard">
-              <img src={require("./static/assets/main-feature3.svg").default} />
-              <div className="description">
+            <Lottie loop = {true} animationData= {f} style={{height : 200}}/>              <div className="description">
                 To get simplified Financial Advisory and Customer Support
                 escaping complex decisions and digital frauds
               </div>
@@ -287,15 +294,14 @@ export default function Homepage() {
           <div className="col-lg-6 col-md-12 col-xl-6">
             <ul className="list-group eligible-list">
               <li className="list-group-item">
-                <img src={require("./static/assets/eligible-1.svg").default} />
-                <p>A Resident of India</p>
+              <Lottie loop = {true} animationData= {a} style={{height : 80}}/>                <p>A Resident of India</p>
               </li>
               <li className="list-group-item">
-                <img src={require("./static/assets/eligible-2.svg").default} />
+              <Lottie loop = {true} animationData= {b} style={{height : 80 , marginLeft: -35}}/>                
                 <p>Anyone above 18 years of age&nbsp;</p>
               </li>
               <li className="list-group-item">
-                <img src={require("./static/assets/eligible-3.svg").default} />
+              <Lottie loop = {true} animationData= {c} style={{height : 80}}/>                
                 <p>Holding any designation or a profession</p>
               </li>
             </ul>
@@ -767,8 +773,7 @@ export default function Homepage() {
         </div>
         <div className="row" style={{alignitems: "center"}}>
           <div className="p-4 col-xl-4 col-lg-4 col-12">
-            <img src={require("./static/assets/partner.png")} />
-          </div>
+          <Lottie loop = {true} animationData= {partner} />          </div>
           <div className="pr-5 ml-5 col-xl-7 col-lg-7 col-10">
             <p className="theme-p" style={{fontsize: 18}}>
               Finorator allows you to become a financial aggregator partner
@@ -808,8 +813,7 @@ export default function Homepage() {
               </div>
           </div>
           <div className="col-xl-4">
-            <img src={require("./static/assets/testimony0.png")} className="w-100" />
-          </div>
+          <Lottie loop = {true} animationData= {review} style={{height : 300}} className = "w-100"/>          </div>
         </div>
       </div>
     </div>        

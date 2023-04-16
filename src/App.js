@@ -7,7 +7,7 @@ import Contactus from './Comp/Contactus';
 function App() {
   return (
     <div className="App">
-      <Contactus />
+    <Contactus />
 
           </div>
   );

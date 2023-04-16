@@ -11,7 +11,7 @@ export default function SliderLearnandexplore() {
   
     return (
         <div>
-      <Carousel activeIndex={index} onSelect={handleSelect}>
+      <Carousel activeIndex={index} onSelect={handleSelect} indicators={false}>
         
             <Carousel.Item>
         <div class="row justify-content-center">

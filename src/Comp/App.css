@@ -5,3 +5,7 @@ background-image: url("./static/assets/dashicons_arrow-left-alt1.png")
   background-image: url("./static/assets/dashicons_arrow-left-alt2.png")
 
 }
+.card-holder{
+  height: 100;
+  width: 70;
+}
