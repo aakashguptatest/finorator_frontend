@@ -3,11 +3,11 @@ import Carousel from 'react-bootstrap/Carousel';
 import "./App.css"
 
 function Sliderreview() {
-  const [index, setIndex] = useState(0);
+    const [index, setIndex] = useState(0);
 
-  const handleSelect = (selectedIndex, e) => {
-    setIndex(selectedIndex);
-  };
+    const handleSelect = (selectedIndex, e) => {
+      setIndex(selectedIndex);
+    };
 
   
   return (
