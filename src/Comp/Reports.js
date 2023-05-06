@@ -9,7 +9,7 @@ import Card from './Cards'
 import Card1 from './Cards1'
 import Card2 from './Cards2'
 import Card3 from './Cards3'
-
+a= []
 
 export default function Reports() {
 
