@@ -9,7 +9,7 @@ import Chart from "react-apexcharts";
 
 const Profile = () => {
   return (
-    <div className="min-h-screen">
+    <div className=" bg-[#e6f3ff] min-h-screen">
       <div className="flex px-2 bg-[rgb(61,134,176)] bg-opacity-50 justify-between items-center">
         <div className="p-2 md:text-xm text-sm">
           <div>Summary Overview</div>
@@ -69,7 +69,7 @@ const Profile = () => {
             type="donut"
             width={1000}
             height={450}
-            series={[25, 35, 40]}
+            series={[25, 35, 40]}  //a.percentage of each fund
             options={{
               dataLabels: {
                 enabled: true,
@@ -118,9 +118,9 @@ const Profile = () => {
                 },
               ],
               labels: [
-                "Axis Mutual Fund - Gr",
-                "DSP Equity Opportunities Fund - Gr",
-                "SBI Flexicap Fund - Gr",
+                "a.Axis Mutual Fund - Gr",  //a.mutual fund name
+                "a.DSP Equity Opportunities Fund - Gr",  //a.mutual fund name
+                "a.SBI Flexicap Fund - Gr",  //a.mutual fund name
               ],
               plotOptions: {
                 pie: {
@@ -139,15 +139,16 @@ const Profile = () => {
           />
         </div>
 
-        <div class="grid mt-4 gap-4">
-          <div class="px-2 py-2 border border-gray-300 rounded bg-white text-gray-700 shadow-lg">
-            <div className="text-center text-xl font-bold">Investments</div>
+        <div class="grid mt-4 gap-6">
+          <div class="px-10 py-2 border border-gray-300 rounded bg-white text-gray-700 shadow-lg">
+            <div className="text-center text-2xl font-bold">Investments</div>
           </div>
-          <div class="p-4 border border-gray-300 rounded bg-white text-gray-700 shadow-lg">
-            <div className="text-center text-xl font-bold">Current Value</div>
+          <div class="px-6  border border-gray-300 rounded bg-white text-gray-700 shadow-lg">
+            <div className="text-center text-2xl font-bold">Current Value</div>
           </div>
-          <div class="p-4 border border-gray-300 rounded bg-white text-gray-700 shadow-lg">
-            <div className="text-center text-xl font-bold">Unrealized Gain/Loss</div>
+          <div class="px-6 border border-gray-300 rounded bg-white text-gray-700 shadow-lg">
+            <div className="text-center text-2xl font-bold">Unrealized </div>
+            <div className="text-center text-2xl font-bold">Gain/Loss</div>
           </div>
         </div>
       </div>
@@ -156,57 +157,4 @@ const Profile = () => {
 };
 
 export default Profile;
-//  <DonutChart
-//   innerRadius={0.5}
-//   outerRadius={0.7}
-//   legend={false}
-//   data={[
-//     {
-//       label: "Axis Mutual Fund - Gr",
-//       value: 25,
-//     },
-//     {
-//       label: "DSP Equity Opportunities Fund - Gr",
-//       value: 45,
-//     },
-//     {
-//       label: "SBI Flexicap Fund - Gr",
-//       value: 30,
-//     },
-//   ]}
-// />
 
-// const data = {
-//     labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-//     datasets: [
-//       {
-//         label: '# of Votes',
-//         data: [12, 19, 3, 5, 2, 3],
-//         backgroundColor: [
-//           'rgba(255, 99, 132, 0.2)',
-//           'rgba(54, 162, 235, 0.2)',
-//           'rgba(255, 206, 86, 0.2)',
-//           'rgba(75, 192, 192, 0.2)',
-//           'rgba(153, 102, 255, 0.2)',
-//           'rgba(255, 159, 64, 0.2)',
-//         ],
-//         borderColor: [
-//           'rgba(255, 99, 132, 1)',
-//           'rgba(54, 162, 235, 1)',
-//           'rgba(255, 206, 86, 1)',
-//           'rgba(75, 192, 192, 1)',
-//           'rgba(153, 102, 255, 1)',
-//           'rgba(255, 159, 64, 1)',
-//         ],
-//         borderWidth: 1,
-//       },
-//     ],
-//   };
-
-//     <Doughnut
-//     data={data}
-//     options={{
-//       responsive: true,
-//     //   maintainAspectRatio: true,
-//     }}
-//   />
