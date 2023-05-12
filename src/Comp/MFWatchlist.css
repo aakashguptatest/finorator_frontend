@@ -14,7 +14,11 @@
       flex-direction: row;
         
     }
-    
+    option{
+      display: flex;
+      flex-direction: row;
+      
+    }    
     .textip label {
       margin-right: 1rem;
       font-size: larger;
@@ -46,4 +50,8 @@
   button:hover {
     background-color: blue;
   }
-    
+    .take:hover{
+      cursor: pointer;
+      color: blue;
+      background-color: blue;
+    }
