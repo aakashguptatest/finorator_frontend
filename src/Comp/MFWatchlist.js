@@ -10,8 +10,10 @@ export default function MFWatchlist() {
     const [name, setname] = useState('');
     const [results, setResults] = useState([]);
     const [options, setOptions] = useState([]);
+    const [api, setapi] = useState("https://jsonplaceholder.typicode.com/comments")
+       
     useEffect(() => {
-      fetch('https://jsonplaceholder.typicode.com/comments')
+      fetch(api)
         .then((response) => response.json())
         .then((data) => {
           const input1Options = [...new Set(data.map((item) => item.postId))];
@@ -21,22 +23,44 @@ export default function MFWatchlist() {
           setOptions([input1Options, input2Options, input3Options, input4Options]);
         })
         .catch((error) => console.log(error));
-    }, []);
-  
-    let handleSearch = () => {
-      let api = "https://jsonplaceholder.typicode.com/comments?"
-      if (AMC !== ""){
-        api = api + `postId=${AMC}`
+    }, [api]);
+      function changeAMC(i){
+          setAMC(i);
+          let a = api ;
+             setapi(a+ `?postId=${i}`);
+             
       }
-      if (category !== ""){
-        api = api + `&email=${category}`
+
+        
+      
+      function changenature(i) {
+         
+        setnature(i);
+        let a = api ;
+    
+        setapi(a + `&name=${i}`);
+        
       }
-      if (nature !== ""){
-        api = api + `&name=${nature}`
+      function changecategory(i){
+         
+        setcategory(i);
+        let a = api ;
+        setapi(a + `&email=${i}`);
+
+    }
+
+
+function changename(i) {
+  setname(i);
+        let a = api ;
+        setapi(a +`&body=${i}`);
+        console.log(api);
+
       }
-      if (name !== ""){
-        api = api + `&body=${name}`
-      }
+      
+    let Search=() => {
+      console.log("result wali " + api)
+
       fetch(api)
         .then(response => response.json())
         .then(json => setResults(json))
@@ -47,34 +71,34 @@ export default function MFWatchlist() {
         <div>
           <label className='label'>
             AMC:<br />
-            <select className = "textip" value={AMC} onChange={(e) => setAMC(e.target.value)}> <option value="">Select an option</option>
-            {options[0]?.map((option) => (
-              <option value={option}>{option}</option>
+            <select className = "textip" value={AMC} onChange={(e) => changeAMC(e.target.value)}> <option value="">Select an option</option>
+            {options[0]?.map((option,index) => (
+              <option key={index} value={option}>{option}</option>
             ))}
           </select>
           </label> <br />
           <label className='label'>
             Select Nature<br />
-            <select className = "textip" type="text" value={nature} onChange={(e) => setnature(e.target.value)}><option value="">Select an option</option>
-            {options[1]?.map((option) => (
-              <option value={option}>{option}</option>
+            <select className = "textip" type="text" value={nature} onChange={(e) => changenature(e.target.value)}><option value="">Select an option</option>
+            {options[1]?.map((option,index) => (
+              <option key={index} value={option}>{option}</option>
             ))}</select> 
           </label><br />
           <label className='label'>
             Select Category:<br />
-            <select className = "textip" type="text" value={category} onChange={(e) => setcategory(e.target.value)}><option value="">Select an option</option>
-            {options[2]?.map((option) => (
-              <option value={option}>{option}</option>
+            <select className = "textip" type="text" value={category} onChange={(e) => changecategory(e.target.value)}><option value="">Select an option</option>
+            {options[2]?.map((option,index) => (
+              <option key={index} value={option}>{option}</option>
             ))}</select> 
           </label><br />
           <label className='label'>
             Name:<br />
-            <select className = "textip" type="text" value={name} onChange={(e) => setname(e.target.value)}><option value="">Select an option</option>
-            {options[3]?.map((option) => (
-              <option value={option}>{option}</option>
+            <select className = "textip" type="text" value={name} onChange={(e) => changename(e.target.value)}><option value="">Select an option</option>
+            {options[3]?.map((option,index) => (
+              <option key={index} value={option}>{option}</option>
             ))}</select> 
           </label><br /> <br/>
-          <button onClick={handleSearch}>Search</button>
+          <button onClick={Search}>Search</button>
           <div> <br/><br/>
                       </div>
         </div><br/>
@@ -104,11 +128,10 @@ export default function MFWatchlist() {
         <td>{result.name}</td>
         <td>{result.name}</td>
         <td><img src = {gif}/></td>
-
       </tr>
     ))}
-  </tbody>    </Table>
- 
+  </tbody>  
+  </Table>
       </div>
     );
   }
