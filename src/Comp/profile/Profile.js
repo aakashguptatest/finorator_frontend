@@ -69,7 +69,7 @@ const Profile = () => {
             type="donut"
             width={1000}
             height={450}
-            series={[25, 35, 40]}  //a.percentage of each fund
+            series={[45, 15, 40]}  //a.percentage of each fund
             options={{
               dataLabels: {
                 enabled: true,
