@@ -58,9 +58,9 @@ function Contactus() {
                 </form>
             </div>
             <div class="col-lg-6">
-                <div class="map">
+                <div class="map" style={{height: 500, width: "100%", backgroundColor: "blue"}}>
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3718.4195835162845!2d81.64447971492264!3d21.254852685876365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a28dd92aa38537f%3A0x7d5d65dfd8e8d55d!2s36INC!5e0!3m2!1sen!2sin!4v1632938713000!5m2!1sen!2sin"
-                            width="100%" height="200" style={{border:"0"}} allowfullscreen="" loading="lazy"></iframe>
+                            width="100%" height="100%" style={{border:"0"}} allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
         </div>
