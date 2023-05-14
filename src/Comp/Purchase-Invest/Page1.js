@@ -56,10 +56,10 @@ export default function Page1() {
         }
         
       let Search=() => {
-        console.log("result wali " + api)
         fetch(api)
           .then(response => response.json())
           .then(json => setResults(json));
+          console.log(results)
         
       }
   return (

@@ -1,0 +1,36 @@
+.container {
+    display: flex;
+    flex-direction: column;
+  }
+.scheme{
+    height: 50vh;
+    width: 70vw;
+    align-self: center;
+    background-color: gray;
+
+}
+  
+  .scheme {
+    flex-basis: 100%;
+  }
+  
+  .division {
+width: 70vw;
+background-color: gray; 
+align-self: center;
+padding: 1vw;
+}
+  
+  .buttons {
+    flex-basis: 100%;
+  }
+  
+  @media screen and (max-width: 767px) {
+    .division {
+      flex-basis: 100%;
+    }
+  }
+.text{
+    width: 80%;
+    font-size: 1.5em;
+}

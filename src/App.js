@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Homepage from "./Comp/Homepage";
 import Settings from "./Comp/settings/settings";
 import Investments from "./Comp/investments/investments";
-import Purchase from './Comp/Purchase-Invest/Purchase-Invest';
+import PurchaseTransaction from './Comp/Purchase-Transaction';
 import Page2 from './Comp/Purchase-Invest/Page2';
 import Profile from "./Comp/profile/Profile";
 import Portfolio from "./Comp/profile/Portfolio";
