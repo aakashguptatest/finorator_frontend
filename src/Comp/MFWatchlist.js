@@ -63,7 +63,8 @@ function changename(i) {
 
       fetch(api)
         .then(response => response.json())
-        .then(json => setResults(json))
+        .then(json => setResults(json, console.log(json)));
+        
       
     }
         return (
