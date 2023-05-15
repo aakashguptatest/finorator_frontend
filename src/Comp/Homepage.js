@@ -4,6 +4,7 @@ import "./Homepage.css"
 import "./static/css/main.css"
 import "./static/bootstrap/css/bootstrap.css"
 import "./static/css/starter-template.css"
+import { Link } from 'react-router-dom';
 import Typewriter from "typewriter-effect";
 import SliderAffiliations from './Affiliations';
 import SliderSegment from './Sliderhome';
@@ -67,7 +68,6 @@ export default function Homepage() {
       that.tick();
     }, delta);
   };
-
   return (
     <div>
       <div className="hero" >
@@ -782,9 +782,8 @@ export default function Homepage() {
               products of every segment and seamlessly manage all financial
               operations of your business under one integrated CRM.
             </p>
-            <a className="theme-btn btn my-2 my-sm-0" href="/partner"
-              >Join Now</a
-            >
+            <Link className="theme-btn btn my-2 my-sm-0" to="/partner"
+              >Join Now</Link>
           </div>
         </div>
       </div>
