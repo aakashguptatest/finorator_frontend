@@ -4,7 +4,6 @@ import Homepage from "./Comp/Homepage";
 import Settings from "./Comp/settings/settings";
 import Investments from "./Comp/investments/investments";
 import PurchaseTransaction from './Comp/Purchase-Transaction';
-import Page2 from './Comp/Purchase-Invest/Page2';
 import Profile from "./Comp/profile/Profile";
 import Portfolio from "./Comp/profile/Portfolio";
 import Blogs from "./Comp/MF/blogs";
@@ -18,7 +17,7 @@ import Footer from "./Comp/Footer/footer";
 function App() {
   return (
     <div className="App">
-      <Page2 />
+      <PurchaseTransaction />
           </div>
   );
 }
