@@ -24,7 +24,12 @@ export default function MFWatchlist() {
         })
         .catch((error) => console.log(error));
     }, [api]);
+    function init(){
+      setapi("https://jsonplaceholder.typicode.com/comments");
+      console.log(api + "dfsg");
+    }
       function changeAMC(i){
+        
           setAMC(i);
           let a = api ;
              setapi(a+ `?postId=${i}`);
@@ -72,7 +77,7 @@ function changename(i) {
         <div>
           <label className='label'>
             AMC:<br />
-            <select className = "textip" value={AMC} onChange={(e) => changeAMC(e.target.value)}> <option value="">Select an option</option>
+            <select className = "textip" value={AMC} onClick = {init} onChange={(e) => changeAMC(e.target.value)}> <option value="">Select an option</option>
             {options[0]?.map((option,index) => (
               <option key={index} value={option}>{option}</option>
             ))}
