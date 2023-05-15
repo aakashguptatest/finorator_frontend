@@ -1,7 +1,9 @@
 import React from 'react';
 import "./Purchase-Invest.css"
 import { useState, useEffect } from 'react';
+import {useNavigate} from "react-router-dom"
 export default function Page1() {
+  const nav = useNavigate();
     const [AMC, setAMC] = useState('');
     const [nature, setnature] = useState('');
     const [category, setcategory] = useState('');
@@ -59,7 +61,7 @@ export default function Page1() {
         fetch(api)
           .then(response => response.json())
           .then(json => setResults(json));
-          console.log(results)
+          nav("/Page2",{state: {results: results}})
         
       }
   return (

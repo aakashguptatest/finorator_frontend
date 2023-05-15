@@ -1,8 +1,11 @@
 import React from 'react'
+import {useLocation} from "react-router-dom"
 import { Table, Thead, Tr, Th, Td } from 'react-super-responsive-table';
 import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css';
 import './Purchase-Invest.css';
-export default function Page2(results) {
+export default function Page2() {
+  const location = useLocation();
+  var results = location.state.results;
     function handleclick(i){
         alert(`you selected ${i}`);
     }

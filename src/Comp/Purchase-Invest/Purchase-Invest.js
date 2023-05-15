@@ -1,18 +1,18 @@
-import {Routes, Route, Router, BrowserRouter } from 'react-router-dom';
+import {Routes, Route, Router} from 'react-router-dom';
 import Page1 from './Page1';
 import Page2 from './Page2';
 
 
-function App() {
+function Purchase() {
   
   return (
-    <BrowserRouter>
+    <Router>
     <Routes>
         <Route exact path="/" element={<Page1/>} />
-        <Route exact path="/page2" element={(results) => <Page2 results={results} />} />
+        <Route exact path="/Page2" element={ <Page2 />} />
   </Routes>
-  </BrowserRouter>
+  </Router>
   );
 }
 
-export default App;
+export default Purchase;
