@@ -358,3 +358,6 @@ border-radius: 1rem;
   height: "25em"; 
   margin-right: 8%;
 }
+.results{
+  display: none;
+}

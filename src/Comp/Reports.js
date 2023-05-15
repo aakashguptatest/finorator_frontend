@@ -1,15 +1,17 @@
 import React from 'react'
 import "./Reports.css"
 import "https://kit.fontawesome.com/c77612e695.js"
-import "./static/bootstrap/js/bootstrap.min.js"
 import "./static/css/starter-template.css"
 import "./static/css/main.css"
-import "./static/bootstrap/css/bootstrap.css"
-import Card from './Cards'
-import Card1 from './Cards1'
-import Card2 from './Cards2'
-import Card3 from './Cards3'
-a= []
+import Cardaxisfocused25fund from './Cardsaxisfocused25fund'
+import Cardclientwisesummary from './Cardsclientwisesummary'
+import Cardhdfcsmallcapfund from './Cardshdfcsmallcapfund'
+import CardMiareassetnyse from './CardsMiareassetnyse'
+import CardParagParekhFlexi from './CardsParagParekhFlexi'
+import Cardsbibluechip from './Cardssbibluechip'
+import Cardsbifocusedequity from './Cardssbifocusedequity'
+import CardTataDigitalIndia from './CardsTataDigitalIndia'
+let a= [];
 
 export default function Reports() {
 
@@ -42,6 +44,20 @@ export default function Reports() {
         }
         linkColor.forEach((l) => l.addEventListener("click", colorLink));
       });
+      var checkbox = document.getElementById('myCheckbox');
+      checkbox.addEventListener('click', handleCheckboxClick);
+      function handleCheckboxClick() {
+        if (checkbox.checked) {
+          let client = document.getElementById("name-input").value;
+          let date = document.getElementById("dob-input").value;  
+        }  else {
+          let clent = [];
+          let date = []
+        } 
+        function show(){
+          document.getElementsByClassName('results').style.display = "block";
+        }
+
   return (
     
     <div>
@@ -98,7 +114,7 @@ export default function Reports() {
               </div>
             </div>
           </div>
-          <div class="col-lg-3">
+          {/*<div class="col-lg-3">
             <label class="col-sm-2 col-form-label">Type</label>
             <div class="col-sm-10">
               <div class="form-check form-check-inline">
@@ -108,7 +124,7 @@ export default function Reports() {
                 <label class="form-check-label" for="summary-radio">Summary Report</label>
               </div>
             </div>
-          </div>
+  </div>*/}
       </div>    
       <div class="form-group row text-right">
         <div class="col-sm-12">
@@ -124,15 +140,15 @@ export default function Reports() {
           <button class="btn btn-primary" style={{color: "white"}}>REPORT</button>
         </div>
         <div class="button-group-right">
-          <button class="btn btn-primary" style={{color: "white"}}>SHOW</button>
+          <button class="btn btn-primary" style={{color: "white"}} onClick={{show}}>SHOW</button>
           <button class="btn btn-primary" style={{color: "white"}}>RESET</button>
         </div>
       </div>      
     </div> <br/>
-
-    <div className = "Datashow"><Card/><Card1/></div> 
-    <div className = "Datashow"><Card2/><Card3/></div> 
+    <div className='results'>
+    <div className = "Datashow"><Cardaxisfocused25fund/><Cardclientwisesummary/></div> 
+ </div>
     </div>
   )
 }
-
+}
