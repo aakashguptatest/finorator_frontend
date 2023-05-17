@@ -10,9 +10,10 @@ export default function MFWatchlist() {
     const [name, setname] = useState('');
     const [results, setResults] = useState([]);
     const [options, setOptions] = useState([]);
-    const [api, setapi] = useState("https://jsonplaceholder.typicode.com/comments")
+    const [api, setapi] = useState("https://jsonplaceholder.typicode.com/comments?")
        
     useEffect(() => {
+      console.log(api);
       fetch(api)
         .then((response) => response.json())
         .then((data) => {
@@ -25,14 +26,14 @@ export default function MFWatchlist() {
         .catch((error) => console.log(error));
     }, [api]);
     function init(){
-      setapi("https://jsonplaceholder.typicode.com/comments");
-      console.log(api + "dfsg");
+      setapi("https://jsonplaceholder.typicode.com/comments?");
+      console.log(api + " initialised");
     }
       function changeAMC(i){
         
           setAMC(i);
           let a = api ;
-             setapi(a+ `?postId=${i}`);
+             setapi(a+ `postId=${i}`);
              
       }
 
@@ -56,10 +57,11 @@ export default function MFWatchlist() {
 
 
 function changename(i) {
+  console.log(api + " jo name me aai");
   setname(i);
         let a = api ;
         setapi(a +`&body=${i}`);
-        console.log(api);
+        console.log(api + " jo name se gai");
 
       }
       
