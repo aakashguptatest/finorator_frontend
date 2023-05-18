@@ -6,7 +6,7 @@ import Investments from "./Comp/investments/investments";
 import Profile from "./Comp/profile/Profile";
 import Portfolio from "./Comp/profile/Portfolio";
 import Blogs from "./Comp/MF/blogs";
-import Page3 from "./Comp/MF/Page3";
+import Page3Invest from "./Comp/MF/Page3";
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/mutualfunds/profile/portfolio" element={<Portfolio/>} />
         <Route path="/mutualfunds/blogs" element={<Blogs/>} />
-        <Route path="/mutualfunds/page3" element={<Page3/>} />
+        <Route path="/mutualfunds/page3" element={<Page3Invest/>} />
       </Routes>
     </Router>
   );
