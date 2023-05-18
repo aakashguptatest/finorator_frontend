@@ -5,7 +5,9 @@ import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css';
 import './Purchase-Invest.css';
 export default function Page2() {
   const location = useLocation();
+  console.log(location.state.results);
   var results = location.state.results;
+  console.log(results);
     function handleclick(i){
         alert(`you selected ${i}`);
     }

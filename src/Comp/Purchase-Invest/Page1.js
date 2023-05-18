@@ -4,13 +4,13 @@ import { useState, useEffect } from 'react';
 import {useNavigate} from "react-router-dom"
 export default function Page1() {
   const nav = useNavigate();
+    const [results, setresults] = useState([]);
     const [AMC, setAMC] = useState('');
     const [nature, setnature] = useState('');
     const [category, setcategory] = useState('');
     const [name, setname] = useState('');
-    const [results, setResults] = useState([]);
     const [options, setOptions] = useState([]);
-    const [api, setapi] = useState("https://jsonplaceholder.typicode.com/comments");
+    const [api, setapi] = useState("https://jsonplaceholder.typicode.com/comments?");
     useEffect(() => {
         fetch(api)
           .then((response) => response.json())
@@ -21,12 +21,12 @@ export default function Page1() {
             const input4Options = [...new Set(data.map((item) => item.body))];
             setOptions([input1Options, input2Options, input3Options, input4Options]);
           })
-          .catch((error) => console.log(error));
       }, [api]);
         function changeAMC(i){
+            
             setAMC(i);
             let a = api ;
-               setapi(a+ `?postId=${i}`);
+               setapi("https://jsonplaceholder.typicode.com/comments"+ `?postId=${i}`);
                
         }
   
@@ -53,17 +53,24 @@ export default function Page1() {
     setname(i);
           let a = api ;
           setapi(a +`&body=${i}`);
-          console.log(api);
   
         }
         
-      let Search=() => {
-        fetch(api)
-          .then(response => response.json())
-          .then(json => setResults(json));
-          nav("/Page2",{state: {results: results}})
-        
-      }
+        let Search = () => {
+          fetch(api)
+            .then(response => response.json())
+            .then(json => {
+              setresults(json);
+              console.log(json + " json")
+              console.log(results + " andar wala");
+
+            })
+            console.log(results + " bahr wala");
+            nav("/Page2", { state: { results: results } });
+
+
+        };
+              
   return (
     <div>        <div>
     <label className='label'>
