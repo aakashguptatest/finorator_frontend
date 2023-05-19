@@ -8,6 +8,8 @@ import Portfolio from "./Comp/profile/Portfolio";
 import Blogs from "./Comp/MF/blogs";
 import Page3Invest from "./Comp/MF/Page3";
 import Navbar from "./Comp/NavBar/Navbar";
+import Footer from "./Comp/Footer/footer";
+
 
 
 
@@ -26,6 +28,7 @@ function App() {
         <Route path="/mutualfunds/blogs" element={<Blogs/>} />
         <Route path="/mutualfunds/page3" element={<Page3Invest/>} />
       </Routes>
+      <Footer />
     </Router>
   );
 }
