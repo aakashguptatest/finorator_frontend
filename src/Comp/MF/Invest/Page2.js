@@ -1,5 +1,7 @@
 import React from 'react'
 import {useLocation} from "react-router-dom"
+import {useNavigate} from "react-router-dom"
+
 import { Table, Thead, Tr, Th, Td } from 'react-super-responsive-table';
 import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css';
 import './Purchase-Invest.css';
@@ -8,9 +10,12 @@ export default function Page2() {
   console.log(location.state.results);
   var results = location.state.results;
   console.log(results);
+  const nav = useNavigate();
     function handleclick(i){
-        alert(`you selected ${i}`);
+        nav("/Page3");
+
     }
+    
   return (
     <div>      <Table>
     <Thead>
@@ -31,7 +36,7 @@ export default function Page2() {
       <Td>{result.name}</Td>
       <Td>{result.name}</Td>
       <Td>{result.name}</Td>
-      <Td><button onClick={handleclick(result.name)}/></Td>
+      <Td><button onClick={handleclick(result.name)}>Go</button></Td>
     </tr>
   ))}
 </tbody>  

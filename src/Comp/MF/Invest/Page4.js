@@ -9,10 +9,10 @@ const banks = [
   { value: "NEFT/RTGS", label: "Please Select a Neft/rtgs" },
 ];
 
-const Page3Invest = () => {
+const Page4 = () => {
   const navigate = useNavigate();
   const handleClick = () => {
-    navigate("/page2");
+    navigate("/Page2");
   };
 
   const [selectedBank, setSelectedBank] = useState("");
@@ -94,4 +94,4 @@ const Page3Invest = () => {
   );
 };
 
-export default Page3Invest;
+export default Page4;

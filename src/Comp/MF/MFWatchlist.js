@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Table, Thead, Tr, Th, Td } from 'react-super-responsive-table';
 import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css';
 import './MFWatchlist.css';
-import gif from "./static/assets/icons8-shopping-cart.gif"
+import gif from "../Home/static/assets/icons8-shopping-cart.gif"
 export default function MFWatchlist() {
     const [AMC, setAMC] = useState('');
     const [nature, setnature] = useState('');

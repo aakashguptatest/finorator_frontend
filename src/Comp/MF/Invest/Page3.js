@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import './Purchase-Transaction.css';
 import StarRating from './Star';
 import Chart from "./Graph"
-const PurchaseTransaction = (results) => {
+import {useLocation, useNavigate} from "react-router-dom"
+const Page3 = () => {
   const [checkbox1, setCheckbox1] = useState(false);
   const [checkbox2, setCheckbox2] = useState(false);
   const [selectedOption, setSelectedOption] = useState('Switch in/out');
@@ -33,6 +34,14 @@ const PurchaseTransaction = (results) => {
     const formatted = `${day},${month.slice(0, 3)}, ${year}`;
     setFormattedDate(formatted);
   }, []);
+  const nav = useNavigate();
+  function Go(){
+    nav("/Page4");
+  }
+  function Back(){
+    nav("/Page2");
+  }
+
   return (
     <div className="container">
     <div className="scheme">
@@ -106,12 +115,12 @@ const PurchaseTransaction = (results) => {
       </label> </div>
     <br />
     <div className="buttons">
-      <button>Button 1</button>
-      <button>Button 2</button>
-      <button>Button 3</button>
+      <button onClick={Go}>Save and Continue</button>
+      <button onClick={Back}>Back</button>
+
     </div>
   </div>
     );
 };
 
-export default PurchaseTransaction;
+export default Page3;

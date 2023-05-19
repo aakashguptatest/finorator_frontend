@@ -1,10 +1,10 @@
-import './App.css';
-import PurchaseTransaction from './Comp/Purchase-Transaction';
+import Footer from './Comp/Footer/footer';
+import Purchase from './Comp/MF/Invest/Purchase-Invest';
 function App() {
   return (
     <div className="App">
-    
-  <PurchaseTransaction/>
+    <Purchase/>
+    <Footer/>
           </div>
   );
 }

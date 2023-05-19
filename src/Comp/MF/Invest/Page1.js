@@ -61,12 +61,10 @@ export default function Page1() {
             .then(response => response.json())
             .then(json => {
               setresults(json);
-              console.log(json + " json")
-              console.log(results + " andar wala");
+              nav("/Page2", { state: { results: json } });
+
 
             })
-            console.log(results + " bahr wala");
-            nav("/Page2", { state: { results: results } });
 
 
         };
