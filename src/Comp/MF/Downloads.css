@@ -1,4 +1,7 @@
-.container {
+body{
+  position: sticky;
+}
+.contai {
     height: 100%;
     width: 90%;
     background-color: black;
@@ -7,7 +10,7 @@
     padding-left: 0;
     padding-right: 0;
   }
-  .heading {
+  .head {
     background-color: orange;
     font-size: 40px;
     width:100%;
@@ -33,7 +36,7 @@
     margin-left: 0;
     align-self: left;
   }
-  button{
+  #bu{
     margin-right: 0;
     font-size: x-large;
     height: fit-content;

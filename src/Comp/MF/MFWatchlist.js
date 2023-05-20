@@ -3,6 +3,8 @@ import { Table, Thead, Tr, Th, Td } from 'react-super-responsive-table';
 import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css';
 import './MFWatchlist.css';
 import gif from "../Home/static/assets/icons8-shopping-cart.gif"
+import Landingpage from './Landingpage/landingpage';
+import Sidebar from '../Sidebar/Sidebar';
 export default function MFWatchlist() {
     const [AMC, setAMC] = useState('');
     const [nature, setnature] = useState('');
@@ -76,6 +78,7 @@ function changename(i) {
     }
         return (
       <div style={{ border: '1px solid black', height : "100%", width: "100%" }}>
+        <Sidebar/>
         <div>
           <label className='label'>
             AMC:<br />

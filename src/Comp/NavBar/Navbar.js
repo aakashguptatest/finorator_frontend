@@ -1,43 +1,48 @@
-import { useRef } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
-import "./Navbar.css";
+import { Stack } from "@mui/material";
+import { Link } from "react-router-dom";
 
-function Navbar() {
-	const navRef = useRef();
+const Navbar = () => (
+  <Stack
+    direction="row"
+    alignItems="center"
+    p={2}
+    sx={{
+      position: "sticky",
+      background: "gray",
+      top: 0,
+      zIndex: 10000,
+      justifyContent: "space-around",
+    }}
+  >
+    <NavLink to="/" label="Homepage" />
+    <NavLink to="/partner" label="Become Partner" />
+    <NavLink to="/aboutus" label="About Us" />
+    <NavLink to="/contactus" label="Contact Us" />
+    <NavLink to="/blogs" label="Blogs" />
+    <NavLink to="/landing" label="Mutual Funds" />
+    
+  </Stack>
+);
 
-	const showNavbar = () => {
-		navRef.current.classList.toggle(
-			"responsive_nav"
-		);
-	};
-
-	return (
-		<header>
-			<h3>FINORATOR</h3>
-			<nav ref={navRef}>
-			<a href="/#">Solutions</a>
-
-                <a href="/#">Solutions</a>
-                <a href="/#">About Us</a>
-				<a href="/#">Become a Partner</a>
-				<a href="/#">Resources</a>
-				<a href="/#">About me</a>
-                
-
-				<button
-					className="nav-btn nav-close-btn"
-					onClick={showNavbar}>
-					<FaTimes />
-				</button>
-			</nav>
-			<button
-				className="nav-btn"
-				onClick={showNavbar}>
-				<FaBars />
-			</button>
-		</header>
-	);
-}
+const NavLink = ({ to, label }) => (
+  <Link
+    to={to}
+    style={{
+      display: "flex",
+      alignItems: "center",
+      width: 100,
+      padding: "0.5rem",
+      color: "white",
+      textDecoration: "none",
+      transition: "background-color 0.3s ease",
+      borderRadius: "5px",
+      "&:hover": {
+        backgroundColor: "rgba(255, 255, 255, 0.2)",
+      },
+    }}
+  >
+    {label}
+  </Link>
+);
 
 export default Navbar;
-

@@ -4,9 +4,12 @@ import Page1 from './Page1';
 import Page2 from './Page2';
 import Page3 from './Page3';
 import Page4 from './Page4';
+import Sidebar from '../../Sidebar/Sidebar';
 function Purchase() {
   
   return (
+    <>
+    <Sidebar/>
     <Router>
     <Routes>
         <Route exact path="/" element={<Page1/>} />
@@ -15,6 +18,7 @@ function Purchase() {
         <Route exact path="/Page4" element={ <Page4 />} />
   </Routes>
   </Router>
+  </>
   );
 }
 
