@@ -15,6 +15,8 @@ function Navbar() {
 		<header>
 			<h3>FINORATOR</h3>
 			<nav ref={navRef}>
+			<a href="/#">Solutions</a>
+
                 <a href="/#">Solutions</a>
                 <a href="/#">About Us</a>
 				<a href="/#">Become a Partner</a>
