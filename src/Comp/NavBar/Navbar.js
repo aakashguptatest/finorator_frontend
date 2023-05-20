@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import "./main.css";
+import "./Navbar.css";
 
 function Navbar() {
 	const navRef = useRef();
@@ -15,10 +15,13 @@ function Navbar() {
 		<header>
 			<h3>FINORATOR</h3>
 			<nav ref={navRef}>
-				<a href="/#">Home</a>
-				<a href="/#">My work</a>
-				<a href="/#">Blog</a>
+                <a href="/#">Solutions</a>
+                <a href="/#">About Us</a>
+				<a href="/#">Become a Partner</a>
+				<a href="/#">Resources</a>
 				<a href="/#">About me</a>
+                
+
 				<button
 					className="nav-btn nav-close-btn"
 					onClick={showNavbar}>
