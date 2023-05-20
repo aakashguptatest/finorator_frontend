@@ -6,6 +6,7 @@ import {
   BsGraphUpArrow,
   BsFileEarmarkPdf,
 } from "react-icons/bs";
+import Sidebar from "../Sidebar/Sidebar";
 
 const LinkItem = ({ link, icon, text, isActive, onClick }) => {
   const [hovered, setHovered] = useState(false);
@@ -19,6 +20,8 @@ const LinkItem = ({ link, icon, text, isActive, onClick }) => {
   };
 
   return (
+    <>
+    <Sidebar/>
     <a
       href={link}
       className={`flex items-center px-2 py-1 ${
@@ -37,7 +40,7 @@ const LinkItem = ({ link, icon, text, isActive, onClick }) => {
       >
         {text}
       </div>
-    </a>
+    </a></>
   );
 };
 

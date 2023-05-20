@@ -6,37 +6,35 @@ const Sidebar = () => {
     console.log("hello")
 	const menuItems = [
 		{
-			text: "Dashboard",
+			text: "Downloads",
 			icon: "icons/grid.svg",
+			lk: "/downloads"
+		},
+		{
+			text: "Watchlist",
+			icon: "icons/user.svg",
+			lk: "/watchlist"
+		},
+		{
+			text: "Reports",
+			icon: "icons/message.svg",
+			lk: "/reports"
 		},
 		{
 			text: "Profile",
-			icon: "icons/user.svg",
-		},
-		{
-			text: "Messages",
-			icon: "icons/message.svg",
-		},
-		{
-			text: "Analytics",
 			icon: "icons/pie-chart.svg",
+			lk: "/profile"
 		},
 		{
-			text: "File Manager",
+			text: "Portflio",
 			icon: "icons/folder.svg",
+			lk: "/portfolio"
 		},
 		{
-			text: "Orders",
+			text: "Invest",
 			icon: "icons/shopping-cart.svg",
-		},
-		{
-			text: "Saved Items",
-			icon: "icons/heart.svg",
-		},
-		{
-			text: "Settings",
-			icon: "icons/settings.svg",
-		},
+			lk: "/Page1"
+		}
 	];
 	return (
 		<div
@@ -66,10 +64,10 @@ const Sidebar = () => {
 					</button>
 				</div>
 				<div className="nav-menu">
-					{menuItems.map(({ text, icon }) => (
+					{menuItems.map(({ text, icon, lk }) => (
 						<a
 							className={isExpanded ? "menu-item" : "menu-item menu-item-NX"}
-							href="#"
+							href={lk}
 						>
 							<img className="menu-item-icon" src={icon} alt="" />
 							{isExpanded && <p>{text}</p>}

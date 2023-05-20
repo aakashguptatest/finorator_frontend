@@ -12,10 +12,7 @@ export default function Main() {
         <Routes> 
         <Route path="/" element={<Homepage />}></Route>
           <Route path='/partner' element={<BecomePartner />}></Route>
-          <Route path="/aboutus" element={<Aboutus />}></Route>
-          <Route path="/contactus" element={<Contactus />}></Route>
-
-      </Routes> 
+       </Routes> 
       </Router>
     </div>
   )
