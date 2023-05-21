@@ -20,6 +20,7 @@
     "jquery": "^3.6.4",
     "leaflet": "^1.9.3",
     "lottie-react": "^2.4.0",
+    "mdb-react-ui-kit": "^6.0.0",
     "react": "^18.2.0",
     "react-apexcharts": "^1.4.0",
     "react-app": "^1.1.2",
