@@ -3,7 +3,6 @@ import Page1 from "./Comp/MF/Invest/Page1";
 import Page2 from "./Comp/MF/Invest/Page2";
 import Page3 from "./Comp/MF/Invest/Page3";
 import Page4 from "./Comp/MF/Invest/Page4";
-import Sidebar from "./Comp/Sidebar/Sidebar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Homepage from "./Comp/Home/Homepage";
 import Aboutus from "./Comp/Home/Aboutus";

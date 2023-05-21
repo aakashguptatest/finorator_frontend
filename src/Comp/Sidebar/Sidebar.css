@@ -21,7 +21,7 @@
 	display: grid;
 }
 .nav-upper{
-    z-index: 100;
+    z-index: 10000000000;
 }
 .nav-heading {
 	grid-template-columns: 2fr 1fr;
