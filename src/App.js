@@ -16,6 +16,7 @@ import Profile from "./Comp/profile/Profile";
 import Portfolio from "./Comp/profile/Portfolio";
 import Purchase from "./Comp/MF/Invest/Purchase-Invest";
 import Landingpage from "./Comp/MF/Landingpage/landingpage";
+import Investments from "./Comp/investments/investments";
 function App() {
   return (
   <BrowserRouter>
@@ -32,6 +33,8 @@ function App() {
           <Route path="/portfolio" element={<Portfolio />}></Route>
           <Route path="/invest" element={<Purchase />}></Route>
           <Route path="/landing" element={<Landingpage/>}></Route>
+          <Route path="/investment" element={<Investments/>}></Route>
+
           <Route exact path="/Page1" element={<Page1/>} />
         <Route exact path="/Page2" element={ <Page2 />} />
         <Route exact path='/Page3' element={<Page3 />}/>

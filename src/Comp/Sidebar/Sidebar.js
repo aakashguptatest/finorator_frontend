@@ -34,6 +34,11 @@ const Sidebar = () => {
 			text: "Invest",
 			icon: "icons/shopping-cart.svg",
 			lk: "/Page1"
+		},
+		{
+			text: "Investment",
+			icon: "icons/shopping-cart.svg",
+			lk: "/investment"
 		}
 	];
 	return (
