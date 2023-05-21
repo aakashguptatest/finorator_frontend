@@ -1,100 +1,97 @@
 import React, { useState } from "react";
+import { BsDownload } from "react-icons/bs";
+import { FaUserCircle, FaShoppingCart } from "react-icons/fa";
+import { MdOutlineMessage } from "react-icons/md";
+import { BsFillBookmarkCheckFill } from "react-icons/bs";
+import { AiFillPieChart } from "react-icons/ai";
 import "./Sidebar.css";
 
-const Sidebar = () => {
-	const [isExpanded, setExpendState] = useState(false);
-    console.log("hello")
-	const menuItems = [
-		{
-			text: "Downloads",
-			icon: "icons/grid.svg",
-			lk: "/downloads"
-		},
-		{
-			text: "Watchlist",
-			icon: "icons/user.svg",
-			lk: "/watchlist"
-		},
-		{
-			text: "Reports",
-			icon: "icons/message.svg",
-			lk: "/reports"
-		},
-		{
-			text: "Profile",
-			icon: "icons/pie-chart.svg",
-			lk: "/profile"
-		},
-		{
-			text: "Portflio",
-			icon: "icons/folder.svg",
-			lk: "/portfolio"
-		},
-		{
-			text: "Invest",
-			icon: "icons/shopping-cart.svg",
-			lk: "/Page1"
-		}
-	];
-	return (
-		<div
-			className={
-				isExpanded
-					? "side-nav-container"
-					: "side-nav-container side-nav-container-NX"
-			}
-		>
-			<div className="nav-upper">
-				<div className="nav-heading">
-					{isExpanded && (
-						<div className="nav-brand">
-							<img src="icons/Logo.svg" alt=""  />
-							<h2>Finorator</h2>
-						</div>
-					)}
-					<button
-						className={
-							isExpanded ? "hamburger hamburger-in" : "hamburger hamburger-out"
-						}
-						onClick={() => setExpendState(!isExpanded)}
-					>
-						<span></span>
-						<span></span>
-						<span></span>
-					</button>
-				</div>
-				<div className="nav-menu">
-					{menuItems.map(({ text, icon, lk }) => (
-						<a
-							className={isExpanded ? "menu-item" : "menu-item menu-item-NX"}
-							href={lk}
-						>
-							<img className="menu-item-icon" src={icon} alt="" />
-							{isExpanded && <p>{text}</p>}
-						</a>
-					))}
-				</div>
-			</div>
-			<div className="nav-footer">
-				{isExpanded && (
-					<div className="nav-details">
-						<img
-							className="nav-footer-avatar"
-							src="icons/admin-avatar.svg"
-							alt=""
-							
-						/>
-						<div className="nav-footer-info">
-							{/* <p className="nav-footer-user-name">M Showkat</p> */}
-							{/* <p className="nav-footer-user-position">store admin</p> */}
-						</div>
-					</div>
-				)}
-				<img className="logout-icon" src="../icons/logout.svg" alt=""  />
-			</div>
-		</div>
-	);
-};
+const menuItems = [
+  {
+    text: "Downloads",
+    icon: <BsDownload />,
+    lk: "/downloads",
+  },
+  {
+    text: "Watchlist",
+    icon: <BsFillBookmarkCheckFill />,
+    lk: "/watchlist",
+  },
+  {
+    text: "Reports",
+    icon: <MdOutlineMessage />,
+    lk: "/reports",
+  },
+  {
+    text: "Profile",
+    icon: <FaUserCircle />,
+    lk: "/profile",
+  },
+  {
+    text: "Portfolio",
+    icon: <AiFillPieChart />,
+    lk: "/portfolio",
+  },
+  {
+    text: "Invest",
+    icon: <FaShoppingCart />,
+    lk: "/Page1",
+  },
+];
 
+const Sidebar = () => {
+  const [isExpanded, setExpandedState] = useState(false);
+
+  const toggleSidebar = () => {
+    setExpandedState(!isExpanded);
+  };
+
+  return (
+    <div className={`sidebar ${isExpanded ? "expanded" : ""}`}>
+      <div className="sidebar-upper">
+        <div className="sidebar-heading">
+          {isExpanded && (
+            <div className="sidebar-brand">
+              <h2>DashBoard</h2>
+            </div>
+          )}
+          <button className="sidebar-toggle" onClick={toggleSidebar}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+        <div className="sidebar-menu">
+          {menuItems.map(({ text, icon, lk }, index) => (
+            <a
+              key={index}
+              className={`menu-item ${isExpanded ? "" : "collapsed"}`}
+              href={lk}
+            >
+              {icon}
+              {isExpanded && <span>{text}</span>}
+            </a>
+          ))}
+        </div>
+      </div>
+      <div className="sidebar-footer">
+        {isExpanded && (
+          <div className="sidebar-details">
+            <img
+              className="sidebar-footer-avatar"
+              src="icons/admin-avatar.svg"
+              alt=""
+            />
+            <div className="sidebar-footer-info">
+              <p className="sidebar-footer-user-name">M Showkat</p>
+              <p className="sidebar-footer-user-position">Store Admin</p>
+            </div>
+          </div>
+        )}
+        <img className="logout-icon" src="../icons/logout.svg" alt="" />
+      </div>
+    </div>
+  );
+};
 
 export default Sidebar;
