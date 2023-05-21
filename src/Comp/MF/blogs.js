@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
 import { SearchIcon } from '@heroicons/react/outline';
-
+import Sidebar from '../Sidebar/Sidebar';
 const Blogs = () => {
   const [news, setNews] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
