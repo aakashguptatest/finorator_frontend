@@ -11,7 +11,7 @@ export default function Page2() {
   var results = location.state.results;
   console.log(results);
   const nav = useNavigate();
-    function handleclick(i){
+    function handleclick(){
         nav("/Page3");
 
     }
@@ -36,7 +36,7 @@ export default function Page2() {
       <Td>{result.name}</Td>
       <Td>{result.name}</Td>
       <Td>{result.name}</Td>
-      <Td><button onClick={handleclick(result.name)}>Go</button></Td>
+      <Td><button onClick={handleclick}>Go</button></Td>
     </tr>
   ))}
 </tbody>  
