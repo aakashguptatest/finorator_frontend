@@ -4,6 +4,10 @@ import StarRating from './Star';
 import Chart from "./Graph"
 import {useLocation, useNavigate} from "react-router-dom"
 const Page3 = () => {
+  const location = useLocation();
+  console.log(location.state.results);
+  var results = location.state.results;
+  console.log(results);
   const [checkbox1, setCheckbox1] = useState(false);
   const [checkbox2, setCheckbox2] = useState(false);
   const [selectedOption, setSelectedOption] = useState('Switch in/out');
@@ -48,7 +52,7 @@ const Page3 = () => {
       <h2>Scheme</h2>
       <div className="scheme-content">
         <p id="scheme">
-          SBI Blue Chip Fund regular plan growth <br/>  <br/> <br/> Folio Number: 12345 Amount: 12345 Folio Number: 12345
+          {results.scheme_name} <br/>  <br/> <br/> Folio Number: 12345 Amount: 12345 Folio Number: 12345
         </p>
         <p>Amount: 0, Units: 0.00</p> 
 
