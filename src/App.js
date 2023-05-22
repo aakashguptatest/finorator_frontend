@@ -18,6 +18,7 @@ import Purchase from "./Comp/MF/Invest/Purchase-Invest";
 import Landingpage from "./Comp/MF/Landingpage/landingpage";
 import Investments from "./Comp/investments/investments";
 import Sidebar from "./Comp/Sidebar/Sidebar";
+import Login from "./Comp/Login/Loginpage";
 
 function App() {
   return (
@@ -40,6 +41,8 @@ function App() {
         <Route exact path="/Page2" element={<Page2 />} />
         <Route exact path="/Page3" element={<Page3 />} />
         <Route exact path="/Page4" element={<Page4 />} />
+        <Route exact path="/login" element={<Login />} />
+
       </Routes>
     </BrowserRouter>
   );
