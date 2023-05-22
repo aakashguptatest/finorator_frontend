@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
 import { SearchIcon } from '@heroicons/react/outline';
-
+import Sidebar from '../Sidebar/Sidebar';
 const Blogs = () => {
   const [news, setNews] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
@@ -54,7 +54,7 @@ const Blogs = () => {
   };
 
   return (
-    <div className="container mx-auto">
+    <div className="container bg-white min-h-screen mb-4 mx-auto">
       <h1 className="text-2xl font-bold mb-4">Latest News</h1>
       <div className="relative">
         <input
