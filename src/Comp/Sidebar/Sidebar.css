@@ -1,5 +1,5 @@
 .sidebar {
-	background-color: #f1f1f1;
+	background-color: #f7f7f7;
 	width: 85px;
 	height: 100vh;
 	position: fixed;
@@ -10,7 +10,7 @@
   }
   
   .sidebar.expanded {
-	width: 300px;
+	width: 250px;
   }
   
   .sidebar .sidebar-upper,
@@ -26,7 +26,7 @@
   }
   
   .sidebar .sidebar-heading {
-	grid-template-columns: 1fr 1fr; /* Updated to center the hamburger icon */
+	grid-template-columns: 1fr 1fr;
 	grid-template-rows: 1fr;
 	padding: 20px;
 	outline: none;
@@ -56,7 +56,7 @@
   
   .sidebar .sidebar-toggle span {
 	display: block;
-	margin-top: 6px; /* Increased the margin to center the hamburger icon */
+	margin-top: 6px;
 	background-color: #333;
 	border-radius: 15px;
 	height: 3px;
@@ -86,8 +86,8 @@
 	display: flex;
 	align-items: center;
 	text-decoration: none;
-	margin: 20px;
-	border-radius: 20px;
+	padding: 20px;
+	border-radius: 5px;
 	transition: background-color 0.3s;
 	white-space: nowrap;
 	overflow: hidden;
@@ -96,19 +96,19 @@
   
   .sidebar .menu-item:hover {
 	background-color: #ebebeb;
-	margin: 15px; /* Increased the margin to reduce the gap between items */
+	padding: 15px 10px;
   }
   
   .sidebar .menu-item svg {
 	width: 28px;
 	height: 28px;
 	margin: 0 15px;
-	color: #555; /* Darker shade for icons */
+	color: #353535;
   }
   
   .sidebar .menu-item span {
 	font-size: 14px;
-	color: #555; /* Darker shade for text */
+	color: #666;
   }
   
   .sidebar .sidebar-footer {

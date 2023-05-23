@@ -57,7 +57,7 @@ const Blogs = () => {
 
   return (
     <div className="flex">
-      <div className="w-1/6 z-10">
+      <div className="w-1/6 hidden md:block z-10">
         <Sidebar />
       </div>
       <div className="container bg-white min-h-screen mb-4 mx-auto">
