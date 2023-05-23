@@ -173,7 +173,7 @@ header {
 }
 
 .navbar-heading:hover {
-  background-color: #f9fafb;
+  /* background-color: #f9fafb; */
   color: #5767aa;
   text-decoration: none;
 }
@@ -190,7 +190,7 @@ header {
 }
 
 .navbar-link:hover {
-  background-color: #f9fafb;
+  /* background-color: #f9fafb; */
   color: #5767aa;
   text-decoration: none;
 }
@@ -224,7 +224,7 @@ header {
   }
   
   .navbar-heading:hover {
-	background-color: #f9fafb;
+	/* background-color: #f9fafb; */
 	color: #5767aa;
 	text-decoration: none;
   }
@@ -260,4 +260,60 @@ header {
 	background-color: #ed8a04;
 	text-decoration: none;
   }
+  /* Navbar.css */
+
+/* ... */
+
+.navbar-heading {
+	display: flex;
+	align-items: center;
+	padding: 0.5rem 1rem;
+	color: #374151;
+	font-weight: bold;
+	font-size: 18px; /* Increase the font size */
+	text-decoration: none;
+	transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .navbar-heading:hover {
+	color: #5767aa;
+	text-decoration: none;
+	transform: scale(1.05);
+  }
+  
+  .navbar-link {
+	display: flex;
+	align-items: center;
+	width: 150px;
+	padding: 0.5rem 1rem;
+	color: #374151;
+	font-weight: bold;
+	font-size: 18px; /* Increase the font size */
+	text-decoration: none;
+	transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .navbar-link:hover {
+	color: #5767aa;
+	text-decoration: none;
+	transform: scale(1.05);
+  }
+  
+  #loginbutton {
+	background-color: #f59e0b;
+	color: white;
+	padding: 0.75rem 1rem;
+	border-radius: 0.25rem;
+	transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+	font-weight: bold;
+	font-size: 16px; /* Increase the font size */
+	text-decoration: none;
+  }
+  
+  #loginbutton:hover {
+	background-color: #ed8a04;
+	text-decoration: none;
+	transform: scale(1.05);
+  }
+  
   
