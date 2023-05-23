@@ -14,6 +14,10 @@
   --textColor: #000000;
 }
 
+body {
+  background-color: #f8fafc;
+}
+
 header {
   display: flex;
   align-items: center;
@@ -70,7 +74,6 @@ nav {
     align-items: center;
     justify-content: center;
     gap: 1.5rem;
-    /* background-color: var(--mainColor); */
     transition: 1s;
   }
 
@@ -89,62 +92,29 @@ nav {
   }
 }
 
-/* Navbar.css */
-
-.navbar-heading {
-  display: flex;
-  align-items: center;
-  padding: 0.1rem;
-  color: white;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-  border-radius: 5px;
-}
-
+/* Navbar */
+.navbar-heading,
 .navbar-link {
   display: flex;
   align-items: center;
-  width: 150px;
-  padding: 0.1rem;
-  color: white;
+  padding: 0.5rem 1rem;
+  color: #374151;
+  font-weight: bold;
+  font-size: 20px;
   text-decoration: none;
-  transition: background-color 0.3s ease;
-  border-radius: 5px;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
-/* Tailwind CSS Modifications */
-
-body {
-  background-color: #f8fafc;
-}
-
-header {
-  background-color: white;
-  color: #374151;
-}
-
-.navbar-heading {
-  background-color: #ffffff;
-  padding: 0.5rem 1rem;
-  color: #374151;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.navbar-heading:hover {
-  background-color: #f9fafb;
-  color: #5767aa;
-}
-
-.navbar-link {
-  background-color: #ffffff;
-  padding: 0.5rem 1rem;
-  color: #374151;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
+.navbar-heading:hover,
 .navbar-link:hover {
-  background-color: #f9fafb;
   color: #5767aa;
+  text-decoration: none;
+  transform: scale(1.05);
+  background-color: transparent;
+}
+
+.navbar-link {
+  width: 150px;
 }
 
 #loginbutton {
@@ -152,168 +122,15 @@ header {
   color: white;
   padding: 0.75rem 1rem;
   border-radius: 0.25rem;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-#loginbutton:hover {
-  background-color: #ed8a04;
-}
-/* Navbar.css */
-
-/* ... */
-
-.navbar-heading {
-  display: flex;
-  align-items: center;
-  padding: 0.5rem 1rem;
-  color: #374151;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
   font-weight: bold;
-  text-decoration: none;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.navbar-heading:hover {
-  /* background-color: #f9fafb; */
-  color: #5767aa;
-  text-decoration: none;
-}
-
-.navbar-link {
-  display: flex;
-  align-items: center;
-  width: 150px;
-  padding: 0.5rem 1rem;
-  color: #374151;
-  font-weight: bold;
-  text-decoration: none;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.navbar-link:hover {
-  /* background-color: #f9fafb; */
-  color: #5767aa;
-  text-decoration: none;
-}
-
-#loginbutton {
-  background-color: #f59e0b;
-  color: white;
-  padding: 0.75rem 1rem;
-  border-radius: 0.25rem;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  font-weight: bold;
+  font-size: 18px;
   text-decoration: none;
 }
 
 #loginbutton:hover {
   background-color: #ed8a04;
   text-decoration: none;
+  transform: scale(1.05);
 }
-/* Navbar.css */
-
-/* ... */
-
-.navbar-heading {
-	display: flex;
-	align-items: center;
-	padding: 0.5rem 1rem;
-	color: #374151;
-	font-weight: bold;
-	text-decoration: none;
-	transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
-  .navbar-heading:hover {
-	/* background-color: #f9fafb; */
-	color: #5767aa;
-	text-decoration: none;
-  }
-  
-  .navbar-link {
-	display: flex;
-	align-items: center;
-	width: 150px;
-	padding: 0.5rem 1rem;
-	color: #374151;
-	font-weight: bold;
-	text-decoration: none;
-	transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
-  .navbar-link:hover {
-	background-color: #f9fafb;
-	color: #5767aa;
-	text-decoration: none;
-  }
-  
-  #loginbutton {
-	background-color: #f59e0b;
-	color: white;
-	padding: 0.75rem 1rem;
-	border-radius: 0.25rem;
-	transition: background-color 0.3s ease, color 0.3s ease;
-	font-weight: bold;
-	text-decoration: none;
-  }
-  
-  #loginbutton:hover {
-	background-color: #ed8a04;
-	text-decoration: none;
-  }
-  /* Navbar.css */
-
-/* ... */
-
-.navbar-heading {
-	display: flex;
-	align-items: center;
-	padding: 0.5rem 1rem;
-	color: #374151;
-	font-weight: bold;
-	font-size: 18px; /* Increase the font size */
-	text-decoration: none;
-	transition: color 0.3s ease, transform 0.3s ease;
-  }
-  
-  .navbar-heading:hover {
-	color: #5767aa;
-	text-decoration: none;
-	transform: scale(1.05);
-  }
-  
-  .navbar-link {
-	display: flex;
-	align-items: center;
-	width: 150px;
-	padding: 0.5rem 1rem;
-	color: #374151;
-	font-weight: bold;
-	font-size: 18px; /* Increase the font size */
-	text-decoration: none;
-	transition: color 0.3s ease, transform 0.3s ease;
-  }
-  
-  .navbar-link:hover {
-	color: #5767aa;
-	text-decoration: none;
-	transform: scale(1.05);
-  }
-  
-  #loginbutton {
-	background-color: #f59e0b;
-	color: white;
-	padding: 0.75rem 1rem;
-	border-radius: 0.25rem;
-	transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
-	font-weight: bold;
-	font-size: 16px; /* Increase the font size */
-	text-decoration: none;
-  }
-  
-  #loginbutton:hover {
-	background-color: #ed8a04;
-	text-decoration: none;
-	transform: scale(1.05);
-  }
-  
-  
+/* Navbar */
