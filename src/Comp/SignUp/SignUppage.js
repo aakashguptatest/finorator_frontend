@@ -8,34 +8,49 @@ import {
   MDBInput,
   MDBCheckbox,
 } from "mdb-react-ui-kit";
-import "./Loginpage.css";
+import "./SignUpPage.css";
 import { useState } from "react";
 import axios from "axios";
 
-
-function Login() {
+function SignUp() { 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
 
   const handleUsernameChange = (e) => {
     setUsername(e.target.value);
-  }
+  };
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
-  }
+  };
+  const handleFirstnameChange = (e) => {
+    setFirstName(e.target.value);
+  };
+  const handleLastnameChange = (e) => {
+    setLastName(e.target.value);
+  };
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
 
   const sendLoginRequest = () => {
-    const url = "http://127.0.0.1:5000/users/login";
+    const url = "http://127.0.0.1:5000/users/signup";
     const data = {
       username: username,
-      password: password
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+      password: password,
     };
-  
-    axios.post(url, data)
-      .then(response => {
+
+    axios
+      .post(url, data)
+      .then((response) => {
         console.log(response.data.message);
       })
-      .catch(error => {
+      .catch((error) => {
         console.error(error.message);
       });
   };
@@ -80,7 +95,30 @@ function Login() {
             size="lg"
             onChange={handleUsernameChange}
           />
-
+          <MDBInput
+            wrapperClass="mb-2"
+            label="First Name"
+            id="formControlLg"
+            type="email"
+            size="lg"
+            onChange={handleFirstnameChange}
+          />
+          <MDBInput
+            wrapperClass="mb-2"
+            label="Second Name"
+            id="formControlLg"
+            type="email"
+            size="lg"
+            onChange={handleLastnameChange}
+          />
+          <MDBInput
+            wrapperClass="mb-4"
+            label="Email address"
+            id="formControlLg"
+            type="email"
+            size="lg"
+            onChange={handleEmailChange}
+          />
           <MDBInput
             wrapperClass="mb-4"
             label="Password"
@@ -160,5 +198,6 @@ function Login() {
     </MDBContainer>
   );
 }
+ 
 
-export default Login;
+export default SignUp;
