@@ -24,7 +24,6 @@ function App() {
   return (
     <BrowserRouter>
       <Navbar />
-      <Sidebar />
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/partner" element={<BecomePartner />} />
