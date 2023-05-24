@@ -21,9 +21,6 @@ export default function Page2() {
       <Tr>
         <Th style= {{width: "50%"}}>Scheme</Th>
         <Th style= {{width: "15%"}}>Min Invt</Th>
-        {/* <Th style= {{width: "7%"}}>1Yr</Th>
-        <Th style= {{width: "7%"}}>3Yr</Th>
-        <Th style= {{width: "7%"}}>5Yr</Th> */}
         <Th style= {{width: "14%"}}>Select Scheme</Th>
       </Tr>
     </Thead>
@@ -33,9 +30,6 @@ export default function Page2() {
     <tr key={result._id}>
       <Td>{result.scheme_name}</Td>
       <Td>{result.minimum_purchase_amount}</Td>
-      {/* <Td>{result.name}</Td> */}
-      {/* <Td>{result.name}</Td> */}
-      {/* <Td>{result.name}</Td> */}
       <Td>
         <button onClick={handleclick(result)}>Go</button>
       </Td>
@@ -45,9 +39,6 @@ export default function Page2() {
   <tr>
     <Td>{results.scheme_name}</Td>
     <Td>{results.minimum_purchase_amount}</Td>
-    {/* <Td>{results.name}</Td> */}
-    {/* <Td>{results.name}</Td> */}
-    {/* <Td>{results.name}</Td> */}
     <Td>
       <button onClick={handleclick(results)}>Go</button>
     </Td>
