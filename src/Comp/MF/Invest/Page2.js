@@ -11,9 +11,8 @@ export default function Page2() {
   var results = location.state.results;
   console.log(results);
   const nav = useNavigate();
-    function handleclick(){
-        nav("/Page3");
-
+    function handleclick(i){
+        nav("/Page3", { state: { results: i } });
     }
     
   return (
@@ -22,25 +21,32 @@ export default function Page2() {
       <Tr>
         <Th style= {{width: "50%"}}>Scheme</Th>
         <Th style= {{width: "15%"}}>Min Invt</Th>
-        <Th style= {{width: "7%"}}>1Yr</Th>
-        <Th style= {{width: "7%"}}>3Yr</Th>
-        <Th style= {{width: "7%"}}>5Yr</Th>
-        <Th style= {{width: "14%"}}> </Th>
+        <Th style= {{width: "14%"}}>Select Scheme</Th>
       </Tr>
     </Thead>
     <tbody>
-  {results.map((result) => (
-    <tr key={result.id}>
-      <Td>{result.name}</Td>
-      <Td>{result.email}</Td>
-      <Td>{result.name}</Td>
-      <Td>{result.name}</Td>
-      <Td>{result.name}</Td>
-      <Td><button onClick={handleclick}>Go</button></Td>
+    {Array.isArray(results) ? (
+  results.map((result) => (
+    <tr key={result._id}>
+      <Td>{result.scheme_name}</Td>
+      <Td>{result.minimum_purchase_amount}</Td>
+      <Td>
+        <button onClick={handleclick(result)}>Go</button>
+      </Td>
     </tr>
-  ))}
-</tbody>  
-</Table>
- </div>
-  )
+  ))
+) : (
+  <tr>
+    <Td>{results.scheme_name}</Td>
+    <Td>{results.minimum_purchase_amount}</Td>
+    <Td>
+      <button onClick={handleclick(results)}>Go</button>
+    </Td>
+  </tr>
+)}
+
+  </tbody>  
+  </Table>
+  </div>
+    )
 }

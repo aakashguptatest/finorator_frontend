@@ -1,110 +1,120 @@
 import React from 'react';
 import "./Purchase-Invest.css"
 import { useState, useEffect } from 'react';
-import {useNavigate} from "react-router-dom"
-export default function Page1() {
+import {useNavigate} from "react-router-dom";
+import axios from "axios";
+
+const DropdownMenu = () => {
   const nav = useNavigate();
-    const [results, setresults] = useState([]);
-    const [AMC, setAMC] = useState('');
-    const [nature, setnature] = useState('');
-    const [category, setcategory] = useState('');
-    const [name, setname] = useState('');
-    const [options, setOptions] = useState([]);
-    const [api, setapi] = useState("https://jsonplaceholder.typicode.com/comments?");
-    useEffect(() => {
-        fetch(api)
-          .then((response) => response.json())
-          .then((data) => {
-            const input1Options = [...new Set(data.map((item) => item.postId))];
-            const input2Options = [...new Set(data.map((item) => item.name))];
-            const input3Options = [...new Set(data.map((item) => item.email))];
-            const input4Options = [...new Set(data.map((item) => item.body))];
-            setOptions([input1Options, input2Options, input3Options, input4Options]);
-          })
-      }, [api]);
-        function changeAMC(i){
-            
-            setAMC(i);
-            let a = api ;
-               setapi("https://jsonplaceholder.typicode.com/comments"+ `?postId=${i}`);
-               
+  const [amcCodes, setAmcCodes] = useState([]);
+  const [schemeTypes, setSchemeTypes] = useState([]);
+  const [selectedAMCCode, setSelectedAMCCode] = useState('');
+  const [selectedSchemeType, setSelectedSchemeType] = useState('');
+  const [selectedSchemeName, setSelectedSchemeName] = useState('');
+  const [schemes, setSchemes] = useState([]);
+
+  useEffect(() => {
+    axios.get('http://127.0.0.1:5000/mutualfunds/get_schemes')
+      .then(response => {
+      const data = response.data;
+        if (data.amc_codes) {
+          setAmcCodes(data.amc_codes);
         }
-  
-          
-        
-        function changenature(i) {
-           
-          setnature(i);
-          let a = api ;
-      
-          setapi(a + `&name=${i}`);
-          
+        if (data.scheme_types) {
+          setSchemeTypes(data.scheme_types);
         }
-        function changecategory(i){
-           
-          setcategory(i);
-          let a = api ;
-          setapi(a + `&email=${i}`);
-  
-      }
-  
-  
-  function changename(i) {
-    setname(i);
-          let a = api ;
-          setapi(a +`&body=${i}`);
-  
+        console.log(data.amc_codes);
+      })
+      .catch(error => console.error(error));
+  }, []);
+
+  const fetchSchemes = () => {
+    if (!selectedAMCCode || !selectedSchemeType) {
+      axios.post('http://127.0.0.1:5000/mutualfunds/get_schemes', {
+        scheme_name: selectedSchemeName
+      }, {
+        headers: {
+          'Content-Type': 'application/json',
         }
-        
-        let Search = () => {
-          fetch(api)
-            .then(response => response.json())
-            .then(json => {
-              setresults(json);
-              nav("/Page2", { state: { results: json } });
+      })
+      .then(response => {
+        const data = response.data;
+        if (data.scheme) {
+          setSchemes(data.scheme);
+          nav("/Page2", { state: { results: data.scheme } });
+        }
+      })
+      .catch(error => console.error(error));
+    } else {
+      axios.post('http://127.0.0.1:5000/mutualfunds/get_schemes', {
+        amc_code: selectedAMCCode,
+        scheme_type: selectedSchemeType,
+      }, {
+        headers: {
+          'Content-Type': 'application/json',
+        }
+      })
+      .then(response => {
+        const data = response.data;
+        if (data.schemes) {
+          setSchemes(data.schemes);
+          nav("/Page2", { state: { results: data.schemes } });
+        }
+      })
+      .catch(error => console.error(error));
+    }
+  };
+  
+  
 
+  const handleAMCCodeChange = event => {
+    setSelectedAMCCode(event.target.value);
+  };
 
-            })
+  const handleSchemeTypeChange = event => {
+    setSelectedSchemeType(event.target.value);
+  };
 
-
-        };
+  const handleSchemeNameChange = event => {
+    setSelectedSchemeName(event.target.value);
+  };
               
   return (
     <div>        <div>
     <label className='label'>
-      AMC:<br />
-      <select className = "textip" value={AMC} onChange={(e) => changeAMC(e.target.value)}> <option value="">Select an option</option>
-      {options[0]?.map((option,index) => (
-        <option key={index} value={option}>{option}</option>
-      ))}
+      Select AMC:<br /> <br /> 
+      <select className = "textip" value={selectedAMCCode} onChange={handleAMCCodeChange}> <option value="">Select an option</option>
+      {amcCodes.map(code => (
+          <option key={code} value={code}>
+            {code}
+          </option>
+        ))}
     </select>
     </label> <br />
+
     <label className='label'>
-      Select Nature<br /> <br /> 
-      <select className = "textip" type="text" value={nature} onChange={(e) => changenature(e.target.value)}><option value="">Select an option</option>
-      {options[1]?.map((option,index) => (
-        <option key={index} value={option}>{option}</option>
-      ))}</select> 
+      Select Nature:<br /> <br /> 
+      <select className = "textip" value={selectedSchemeType} onChange={handleSchemeTypeChange}><option value="">Select an option</option>
+      {schemeTypes.map(type => (
+          <option key={type} value={type}>
+            {type}
+          </option>
+        ))}
+        </select> 
     </label><br /><br /><br />
+
     <label className='label'>
-      Select Category:<br /><br />
-      <select className = "textip" type="text" value={category} onChange={(e) => changecategory(e.target.value)}><option value="">Select an option</option>
-      {options[2]?.map((option,index) => (
-        <option key={index} value={option}>{option}</option>
-      ))}</select> 
+     Search Scheme Name:<br /><br />
+     <input type='text' value={selectedSchemeName} onChange={handleSchemeNameChange}></input>
     </label><br /><br /><br />
-    <label className='label'>
-      Name:<br /><br />
-      <select className = "textip" type="text" value={name} onChange={(e) => changename(e.target.value)}><option value="">Select an option</option>
-      {options[3]?.map((option,index) => (
-        <option key={index} value={option}>{option}</option>
-      ))}</select> 
-    </label><br /> <br/><br /><br />
-<button onClick={Search}>Search</button>
-    <div> <br/><br/>
-                </div>
+    <button onClick={fetchSchemes}>Get Schemes</button> <br /> <br />
+
+       <br /> <br/><br /><br />
+     <div> <br/><br/>
+                 </div>
   </div>
            
     </div>
   )
 }
+export default DropdownMenu;
