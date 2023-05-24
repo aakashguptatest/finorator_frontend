@@ -19,6 +19,7 @@ import Landingpage from "./Comp/MF/Landingpage/landingpage";
 import Investments from "./Comp/investments/investments";
 import Sidebar from "./Comp/Sidebar/Sidebar";
 import Login from "./Comp/Login/Loginpage";
+import SignUp from "./Comp/SignUp/SignUppage";
 
 function App() {
   return (
@@ -41,6 +42,8 @@ function App() {
         <Route exact path="/Page3" element={<Page3 />} />
         <Route exact path="/Page4" element={<Page4 />} />
         <Route exact path="/login" element={<Login />} />
+        <Route exact path="/investments" element={<Investments />} />
+        <Route exact path="/signup" element={<SignUp />} />
 
       </Routes>
     </BrowserRouter>
