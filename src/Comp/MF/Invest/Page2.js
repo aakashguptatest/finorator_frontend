@@ -7,12 +7,11 @@ import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css';
 import './Purchase-Invest.css';
 export default function Page2() {
   const location = useLocation();
-  console.log(location.state.results);
   var results = location.state.results;
   console.log(results);
   const nav = useNavigate();
-    function handleclick(i){
-        nav("/Page3", { state: { results: i } });
+    function handleclick(){
+        nav("/Page3", { state: { results: results } });
     }
     
   return (
@@ -31,7 +30,7 @@ export default function Page2() {
       <Td>{result.scheme_name}</Td>
       <Td>{result.minimum_purchase_amount}</Td>
       <Td>
-        <button onClick={handleclick(result)}>Go</button>
+        <button onClick={handleclick}>Go</button>
       </Td>
     </tr>
   ))
@@ -40,7 +39,7 @@ export default function Page2() {
     <Td>{results.scheme_name}</Td>
     <Td>{results.minimum_purchase_amount}</Td>
     <Td>
-      <button onClick={handleclick(results)}>Go</button>
+      <button onClick={handleclick}>Go</button>
     </Td>
   </tr>
 )}

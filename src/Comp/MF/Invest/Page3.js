@@ -43,7 +43,9 @@ const Page3 = () => {
     nav("/Page4");
   }
   function Back(){
-    nav("/Page2");
+    var re = localStorage.getItem('results');
+    console.log( "dfsdf " + re);
+    nav("/Page2", { state: { results: re } });
   }
 
   return (
