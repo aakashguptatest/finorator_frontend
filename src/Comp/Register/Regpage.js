@@ -8,52 +8,44 @@ import {
   MDBInput,
   MDBCheckbox,
 } from "mdb-react-ui-kit";
-import "./SignUpPage.css";
+import "./Regpage.css";
 import { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router";
-function SignUp() { 
-  const nav = useNavigate();
+import { useLocation, useNavigate } from "react-router";
+
+function Register() {
   const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleUsernameChange = (e) => {
     setUsername(e.target.value);
-  };
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
-  };
-  const handleFirstnameChange = (e) => {
-    setFirstName(e.target.value);
-  };
-  const handleLastnameChange = (e) => {
-    setLastName(e.target.value);
-  };
+  }
+
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
-  };
-  const sendregRequest = () => {
-    const url = "http://127.0.0.1:5000/users/signup";
+  }
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  }
+const nav = useLocation();
+  const sendRegisterRequest = () => {
+    const url = "http://127.0.0.1:5000/users/register";
     const data = {
       username: username,
-      firstName: firstName,
-      lastName: lastName,
       email: email,
-      password: password,
+      password: password
     };
 
-    axios
-      .post(url, data)
-      .then((response) => {
+    axios.post(url, data)
+      .then(response => {
         console.log(response.data.message);
       })
-      .catch((error) => {
+      .catch(error => {
         console.error(error.message);
       });
-      nav("/");
+      nav("/")
   };
 
   return (
@@ -62,14 +54,14 @@ function SignUp() {
         <MDBCol col="10" md="6">
           <img
             src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
-            class="img-fluid"
+            className="img-fluid"
             alt="Sample image"
           />
         </MDBCol>
 
         <MDBCol col="4" md="6">
           <div className="d-flex flex-row align-items-center justify-content-center">
-            <p className="lead fw-normal mb-0 me-3">Sign in with</p>
+            <p className="lead fw-normal mb-0 me-3">Sign up with</p>
 
             <MDBBtn floating size="md" tag="a" className="me-2">
               <MDBIcon fab icon="facebook-f" />
@@ -92,38 +84,20 @@ function SignUp() {
             wrapperClass="mb-4"
             label="Username"
             id="formControlLg"
-            type="username"
+            type="text"
             size="lg"
             onChange={handleUsernameChange}
-            required
           />
-          <MDBInput
-            wrapperClass="msb-2"
-            label="First Name"
-            id="formControlLg"
-            type="email"
-            size="lg"
-            onChange={handleFirstnameChange}
-            required
-          />
-          <MDBInput
-            wrapperClass="mb-2"
-            label="Second Name"
-            id="formControlLg"
-            type="email"
-            size="lg"
-            onChange={handleLastnameChange}
-            required
-          />
+
           <MDBInput
             wrapperClass="mb-4"
-            label="Email address"
+            label="Email"
             id="formControlLg"
             type="email"
             size="lg"
             onChange={handleEmailChange}
-            required
           />
+
           <MDBInput
             wrapperClass="mb-4"
             label="Password"
@@ -131,24 +105,14 @@ function SignUp() {
             type="password"
             size="lg"
             onChange={handlePasswordChange}
-            required
           />
 
-          <div className="d-flex justify-content-between mb-4">
-            <MDBCheckbox
-              name="flexCheck"
-              value=""
-              id="flexCheckDefault"
-              label="Stay logged in"
-            />
-          </div>
-
           <div className="text-center text-md-start mt-4 pt-2">
-            <MDBBtn className="mb-0 px-5" size="lg" onClick={sendregRequest}>
+            <MDBBtn className="mb-0 px-5" size="lg" onClick={sendRegisterRequest}>
               Register
             </MDBBtn>
             <p className="small fw-bold mt-2 pt-1 mb-2">
-              Have an account?{" "}
+              Already have an account?{" "}
               <a href="/login" className="link-danger">
                 Login
               </a>
@@ -159,7 +123,7 @@ function SignUp() {
 
       <div className="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
         <div className="text-white mb-3 mb-md-0">
-          Copyright © 2020. All rights reserved.
+          © 2020. All rights reserved.
         </div>
 
         <div>
@@ -203,6 +167,5 @@ function SignUp() {
     </MDBContainer>
   );
 }
- 
 
-export default SignUp;
+export default Register;
