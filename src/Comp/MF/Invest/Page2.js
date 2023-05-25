@@ -11,8 +11,9 @@ export default function Page2() {
   var results = location.state.results;
   console.log(results);
   const nav = useNavigate();
-    function handleclick(i){
-        nav("/Page3", { state: { results: i } });
+    function handleclick(results){
+      console.log("fghjkl;")
+        nav("/Page3", { state: { results: results } });
     }
     
   return (
@@ -24,28 +25,27 @@ export default function Page2() {
         <Th style= {{width: "14%"}}>Select Scheme</Th>
       </Tr>
     </Thead>
-    <tbody>
+
     {Array.isArray(results) ? (
   results.map((result) => (
-    <tr key={result._id}>
+    <Tr key={result._id}>
       <Td>{result.scheme_name}</Td>
       <Td>{result.minimum_purchase_amount}</Td>
       <Td>
-        <button onClick={handleclick(result)}>Go</button>
+        <button onClick={() => {handleclick(results)}}>Go</button>
       </Td>
-    </tr>
+    </Tr>
   ))
 ) : (
-  <tr>
+  <Tr>
     <Td>{results.scheme_name}</Td>
     <Td>{results.minimum_purchase_amount}</Td>
     <Td>
-      <button onClick={handleclick(results)}>Go</button>
+      <button onClick={() => {handleclick(results)}}>Go</button>
     </Td>
-  </tr>
+  </Tr>
 )}
 
-  </tbody>  
   </Table>
   </div>
     )

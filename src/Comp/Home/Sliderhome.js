@@ -8,16 +8,16 @@ import d from "./static/assets/142101-easy-loan.json";
 import e from "./static/assets/72203-income-tax.json";
 import f from "./static/assets/99232-real-estate.json";
 import "./App.css";
-
+import { useNavigate } from "react-router";
 export default function SliderSegment() {
   const [index, setIndex] = useState(0);
-
+  const nav = useNavigate();
   const handleSelect = (selectedIndex, e) => {
     setIndex(selectedIndex);
   };
 
   return (
-    <>
+    <div id = "car">
       <Carousel activeIndex={index} onSelect={handleSelect}>
         <Carousel.Item>
           <div className="row car-row">
@@ -37,7 +37,7 @@ export default function SliderSegment() {
               </div>
             </div>
             <div className="col-lg-2 col-12 col-sm-6 col-xl-2">
-              <div className="segment-card">
+              <div className="segment-card" onClick={() => {nav("/landing")}}>
                 <div className="card-holder">
                   <Lottie
                     loop={true}
@@ -114,6 +114,6 @@ export default function SliderSegment() {
           </div>
         </Carousel.Item>
       </Carousel>
-    </>
+    </div>
   );
 }
