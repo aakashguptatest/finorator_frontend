@@ -42,10 +42,8 @@ const Page3 = () => {
   function Go(){
     nav("/Page4");
   }
-  function Back(){
-    var re = localStorage.getItem('results');
-    console.log( "dfsdf " + re);
-    nav("/Page2", { state: { results: re } });
+  function Back(i){
+    nav("/Page2", { state: { results: i } });
   }
 
   return (
@@ -122,7 +120,7 @@ const Page3 = () => {
     <br />
     <div className="buttons">
       <button onClick={Go}>Save and Continue</button>
-      <button onClick={Back}>Back</button>
+      <button onClick={Back(results)}>Back</button>
 
     </div>
   </div>

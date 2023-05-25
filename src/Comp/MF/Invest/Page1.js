@@ -41,8 +41,6 @@ const DropdownMenu = () => {
         const data = response.data;
         if (data.scheme) {
           setSchemes(data.scheme);
-          localStorage.setItem("results", data.scheme); // Set data.scheme in local storage
-          console.log("sdfs" + data.scheme);
           nav("/Page2", { state: { results: data.scheme } });
         }
       })
@@ -60,15 +58,13 @@ const DropdownMenu = () => {
         const data = response.data;
         if (data.schemes) {
           setSchemes(data.schemes);
-          localStorage.setItem("results", data.schemes); // Set data.schemes in local storage
-          console.log("sdfs" + data.scheme);
           nav("/Page2", { state: { results: data.schemes } });
         }
       })
       .catch(error => console.error(error));
     }
   };
-    
+  
   
 
   const handleAMCCodeChange = event => {

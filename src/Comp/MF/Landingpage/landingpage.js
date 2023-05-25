@@ -1,15 +1,26 @@
 import React from 'react';
 import './landingpage.css';
-import Sidebar from '../../Sidebar/Sidebar';
+import SidebarMF from '../../sidebar mutualfunds/Sidebar';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+import SliderSegment from '../../Home/Sliderhome';
+import Downloads from '../Downloads';
+import Blogs from '../blogs';
+
 function Landingpage() {
+  const username = "Aditya";
   return (
     <div>
-    <Sidebar />
+    <SidebarMF />
     <div className="Landingpage">
-      <section className="plain-text-section">
-        <h1>Welcome to Our Landing Page</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget ligula vel dui rhoncus malesuada. Vestibulum nec nunc quis purus tristique pharetra.</p>
-      </section>
+      <section className="plain-text-section"> 
+      <div className="welcome-section">
+      <FontAwesomeIcon icon={faUser} className="profile-icon" />
+      <div className="welcome-content">
+        <h2 className="welcome-title">Welcome, {username}!</h2>
+        <p className="welcome-message">Congratulations on successfully logging in.</p>
+      </div>
+    </div>     </section>
 
       <section className="card-section">
         <h2>Featured Cards</h2>
@@ -82,9 +93,15 @@ function Landingpage() {
             <p>Answer to Question 1.</p>
           </div>
 
-          {/* Repeat the question and answer structure for other Q&A pairs */}
         </div>
       </section>
+      <section id='Segment' style={{zIndex: 0}}>    <SliderSegment/>
+</section>
+<section id='blogs'>    <Blogs/>
+</section>
+<section id = 'downloads'>    <Downloads/>
+</section>
+
     </div></div>
   );
 }

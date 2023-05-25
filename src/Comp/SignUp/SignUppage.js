@@ -11,9 +11,8 @@ import {
 import "./SignUpPage.css";
 import { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router";
+
 function SignUp() { 
-  const nav = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [firstName, setFirstName] = useState("");
@@ -35,7 +34,8 @@ function SignUp() {
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
-  const sendregRequest = () => {
+
+  const sendLoginRequest = () => {
     const url = "http://127.0.0.1:5000/users/signup";
     const data = {
       username: username,
@@ -53,7 +53,6 @@ function SignUp() {
       .catch((error) => {
         console.error(error.message);
       });
-      nav("/");
   };
 
   return (
@@ -95,16 +94,14 @@ function SignUp() {
             type="username"
             size="lg"
             onChange={handleUsernameChange}
-            required
           />
           <MDBInput
-            wrapperClass="msb-2"
+            wrapperClass="mb-2"
             label="First Name"
             id="formControlLg"
             type="email"
             size="lg"
             onChange={handleFirstnameChange}
-            required
           />
           <MDBInput
             wrapperClass="mb-2"
@@ -113,7 +110,6 @@ function SignUp() {
             type="email"
             size="lg"
             onChange={handleLastnameChange}
-            required
           />
           <MDBInput
             wrapperClass="mb-4"
@@ -122,7 +118,6 @@ function SignUp() {
             type="email"
             size="lg"
             onChange={handleEmailChange}
-            required
           />
           <MDBInput
             wrapperClass="mb-4"
@@ -131,7 +126,6 @@ function SignUp() {
             type="password"
             size="lg"
             onChange={handlePasswordChange}
-            required
           />
 
           <div className="d-flex justify-content-between mb-4">
@@ -139,18 +133,19 @@ function SignUp() {
               name="flexCheck"
               value=""
               id="flexCheckDefault"
-              label="Stay logged in"
+              label="Remember me"
             />
+            <a href="!#">Forgot password?</a>
           </div>
 
           <div className="text-center text-md-start mt-4 pt-2">
-            <MDBBtn className="mb-0 px-5" size="lg" onClick={sendregRequest}>
-              Register
+            <MDBBtn className="mb-0 px-5" size="lg" onClick={sendLoginRequest}>
+              Login
             </MDBBtn>
             <p className="small fw-bold mt-2 pt-1 mb-2">
-              Have an account?{" "}
-              <a href="/login" className="link-danger">
-                Login
+              Don't have an account?{" "}
+              <a href="../signup" className="link-danger">
+                Register
               </a>
             </p>
           </div>
