@@ -1,14 +1,11 @@
 import React from "react";
-import Page1 from "./Comp/MF/Invest/Page1";
-import Page2 from "./Comp/MF/Invest/Page2";
-import Page3 from "./Comp/MF/Invest/Page3";
-import Page4 from "./Comp/MF/Invest/Page4";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import Navbar from "./Comp/NavBar/Navbar";
+import MfNavbar from "./Comp/MF/nabarmf/MfNavbar";
 import Homepage from "./Comp/Home/Homepage";
 import Aboutus from "./Comp/Home/Aboutus";
 import Contactus from "./Comp/Home/Contactus";
 import BecomePartner from "./Comp/Home/BecomePartner";
-import Navbar from "./Comp/NavBar/Navbar";
 import Blogs from "./Comp/MF/blogs";
 import Downloads from "./Comp/MF/Downloads";
 import MFWatchlist from "./Comp/MF/MFWatchlist";
@@ -17,37 +14,54 @@ import Portfolio from "./Comp/profile/Portfolio";
 import Purchase from "./Comp/MF/Invest/Purchase-Invest";
 import Landingpage from "./Comp/MF/Landingpage/landingpage";
 import Investments from "./Comp/investments/investments";
-import Sidebar from "./Comp/Sidebar/Sidebar";
+import Page1 from "./Comp/MF/Invest/Page1";
+import Page2 from "./Comp/MF/Invest/Page2";
+import Page3 from "./Comp/MF/Invest/Page3";
+import Page4 from "./Comp/MF/Invest/Page4";
 import Login from "./Comp/Login/Loginpage";
 import SignUp from "./Comp/SignUp/SignUppage";
+import HelpAndSupportPage from "./Comp/helpAndSupport/HelpandSupport";
+
+function NavbarWrapper() {
+  const location = useLocation();
+  const isMfRoute = location.pathname.startsWith("/mf");
+
+  return isMfRoute ? <MfNavbar /> : <Navbar />;
+}
 
 function App() {
   return (
     <BrowserRouter>
-      <Navbar />
+      <NavbarWrapper />
       <Routes>
         <Route path="/" element={<Homepage />} />
+        <Route path="/help" element={<HelpAndSupportPage />} />
         <Route path="/partner" element={<BecomePartner />} />
-        <Route path="/aboutus" element={<Aboutus />}></Route>
-        <Route path="/contactus" element={<Contactus />}></Route>
-        <Route path="/blogs" element={<Blogs />}></Route>
-        <Route path="/downloads" element={<Downloads />}></Route>
-        <Route path="/watchlist" element={<MFWatchlist />}></Route>
-        <Route path="/profile" element={<Profile />}></Route>
-        <Route path="/portfolio" element={<Portfolio />}></Route>
-        <Route path="/invest" element={<Purchase />}></Route>
-        <Route path="/landing" element={<Landingpage />}></Route>
-        <Route exact path="/Page1" element={<Page1 />} />
-        <Route exact path="/Page2" element={<Page2 />} />
-        <Route exact path="/Page3" element={<Page3 />} />
-        <Route exact path="/Page4" element={<Page4 />} />
-        <Route exact path="/login" element={<Login />} />
-        <Route exact path="/investments" element={<Investments />} />
-        <Route exact path="/signup" element={<SignUp />} />
-
+        <Route path="/aboutus" element={<Aboutus />} />
+        <Route path="/contactus" element={<Contactus />} />
+        <Route path="/mf/blogs" element={<Blogs />} />
+        <Route path="/mf/downloads" element={<Downloads />} />
+        <Route path="/mf/watchlist" element={<MFWatchlist />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/mf/invest" element={<Purchase />} />
+        <Route path="/landing" element={<Landingpage />} />
+        <Route path="/Page1" element={<Page1 />} />
+        <Route path="/Page2" element={<Page2 />} />
+        <Route path="/Page3" element={<Page3 />} />
+        <Route path="/Page4" element={<Page4 />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/investments" element={<Investments />} />
+        <Route path="/signup" element={<SignUp />} />
       </Routes>
     </BrowserRouter>
   );
 }
 
 export default App;
+
+
+
+
+
+

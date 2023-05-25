@@ -51,7 +51,7 @@ const NavLinks = ({ isMenuOpen }) => (
     direction={{ xs: "column", sm: "row" }}
     spacing={{ xs: 2, sm: 0 }}
     display={{ xs: isMenuOpen ? "flex" : "none", sm: "flex" }}
-    className={isMenuOpen ? "navbar-extended" : ""}
+    className={isMenuOpen ? "bg-white navbar-extended" : ""}
     sx={{
       position: { xs: "absolute", sm: "static" },
       top: { xs: "60px", sm: "auto" },
@@ -80,7 +80,7 @@ const AuthLinks = () => (
       component={Link}
       to="/login"
       color="warning"
-      className="bg-yellow-400 hover:bg-yellow-500 text-white font-semibold py-2 px-4 rounded"
+      className="bg-yellow-400 px-3 py-1 rounded-xl text-sm hover:bg-yellow-500 text-white font-semibold"
     >
       Login/ Register
     </Button>

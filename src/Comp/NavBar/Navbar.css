@@ -22,15 +22,15 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 80px;
-  padding: 0 2rem;
+  height: 50px;
+  padding: 0;
   background-color: var(--mainColor);
   color: var(--textColor);
   box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.2);
 }
 
 nav a {
-  margin: 0 1rem;
+  margin: 0;
   color: var(--textColor);
   text-decoration: none;
 }
@@ -40,7 +40,7 @@ nav a:hover {
 }
 
 header .nav-btn {
-  padding: 5px;
+  /* padding: 5px; */
   cursor: pointer;
   background: transparent;
   border: none;
@@ -88,7 +88,7 @@ nav {
   }
 
   nav a {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
 }
 
@@ -97,10 +97,10 @@ nav {
 .navbar-link {
   display: flex;
   align-items: center;
-  padding: 0.5rem 1rem;
+  padding: 0rem 0.5rem;
   color: #374151;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 1rem;
   text-decoration: none;
   transition: color 0.3s ease, transform 0.3s ease;
 }
@@ -114,17 +114,17 @@ nav {
 }
 
 .navbar-link {
-  width: 150px;
+  width: 10   0px;
 }
 
 #loginbutton {
   background-color: #f59e0b;
   color: white;
-  padding: 0.75rem 1rem;
-  border-radius: 0.25rem;
+  /* padding: 0.75rem 1rem; */
+  /* border-radius: 0.25rem; */
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
   font-weight: bold;
-  font-size: 18px;
+  /* font-size: 18px; */
   text-decoration: none;
 }
 
