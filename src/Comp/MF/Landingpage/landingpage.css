@@ -65,4 +65,79 @@
     color: white;
     box-shadow: 5px 5px 5px #00000056;
   }
+  .welcome-section {
+    background-color: #f9f9f9;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    max-width: 500px;
+    margin: 0 auto;
+  }
   
+  .profile-icon {
+    font-size: 32px;
+    color: #333;
+    margin-right: 20px;
+  }
+  
+  .welcome-content {
+    text-align: left;
+  }
+  
+  .welcome-title {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .welcome-message {
+    font-size: 20px;
+    color: #666;
+    margin-bottom: 30px;
+    line-height: 1.4;
+  }
+  
+  @media (max-width: 768px) {
+    .welcome-section {
+      padding: 30px;
+    }
+  
+    .profile-icon {
+      font-size: 28px;
+    }
+  
+    .welcome-title {
+      font-size: 28px;
+    }
+  
+    .welcome-message {
+      font-size: 18px;
+    }
+  }
+  .sad-icon {
+    font-size: 24px;
+    color: #333;
+    margin-right: 10px;
+  }
+  
+  .logout-section {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logout-button {
+    font-size: 16px;
+    color: #666;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-left: 5px;
+  }
+  
+  .logout-button:hover {
+    color: #333;
+    text-decoration: underline;
+  }
