@@ -36,5 +36,5 @@ export const data = {
 };
 
 export default function Chart() {
-  return <Line options={options} data={data} />;
+  return <Line options={options} data={data} style={{ width: '90%', height: '20em' }} />;
 }

@@ -24,7 +24,7 @@ const StarRating = ({ rating }) => {
     return stars;
   };
 
-  return <div>{renderStars()}</div>;
+  return <div style={{ display: "flex" }}>{renderStars()}</div>;
 };
 
 export default StarRating;
