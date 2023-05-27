@@ -7,7 +7,7 @@ const Blogs = () => {
   const [news, setNews] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const searchInputRef = useRef(null);
-
+  
   useEffect(() => {
     const fetchData = async () => {
       const options = {
@@ -30,7 +30,6 @@ const Blogs = () => {
         setNews(response.data.news || []);
       } catch (error) {
         console.error(error);
-        // Handle the error
       }
     };
 
@@ -79,7 +78,8 @@ const Blogs = () => {
           {filteredNews.map((article) => (
             <div key={article.uuid} className="bg-white p-4 rounded shadow">
               <img
-                src={article.thumbnail.resolutions[0].url}
+                // src={article.thumbnail.resolutions[0].url}
+                src="https://www.salesforce.com/content/dam/blogs/ca/Blog%20Posts/anatomy-of-a-blog-post-deconstructed-open-graph.jpg"
                 alt={article.title}
                 className="mb-2"
               />
