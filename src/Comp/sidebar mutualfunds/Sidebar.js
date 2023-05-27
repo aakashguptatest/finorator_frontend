@@ -6,6 +6,9 @@ import { BsFillBookmarkCheckFill } from "react-icons/bs";
 import { AiFillPieChart } from "react-icons/ai";
 import "./Sidebar.css";
 import { Link } from "react-scroll";
+import Dropdown from 'react-dropdown';
+import 'react-dropdown/style.css';
+import { useNavigate } from "react-router";
 
 const menuItems = [
   {
@@ -16,35 +19,43 @@ const menuItems = [
   {
     text: "FAQ",
     icon: <BsFillBookmarkCheckFill />,
-    lk:"qa-section"
+    lk: "qa-section"
   },
   {
     text: "Segments",
     icon: <MdOutlineMessage />,
-    lk:"Segment"
+    lk: "Segment"
   },
   {
     text: "Blogs",
     icon: <FaUserCircle />,
-    lk:"blogs"
+    lk: "blogs"
   },
   {
     text: "Downloads",
     icon: <AiFillPieChart />,
-    lk:"downloads"
-  },
-  {
-    text: "Settings",
-    icon: <FaShoppingCart />,
-    lk: ""
+    lk: "downloads"
   },
 ];
+const options = [
+  'Bank Mandate Detials', 'Basic Information', 'Login/Change Password', 'Demat/Account Closure'
+];
+const defaultOption = options[0];
 
 const SidebarMF = () => {
+  const nav = useNavigate();
   const [isExpanded, setExpandedState] = useState(false);
 
   const toggleSidebar = () => {
     setExpandedState(!isExpanded);
+  };
+
+  const handleDropdownSelect = (selectedOption) => {
+    if (selectedOption.value == "Basic Information"){
+      nav(`/basic`)
+    }
+    else{
+      nav(`/demat`)}
   };
 
   return (
@@ -63,12 +74,18 @@ const SidebarMF = () => {
           </button>
         </div>
         <div className="sidebar-menu">
+          <Dropdown
+            options={options}
+            onChange={handleDropdownSelect}
+            value={defaultOption}
+            placeholder="Select an option"
+          />
           {menuItems.map(({ text, icon, lk }, index) => (
             <Link
               key={index}
               className={`menu-item ${isExpanded ? "" : "collapsed"}`}
-               spy={true} smooth={true}
-               to = {lk}
+              spy={true} smooth={true}
+              to={lk}
             >
               {icon}
               {isExpanded && <span>{text}</span>}

@@ -1,0 +1,127 @@
+.box {
+    position: relative;
+    width: 100%;
+    max-width: 1166px;
+    height: 65px;
+    margin: 0 auto;
+    background: rgba(237, 129, 48, 0.2);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  
+  .demat {
+    /* DEMAT/ACCOUNT CLOSURE */
+    width: 100%;
+    max-width: 521px;
+    height: 30px;
+    margin: 0 auto;
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #EE812D;
+  }
+  
+  .button {
+    /* Button */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 30px;
+    gap: 10px;
+    width: 199px;
+    height: 40px;
+    margin: 20px auto;
+    background: #EE812D;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+  }
+  
+  .closeacc {
+    width: 100%;
+    height: 20px;
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #F4F4F4;
+  }
+  
+  .table {
+    position: relative;
+    width: 100%;
+    max-width: 1075px;
+    height: auto;
+    margin: 0 auto;
+    padding: 10px;
+  }
+  
+  .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .heading {
+    left: 5%;
+    width: 50%;
+    font-family: 'Sansation';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 20px;
+    color: rgba(62, 62, 60, 0.7);
+  }
+  
+  .des {
+    width: 50%;
+    font-family: 'Sansation';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 20px;
+    color: rgba(62, 62, 60, 0.7);
+  }
+  
+  /* Media Queries */
+  @media (max-width: 768px) {
+    .box{
+        width: 90%;
+    }
+    .demat {
+      font-size: 24px;
+    }
+  
+    .button {
+      width: 100%;
+      max-width: 300px;
+    }
+  
+    .closeacc {
+      font-size: 14px;
+    }
+  
+    .table {
+      padding: 5px;
+    }
+  
+    .row {
+      flex-direction: column;
+      align-items: flex-start;
+      width: 90%;
+    }
+  
+    .heading,
+    .des {
+        left: 5%;
+    }
+  }
+  

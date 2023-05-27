@@ -42,8 +42,10 @@ const Page3 = () => {
   function Go() {
     nav("/Page4");
   }
-  function Back(i) {
-    nav("/Page2", { state: { results: i } });
+  function Back() {
+    var r = localStorage.getItem("data.scheme");
+    console.log(r);
+    nav("/Page2", { state: { results: r } });
   }
 
   return (
@@ -68,62 +70,57 @@ const Page3 = () => {
               <option value="Redemption">Redemption</option>
               <option value="Purchase">Purchase</option>
             </select>
-            <div class="cont">
-              <div>
-                <p>
-                  category: <br />
-                  fundHouse;
-                </p>
-              </div>
-              <div>
-                <p>
-                  fundSize: <br />
-                  Express Ratio:
-                </p>{" "}
+
+            <div style={{ display: "flex", alignItems: "center" }}>
+              <label style={{ marginRight: "10px", fontSize: "x-large" }}>
+                <input
+                  type="checkbox"
+                  checked={checkbox1}
+                  onChange={handleCheckbox1Change}
+                />
+                Regular
+              </label>
+              <label style={{ marginRight: "10px", fontSize: "x-large" }}>
+                <input
+                  type="checkbox"
+                  checked={checkbox2}
+                  onChange={handleCheckbox2Change}
+                />
+                Direct
+              </label>
+              <button className="go-button" onClick={handleGoButtonClick}>
+                Go
+              </button>
+            </div>
+            <div className="nav-rating">
+              <p style={{ fontSize: "1.5em" }}>
+                NAV: <b>1234</b> ({formattedDate})
+                <div>
+                  Crisil Rank -{" "}
+                  <span style={{ display: "flex" }}>
+                    <StarRating rating={2} />
+                  </span>
+                </div>
+                <span>Risk: Very High</span>
+              </p>
+
+              <div class="cont">
+                <div>
+                  <p>
+                    category: Large and Mid Cap Fund <br />
+                    fundHouse:SBI Mutual Fund
+                  </p>
+                  <p>
+                    fundSize: 9077 Cr <br />
+                    Express Ratio: 1.04%
+                  </p>{" "}
+                </div>
               </div>
             </div>
           </div>
-
-          <div>
-            <label>
-              <input
-                type="checkbox"
-                checked={checkbox1}
-                onChange={handleCheckbox1Change}
-              />
-              Checkbox 1
-            </label>
-            <label>
-              <input
-                type="checkbox"
-                checked={checkbox2}
-                onChange={handleCheckbox2Change}
-              />
-              Checkbox 2
-            </label>
-            <button
-              style={{
-                fontSize: "1em",
-                height: "1.6em",
-                padding: 0,
-                width: "2em",
-              }}
-              onClick={handleGoButtonClick}
-            >
-              Go
-            </button>
-          </div>
-          <div className="nav-rating">
-            <p>
-              NAV: <b>1234</b> ({formattedDate})
-              <span>
-                Crisil Rank - <br /> <StarRating rating={2} />
-              </span>
-              <span>Risk: Very High</span>
-            </p>
-          </div>
         </div>
         <Chart />
+
         <p>
           <b>Total Amount: 0</b>
         </p>
@@ -132,20 +129,20 @@ const Page3 = () => {
       <div className="division">
         <label>
           <h2>Amount</h2>
-          <input type="text" placeholder="Enter text" className="text" />
+          <input type="text" placeholder="Min Amt: 1000" className="text" />
         </label>
       </div>
       <br />
       <div className="division">
         <label>
           <h2>EDUN</h2>
-          <input type="text" placeholder="Enter text" className="text" />
+          <input type="text" placeholder="Apoorv Kathwar" className="text" />
         </label>{" "}
       </div>
       <br />
       <div className="buttons">
         <button onClick={Go}>Save and Continue</button>
-        <button onClick={Back(results)}>Back</button>
+        <button onClick={Back}>Back</button>
       </div>
     </div>
   );

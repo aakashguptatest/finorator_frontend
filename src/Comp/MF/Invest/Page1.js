@@ -41,6 +41,7 @@ const DropdownMenu = () => {
         const data = response.data;
         if (data.scheme) {
           setSchemes(data.scheme);
+          localStorage.setItem('data.scheme', data.scheme);
           nav("/Page2", { state: { results: data.scheme } });
         }
       })
@@ -58,6 +59,7 @@ const DropdownMenu = () => {
         const data = response.data;
         if (data.schemes) {
           setSchemes(data.schemes);
+          localStorage.setItem('data.scheme', data.scheme);
           nav("/Page2", { state: { results: data.schemes } });
         }
       })

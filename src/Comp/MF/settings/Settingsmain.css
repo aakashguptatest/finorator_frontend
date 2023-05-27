@@ -1,0 +1,21 @@
+.navbar {
+    justify-content: space-between;
+    background-color: #f2f2f2;
+    padding: 10px;
+    margin-left: 10%;
+  }
+  
+  .segment {
+    margin-left: 10%;
+
+    padding: 10px;
+    cursor: pointer;
+    color: #333;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .segment.active {
+    color: #fff;
+  }
+  
