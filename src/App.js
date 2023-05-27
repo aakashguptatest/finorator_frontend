@@ -21,7 +21,8 @@ import Page4 from "./Comp/MF/Invest/Page4";
 import Login from "./Comp/Login/Loginpage";
 import SignUp from "./Comp/SignUp/SignUppage";
 import HelpAndSupportPage from "./Comp/helpAndSupport/HelpandSupport";
-
+import Settingsdemat from "./Comp/settings/settingsdemat";
+import Settingsmain from "./Comp/settings/Settingsmain";
 function NavbarWrapper() {
   const location = useLocation();
   const isMfRoute = location.pathname.startsWith("/mf");
@@ -31,6 +32,7 @@ function NavbarWrapper() {
 
 function App() {
   return (
+    
     <BrowserRouter>
       <NavbarWrapper />
       <Routes>
@@ -53,6 +55,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/investments" element={<Investments />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/demat" element= {<Settingsdemat />}/>
+        <Route path="/basic" element= {<Settingsmain/>}/>
       </Routes>
     </BrowserRouter>
   );
