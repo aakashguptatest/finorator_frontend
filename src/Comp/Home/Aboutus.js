@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import ControlledCarousel from './Slider';
 import "./static/css/main.css"
 import "./static/bootstrap/css/bootstrap.css"
-import "./static/css/starter-template.css"
+// import "./static/css/starter-template.css"
 
 export default function Aboutus() {
     window.addEventListener('DOMContentLoaded', function() {

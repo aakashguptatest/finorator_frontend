@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import "./static/css/main.css"
 import "./static/bootstrap/css/bootstrap.css"
-import "./static/css/starter-template.css"
+// import "./static/css/starter-template.css"
 
 
 function Contactus() {

@@ -23,12 +23,14 @@ import SignUp from "./Comp/SignUp/SignUppage";
 import HelpAndSupportPage from "./Comp/helpAndSupport/HelpandSupport";
 import Settingsdemat from "./Comp/settings/settingsdemat";
 import Settingsmain from "./Comp/settings/Settingsmain";
+import Footer from "./Comp/Footer/footer";
 function NavbarWrapper() {
   const location = useLocation();
   const isMfRoute = location.pathname.startsWith("/mf");
 
   return isMfRoute ? <MfNavbar /> : <Navbar />;
 }
+
 
 function App() {
   return (
@@ -58,6 +60,7 @@ function App() {
         <Route path="/demat" element= {<Settingsdemat />}/>
         <Route path="/basic" element= {<Settingsmain/>}/>
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }
