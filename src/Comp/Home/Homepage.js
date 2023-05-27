@@ -79,7 +79,7 @@ export default function Homepage() {
                 All financial Solutions<br />
                 <Typewriter
   options={{
-    strings: ['Hello', 'World'],
+    strings: ['Under one roof', 'With single click'],
     autoStart: true,
     loop: true,
     pausefor: 500
@@ -92,7 +92,7 @@ export default function Homepage() {
               <a
                 className="theme-btn btn my-2 my-sm-0 theme-bg2"
                 href="#features-main"
-                style={{backgroundColor: "orange", width: 180, fontsize: 30, borderRadius: 10, color: "white"}}
+                style={{backgroundColor: "#E57C25", width: 120, fontsize: 30, borderRadius: 6, color: "white",fontWeight: "bold"}}
                 >Learn More</a
               >
             </div>
@@ -118,7 +118,7 @@ export default function Homepage() {
           </div>
         </div>
         <div className="row mb-5">
-          <div className="col-xl-4 col-lg-4 col-sm-6">
+          <div className="col-xl-4 col-lg-4 col-sm-6 pt-6">
             <div className="feature-bigcard">
             <Lottie loop = {true} animationData= {d} style={{height : 200}}/>
               <div className="description">
@@ -127,7 +127,7 @@ export default function Homepage() {
               </div>
             </div>
           </div>
-          <div className="col-xl-4 col-lg-4 col-sm-6">
+          <div className="col-xl-4 col-lg-4 col-sm-6 pt-6">
             <div className="feature-bigcard">
                    <Lottie loop = {true} animationData= {e} style={{height : 200}}/>              <div className="description">
                 To spend less time and money on otherwise financial applications
@@ -135,7 +135,7 @@ export default function Homepage() {
               </div>
             </div>
           </div>
-          <div className="col-xl-4 col-lg-4 col-sm-12">
+          <div className="col-xl-4 col-lg-4 col-sm-12 pt-6">
             <div className="feature-bigcard">
             <Lottie loop = {true} animationData= {f} style={{height : 200}}/>              <div className="description">
                 To get simplified Financial Advisory and Customer Support
@@ -239,7 +239,7 @@ export default function Homepage() {
           </div>
         </div>
         <div className="row" style={{alignItems: "center", justifycontent: "center"}}>
-          <div className="col-xl-2 col-lg-2 col-12 col-sm-6">
+          <div className="col-xl-2 col-lg-2 col-12 col-sm-6 mb-6">
             <div className="step-card">
               <img src={require("./static/assets/step1.svg").default} />
               <div className="title">Step 1</div>
@@ -251,7 +251,7 @@ export default function Homepage() {
           <div className="col-xl-1 col-lg-1 arr">
             <img src={require("./static/assets/Arrow 1.svg").default} />
           </div>
-          <div className="col-xl-2 col-lg-2 col-12 col-sm-6">
+          <div className="col-xl-2 col-lg-2 col-12 col-sm-6 mb-6">
             <div className="step-card">
               <img src={require("./static/assets/step2.svg").default} />
               <div className="title">Step 2</div>
@@ -263,7 +263,7 @@ export default function Homepage() {
           <div className="col-xl-1 col-lg-1 arr">
             <img src={require("./static/assets/Arrow 1.svg").default} />
           </div>
-          <div className="col-xl-2 col-lg-2 col-12 col-sm-6">
+          <div className="col-xl-2 col-lg-2 col-12 col-sm-6 mb-6">
             <div className="step-card">
               <img src={require("./static/assets/step3.svg").default} />
               <div className="title">Step 3</div>
@@ -275,7 +275,7 @@ export default function Homepage() {
           <div className="col-xl-1 col-lg-1 arr">
             <img src={require("./static/assets/Arrow 1.svg").default} />
           </div>
-          <div className="col-xl-2 col-lg-2 col-12 col-sm-6">
+          <div className="col-xl-2 col-lg-2 col-12 col-sm-6 mb-6">
             <div className="step-card">
               <img src={require("./static/assets/step4.svg").default} />
               <div className="title">Step 4</div>
