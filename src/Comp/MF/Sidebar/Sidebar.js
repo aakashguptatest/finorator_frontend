@@ -4,58 +4,88 @@ import { FaUserCircle, FaShoppingCart } from "react-icons/fa";
 import { MdOutlineMessage } from "react-icons/md";
 import { BsFillBookmarkCheckFill } from "react-icons/bs";
 import { AiFillPieChart } from "react-icons/ai";
-import "./Sidebar.css";
-import { Link } from "react-scroll";
 import Dropdown from 'react-dropdown';
-import 'react-dropdown/style.css';
+
 import { useNavigate } from "react-router";
+
+import "./Sidebar.css";
 
 const menuItems = [
   {
-    text: "Profile",
+    text: "Portfolio",
     icon: <BsDownload />,
-    lk: "welcome-section"
+    lk: "/portfolio",
   },
   {
-    text: "FAQ",
-    icon: <BsFillBookmarkCheckFill />,
-    lk: "qa-section"
-  },
-  {
-    text: "Segments",
+    text: "Investment",
     icon: <MdOutlineMessage />,
-    lk: "Segment"
+    lk: "/investments",
   },
   {
-    text: "Blogs",
+    text: "Plan/Calculator",
     icon: <FaUserCircle />,
-    lk: "blogs"
+    lk: "/plan",
   },
   {
     text: "Downloads",
     icon: <AiFillPieChart />,
-    lk: "downloads"
+    lk: "/mf/downloads",
+  },
+  {
+    text: "Help & Supports",
+    icon: <FaShoppingCart />,
+    lk: "/help",
   },
 ];
-const options = [
-  'Bank Mandate Detials', 'Basic Information', 'Login/Change Password', 'Demat/Account Closure'
-];
-const defaultOption = options[0];
 
-const SidebarMF = () => {
+const Sidebar = () => {
   const nav = useNavigate();
   const [isExpanded, setExpandedState] = useState(false);
-
-  const toggleSidebar = () => {
-    setExpandedState(!isExpanded);
-  };
-
-  const handleDropdownSelect = (selectedOption) => {
+  const optionsSettings = [
+    'Bank Mandate Detials', 'Basic Information', 'Login/Change Password', 'Demat/Account Closure'
+  ];
+  const optionsBlogs = [
+    'Research', 'Blogs'
+  ];
+  const optionsProfile = [
+    'Profile', 'Portfolio', "Transaction", "Reports", "Watchlist"
+  ];
+  const defaultOptionProfile = "Profile";
+  const defaultOptionSettings = "Settings";
+  const defaultOptionResearch = "Research/Blogs"
+  const handleDropdownSelectSettings = (selectedOption) => {
     if (selectedOption.value == "Basic Information"){
       nav(`/basic`)
     }
     else{
       nav(`/demat`)}
+  };
+  const handleDropdownSelectResearchc = (selectedOption) => {
+    if (selectedOption.value == "Research"){
+      nav(`/research`)
+    }
+    else{
+      nav(`/mf/blogs`)}
+  };
+  const handleDropdownSelectProfile = (selectedOption) => {
+    if (selectedOption.value == "Profile"){
+      nav(`/profile`)
+    }
+    if (selectedOption.value == "Portfolio"){
+      nav(`/portfolio`)
+    }
+    if (selectedOption.value == "Transaction"){
+      nav(`/transaction`)
+    }
+    if (selectedOption.value == "Reports"){
+      nav(`/reports`)
+    }
+    if (selectedOption.value == "Watchlist"){
+      nav(`/mf/watchlist`)
+    }  };
+ 
+  const toggleSidebar = () => {
+    setExpandedState(!isExpanded);
   };
 
   return (
@@ -74,22 +104,35 @@ const SidebarMF = () => {
           </button>
         </div>
         <div className="sidebar-menu">
-          <Dropdown
-            options={options}
-            onChange={handleDropdownSelect}
-            value={defaultOption}
+        <Dropdown
+            options={optionsProfile}
+            onChange={handleDropdownSelectProfile}
+            value={defaultOptionProfile}
             placeholder="Select an option"
           />
+
+        <Dropdown
+            options={optionsSettings}
+            onChange={handleDropdownSelectSettings}
+            value={defaultOptionSettings}
+            placeholder="Select an option"
+          />
+          <Dropdown
+            options={optionsBlogs}
+            onChange={handleDropdownSelectResearchc}
+            value={defaultOptionResearch}
+            placeholder="Select an option"
+          />
+
           {menuItems.map(({ text, icon, lk }, index) => (
-            <Link
+            <a
               key={index}
               className={`menu-item ${isExpanded ? "" : "collapsed"}`}
-              spy={true} smooth={true}
-              to={lk}
+              href={lk}
             >
               {icon}
               {isExpanded && <span>{text}</span>}
-            </Link>
+            </a>
           ))}
         </div>
       </div>
@@ -113,4 +156,4 @@ const SidebarMF = () => {
   );
 };
 
-export default SidebarMF;
+export default Sidebar;

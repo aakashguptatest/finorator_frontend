@@ -3,6 +3,8 @@ import { useState } from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import Table from "./Table";
 import TableB from "./Tablebelow";
+import Sidebar from "../MF/Sidebar/Sidebar";
+import MfNavbar from "../MF/nabarmf/MfNavbar";
 const InvestmentItem = ({ imgSrc, buttonText }) => {
   return (
     <div className="item flex flex-col items-center">
@@ -128,6 +130,8 @@ const Investments = () => {
 
   return (
     <div>
+      <MfNavbar/>
+      <Sidebar/>
       <div className="p-5 flex bg-slate-300 flex-wrap justify-center">
         {items.map(({ imgSrc, buttonText }, index) => (
           <div key={index} className="mx-6 px-4 mb-4">

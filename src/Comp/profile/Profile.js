@@ -4,16 +4,19 @@ import { MdOutlineEmail } from "react-icons/md";
 // import { Doughnut } from 'react-chartjs-2';
 // import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import Chart from "react-apexcharts";
-import Sidebar from "../Sidebar/Sidebar";
-
+import Sidebar from "../MF/Sidebar/Sidebar";
+import MfNavbar from "../MF/nabarmf/MfNavbar";
 // ChartJS.register(ArcElement, Tooltip, Legend);
 
 const Profile = () => {
   return (
-    <div className="flex">
+    <>
+    <MfNavbar/>
+      <Sidebar/>
+    <div style={{display: "flex"}}>
+      
       <div className="hidden md:block w-[5.5%]">
-        <Sidebar />
-      </div>
+        </div>
       <div className="flex-grow bg-[#e6f3ff] min-h-screen flex-shrink-0">
         <div className="flex px-2 bg-[rgb(61,134,176)] bg-opacity-50">
           <div className="p-2 md:text-xm text-sm">
@@ -160,7 +163,7 @@ const Profile = () => {
           </div>
         </div>
       </div>
-    </div>
+    </div></>
   );
 };
 

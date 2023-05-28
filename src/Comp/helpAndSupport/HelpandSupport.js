@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Faq from "react-faq-component";
 import "./styles.css"; // Import the CSS file for transitions and effects
-
+import Sidebar from "../MF/Sidebar/Sidebar";
+import MfNavbar from "../MF/nabarmf/MfNavbar";
 const HealAndSupportPage = () => {
   const [selectedQuestion, setSelectedQuestion] = useState(null);
 
@@ -49,6 +50,9 @@ const HealAndSupportPage = () => {
   };
 
   return (
+    <>
+    <MfNavbar/>
+    <Sidebar />
     <div className="flex flex-col justify-center items-center min-h-screen py-12">
       {/* <section className="w-full max-w-2xl bg-white rounded-lg p-6"> */}
       <div>
@@ -111,7 +115,7 @@ const HealAndSupportPage = () => {
       </div>
 
       {/* </section> */}
-    </div>
+    </div></>
   );
 };
 
