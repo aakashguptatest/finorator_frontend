@@ -31,10 +31,11 @@ function NavbarWrapper() {
   return isMfRoute ? <MfNavbar /> : <Navbar />;
 }
 
-
 function App() {
+  // Session Storage
+  sessionStorage.setItem("username", "");
+
   return (
-    
     <BrowserRouter>
       <NavbarWrapper />
       <Routes>
@@ -57,8 +58,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/investments" element={<Investments />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/demat" element= {<Settingsdemat />}/>
-        <Route path="/basic" element= {<Settingsmain/>}/>
+        <Route path="/demat" element={<Settingsdemat />} />
+        <Route path="/basic" element={<Settingsmain />} />
       </Routes>
       <Footer />
     </BrowserRouter>
@@ -66,9 +67,3 @@ function App() {
 }
 
 export default App;
-
-
-
-
-
-
