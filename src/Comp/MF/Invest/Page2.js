@@ -36,7 +36,7 @@ export default function Page2() {
               <Td>
                 <button
                   onClick={() => {
-                    handleclick(results);
+                    handleclick(result);
                   }}
                 >
                   Go
