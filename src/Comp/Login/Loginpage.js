@@ -11,31 +11,35 @@ import {
 import "./Loginpage.css";
 import { useState } from "react";
 import axios from "axios";
-
+import { useNavigate } from "react-router-dom";
 
 function Login() {
+  const nav = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   const handleUsernameChange = (e) => {
     setUsername(e.target.value);
-  }
+  };
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
-  }
+  };
 
   const sendLoginRequest = () => {
     const url = "http://127.0.0.1:5000/users/login";
     const data = {
       username: username,
-      password: password
+      password: password,
     };
-  
-    axios.post(url, data)
-      .then(response => {
+
+    axios
+      .post(url, data)
+      .then((response) => {
         console.log(response.data.message);
+        sessionStorage.setItem("username", data.username);
+        nav("/landing");
       })
-      .catch(error => {
+      .catch((error) => {
         console.error(error.message);
       });
   };
