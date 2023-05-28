@@ -34,7 +34,7 @@ const MfNavbar = () => {
                   className="text-2xl px-3 py-2 font-bold rounded-lg bg-[#4D81B2] hover:bg-[#31688E] cursor-pointer flex items-center"
                   onClick={toggleMenu}
                 >
-                  <span className="text-white px-3">INVEST</span>
+                  <span className="text-white px-3" src = "/Page1">INVEST</span>
                   <svg
                     className={`${
                       isOpen ? "transform rotate-180" : ""
@@ -72,7 +72,7 @@ const MfNavbar = () => {
             </div>
             <div className="hidden md:flex gap-7">
               <div className="text-2xl px-[6rem] rounded-md mx-2 py-2 font-bold bg-[#4D81B2] hover:bg-[#31688E] cursor-pointer">
-                <a className="text-white" style={{ textDecoration: "none" }} href="/">
+                <a className="text-white" style={{ textDecoration: "none" }} href="/Page1">
                   INVEST
                 </a>
               </div>

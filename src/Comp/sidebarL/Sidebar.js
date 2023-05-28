@@ -1,51 +1,51 @@
 import React, { useState } from "react";
 import { BsDownload } from "react-icons/bs";
 import { FaUserCircle, FaShoppingCart } from "react-icons/fa";
-import { MdOutlineMessage } from "react-icons/md";
 import { BsFillBookmarkCheckFill } from "react-icons/bs";
 import { AiFillPieChart } from "react-icons/ai";
+import { BsFillSquareFill } from "react-icons/bs";
+
 import "./Sidebar.css";
+import { Link } from "react-scroll";
+import Dropdown from 'react-dropdown';
+import 'react-dropdown/style.css';
 
 const menuItems = [
   {
-    text: "Downloads",
-    icon: <BsDownload />,
-    lk: "/downloads",
-  },
-  {
-    text: "Watchlist",
-    icon: <BsFillBookmarkCheckFill />,
-    lk: "/watchlist",
-  },
-  {
-    text: "Reports",
-    icon: <MdOutlineMessage />,
-    lk: "/reports",
-  },
-  {
     text: "Profile",
     icon: <FaUserCircle />,
-    lk: "/profile",
+    lk: "welcome-section"
   },
   {
-    text: "Portfolio",
-    icon: <AiFillPieChart />,
-    lk: "/portfolio",
+    text: "FAQ",
+    icon: <BsFillBookmarkCheckFill />,
+    lk: "qa-section"
   },
   {
-    text: "Invest",
+    text: "Segments",
     icon: <FaShoppingCart />,
-    lk: "/Page1",
+    lk: "Segment"
+  },
+  {
+    text: "Blogs",
+    icon: <BsFillSquareFill />,
+    lk: "blogs"
+  },
+  {
+    text: "Downloads",
+    icon: <BsDownload />,
+    lk: "downloads"
   },
 ];
 
-const Sidebar = () => {
+const SidebarL = () => {
   const [isExpanded, setExpandedState] = useState(false);
 
   const toggleSidebar = () => {
     setExpandedState(!isExpanded);
   };
 
+  
   return (
     <div className={`sidebar ${isExpanded ? "expanded" : ""}`}>
       <div className="sidebar-upper">
@@ -63,14 +63,15 @@ const Sidebar = () => {
         </div>
         <div className="sidebar-menu">
           {menuItems.map(({ text, icon, lk }, index) => (
-            <a
+            <Link
               key={index}
               className={`menu-item ${isExpanded ? "" : "collapsed"}`}
-              href={lk}
+              spy={true} smooth={true}
+              to={lk}
             >
               {icon}
               {isExpanded && <span>{text}</span>}
-            </a>
+            </Link>
           ))}
         </div>
       </div>
@@ -94,4 +95,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+export default SidebarL;

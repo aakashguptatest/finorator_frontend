@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import { RiFileDownloadLine } from "react-icons/ri";
 import { MdOutlineEmail } from "react-icons/md";
 import Chart from "react-apexcharts";
-import Sidebar from "../Sidebar/Sidebar";
+import Sidebar from "../MF/Sidebar/Sidebar";
+import MfNavbar from "../MF/nabarmf/MfNavbar";
+// ChartJS.register(ArcElement, Tooltip, Legend);
 
 const Profile = () => {
   const [selectedOption, setSelectedOption] = useState("landing");
@@ -36,10 +38,13 @@ const Profile = () => {
   };
 
   return (
-    <div className="flex">
+    <>
+    <MfNavbar/>
+      <Sidebar/>
+    <div style={{display: "flex"}}>
+      
       <div className="hidden md:block w-[5.5%]">
-        <Sidebar />
-      </div>
+        </div>
       <div className="flex-grow bg-[#e6f3ff] min-h-screen flex-shrink-0">
         <div className="flex px-2 bg-[rgb(61,134,176)] bg-opacity-50">
           <div className="p-2 md:text-xm text-sm">
@@ -212,6 +217,7 @@ const Profile = () => {
               />
             </div>
 
+
             <div className="grid overflow-x-auto mt-4 gap-6">
               <div className="md:px-10 px-4 py-2 border border-gray-300 rounded bg-white text-gray-700 shadow-lg">
                 <div className="text-center text-2xl font-bold">
@@ -258,9 +264,9 @@ const Profile = () => {
               </div>
             </div>
           </div>
-        )}
-      </div>
-    </div>
+        </div>
+    
+    </div></>
   );
 };
 

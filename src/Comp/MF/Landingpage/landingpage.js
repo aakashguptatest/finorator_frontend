@@ -1,116 +1,85 @@
-import React from "react";
-import "./landingpage.css";
-import SidebarMF from "../../sidebar mutualfunds/Sidebar";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
-import SliderSegment from "../../Home/Sliderhome";
-import Downloads from "../Downloads";
-import Blogs from "../blogs";
+import React, { useEffect, useState } from "react";
+import Faq from "react-faq-component";
+
+import './landingpage.css';
+import SidebarL from '../../sidebarL/Sidebar';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+import SliderSegment from '../../Home/Sliderhome';
+import Downloads from '../Downloads';
+import Blogs from '../blogs';
+import PersonalProfile from './ProfileSection';
 
 function Landingpage() {
-  const username = sessionStorage.getItem("username");
+
+const data = {
+  title: "FAQ (How it works)",
+  rows: [
+      {
+          title: "Lorem ipsum dolor sit amet,",
+          content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed tempor sem. Aenean vel turpis feugiat,
+            ultricies metus at, consequat velit. Curabitur est nibh, varius in tellus nec, mattis pulvinar metus.
+            In maximus cursus lorem, nec laoreet velit eleifend vel. Ut aliquet mauris tortor, sed egestas libero interdum vitae.
+            Fusce sed commodo purus, at tempus turpis.`,
+      },
+      {
+          title: "Nunc maximus, magna at ultricies elementum",
+          content:
+              "Nunc maximus, magna at ultricies elementum, risus turpis vulputate quam, vitae convallis ex tortor sed dolor.",
+      },
+      {
+          title: "Curabitur laoreet, mauris vel blandit fringilla",
+          content: `Curabitur laoreet, mauris vel blandit fringilla, leo elit rhoncus nunc, ac sagittis leo elit vel lorem.
+          Fusce tempor lacus ut libero posuere viverra. Nunc velit dolor, tincidunt at varius vel, laoreet vel quam.
+          Sed dolor urna, lobortis in arcu auctor, tincidunt mattis ante. Vivamus venenatis ultricies nibh in volutpat.
+          Cras eu metus quis leo vestibulum feugiat nec sagittis lacus.Mauris vulputate arcu sed massa euismod dignissim. `,
+      },
+      {
+          title: "What is the package version",
+          content: <p>current version is 1.2.1</p>,
+      },
+  ],
+};
+
+const styles = {
+  
+   bgColor: 'white',
+  rowTitleColor: "blue",
+  rowContentColor: 'grey',
+  // arrowColor: "red",
+  zIndex: 0
+};
+
+const config = {
+  animate: true,
+  tabFocus: true
+};
+
+  const username = "Aditya";
   return (
     <div>
-      <SidebarMF />
-      <div className="Landingpage">
-        <section className="plain-text-section">
-          <div className="welcome-section">
-            <FontAwesomeIcon icon={faUser} className="profile-icon" />
-            <div className="welcome-content">
-              <h2 className="welcome-title">Welcome, {username}!</h2>
-              <p className="welcome-message">
-                Congratulations on successfully logging in.
-              </p>
-            </div>
-          </div>{" "}
-        </section>
+    <SidebarL />
+    <div className="Landingpage">
+      <section style={{height: "10", overflow: "hidden"}}> 
+      <PersonalProfile/>
+ </section>
 
-        <section className="card-section">
-          <h2>Featured Cards</h2>
-          <div className="card-container">
-            <div className="card">
-              <h3>Card 1</h3>
-              <p>This is the content of Card 1.</p>
-            </div>
-            <div className="card">
-              <h3>Card 1</h3>
-              <p>This is the content of Card 1.</p>
-            </div>
-            <div className="card">
-              <h3>Card 1</h3>
-              <p>This is the content of Card 1.</p>
-            </div>
-            <div className="card">
-              <h3>Card 1</h3>
-              <p>This is the content of Card 1.</p>
-            </div>
-            <div className="card">
-              <h3>Card 1</h3>
-              <p>This is the content of Card 1.</p>
-            </div>
-            <div className="card">
-              <h3>Card 1</h3>
-              <p>This is the content of Card 1.</p>
-            </div>
-            <div className="card">
-              <h3>Card 1</h3>
-              <p>This is the content of Card 1.</p>
-            </div>
-            {/* Repeat the card structure for the remaining 6 cards */}
-          </div>
-        </section>
+      
+      <section style={{marginLeft: "200"}}>
+      <Faq 
+                data={data}
+                styles={styles}
+                config={config}
+            />
+      </section>
+      <section id='Segment' style={{zIndex: 0}}>    <SliderSegment/>
+</section>
+<section id='blogs'>    <Blogs/>
+</section>
+<section id = 'downloads'>    <Downloads/>
+</section>
 
-        <section className="qa-section">
-          <h2>Frequently Asked Questions</h2>
-          <div className="qa-container">
-            <div className="qa">
-              <h3>Question 1</h3>
-              <p>Answer to Question 1.</p>
-            </div>
-            <div className="qa">
-              <h3>Question 1</h3>
-              <p>Answer to Question 1.</p>
-            </div>
-            <div className="qa">
-              <h3>Question 1</h3>
-              <p>Answer to Question 1.</p>
-            </div>
-            <div className="qa">
-              <h3>Question 1</h3>
-              <p>Answer to Question 1.</p>
-            </div>
-            <div className="qa">
-              <h3>Question 1</h3>
-              <p>Answer to Question 1.</p>
-            </div>
-            <div className="qa">
-              <h3>Question 1</h3>
-              <p>Answer to Question 1.</p>
-            </div>
-            <div className="qa">
-              <h3>Question 1</h3>
-              <p>Answer to Question 1.</p>
-            </div>
-            <div className="qa">
-              <h3>Question 1</h3>
-              <p>Answer to Question 1.</p>
-            </div>
-          </div>
-        </section>
-        <section id="Segment" style={{ zIndex: 0 }}>
-          {" "}
-          <SliderSegment />
-        </section>
-        <section id="blogs">
-          {" "}
-          <Blogs />
-        </section>
-        <section id="downloads">
-          {" "}
-          <Downloads />
-        </section>
-      </div>
-    </div>
+    </div></div>
   );
 }
 

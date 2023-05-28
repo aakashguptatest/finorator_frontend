@@ -2,7 +2,7 @@ import React, { useState } from 'react';
  import "./Settingsmain.css";
  import { Table, Thead, Tr, Th, Td } from 'react-super-responsive-table';
 import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css';
-import SidebarMF from '../sidebar mutualfunds/Sidebar';
+import Sidebar from '../MF/Sidebar/Sidebar';
  export default function Settingsmain() {
     const [activeSegment, setActiveSegment] = useState(' basicinfo');
 
@@ -12,7 +12,7 @@ import SidebarMF from '../sidebar mutualfunds/Sidebar';
   
    return (
     <div >
-        <SidebarMF/>
+        <Sidebar/>
     <div className="navbar" style={{marginLeft: "50"}}>
       <Segment
         active={activeSegment === ' basicinfo'}

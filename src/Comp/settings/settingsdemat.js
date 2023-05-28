@@ -1,11 +1,11 @@
 import React from 'react'
 import "./settingsdemat.css"
-import SidebarMF from '../sidebar mutualfunds/Sidebar'
+import Sidebar from '../MF/Sidebar/Sidebar'
 const Settingsdemat = () => {
   return (
 
     <div>
-      <SidebarMF/>
+      <Sidebar/>
 <div className="box">
   <div className="demat">DEMAT/ACCOUNT CLOSURE</div>
 </div>

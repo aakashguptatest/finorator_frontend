@@ -4,7 +4,7 @@ import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css';
 import './MFWatchlist.css';
 import gif from "../Home/static/assets/icons8-shopping-cart.gif"
 import Landingpage from './Landingpage/landingpage';
-import Sidebar from '../Sidebar/Sidebar';
+import Sidebar from './Sidebar/Sidebar';
 export default function MFWatchlist() {
     const [AMC, setAMC] = useState('');
     const [nature, setnature] = useState('');
