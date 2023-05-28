@@ -63,15 +63,14 @@ const SidebarL = () => {
         </div>
         <div className="sidebar-menu">
           {menuItems.map(({ text, icon, lk }, index) => (
-            <Link
-              key={index}
-              className={`menu-item ${isExpanded ? "" : "collapsed"}`}
-              spy={true} smooth={true}
-              to={lk}
+            <a
+            key={index}
+            className={`menu-item ${isExpanded ? "" : "collapsed"}`}
+            href={lk}
             >
               {icon}
               {isExpanded && <span>{text}</span>}
-            </Link>
+            </a>
           ))}
         </div>
       </div>

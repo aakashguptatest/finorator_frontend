@@ -33,7 +33,7 @@ function NavbarWrapper() {
 
 function App() {
   // Session Storage
-  sessionStorage.setItem("username", "");
+  // sessionStorage.setItem("username", "");
 
   return (
     <BrowserRouter>
