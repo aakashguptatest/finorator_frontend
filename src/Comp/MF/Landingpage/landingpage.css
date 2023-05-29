@@ -23,59 +23,15 @@
     color: white;
   }
   
-  .card-section {
-    padding: 50px;
-  }
   
-  .card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
   
   .card {
-    width: 250px;
-    background-color: #EB8130;
-    padding: 20px;
-    margin: 10px;
-    border-radius: 5px;
+    height: fit-content;
+    width: 40vw;
     box-shadow: 5px 5px 5px #00000069;
-    color: white;
+    color: black;
+    
   }
-  
-  .qa-section {
-    background-color: #3f85b1be;
-    padding: 50px;
-    color: white;
-  
-  }
-  
-  .qa-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .qa {
-    width: 300px;
-    background-color: #53afe8be;
-    padding: 20px;
-    margin: 10px;
-    border-radius: 20px;
-    color: white;
-    box-shadow: 5px 5px 5px #00000056;
-  }
-  .welcome-section {
-    background-color: #f9f9f9;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
-    max-width: 500px;
-    margin: 0 auto;
-  }
-  
   .profile-icon {
     font-size: 32px;
     color: #333;
@@ -86,21 +42,17 @@
     text-align: left;
   }
   
-  .welcome-title {
-    font-size: 36px;
-    color: #333;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-  }
+  @media (max-width: 1020px) {
+.card {
+  width: 130%;
+  margin-left: 100;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px #00000069;
+  color: black;
   
-  .welcome-message {
-    font-size: 20px;
-    color: #666;
-    margin-bottom: 30px;
-    line-height: 1.4;
-  }
+}
+
   
-  @media (max-width: 768px) {
     .welcome-section {
       padding: 30px;
     }
@@ -116,11 +68,6 @@
     .welcome-message {
       font-size: 18px;
     }
-  }
-  .sad-icon {
-    font-size: 24px;
-    color: #333;
-    margin-right: 10px;
   }
   
   .logout-section {
