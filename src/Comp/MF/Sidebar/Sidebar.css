@@ -6,6 +6,8 @@
 	color: #333;
 	transition: 0.4s;
 	overflow-y: auto;
+	z-index: 1000000000000000000;
+
   }
   
   
@@ -18,7 +20,7 @@
   }
   
   .sidebar .sidebar-upper {
-	z-index: 100;
+	z-index: 1000000000000000000;
   }
   
   .sidebar .sidebar-heading {
@@ -187,4 +189,23 @@
   .sidebar .collapsed .sidebar-footer-details {
 	display: none;
   }
-  
+  .dropdown-menu {
+    /* Styles for the dropdown menu... */
+    position: absolute;
+    top: 0;
+    margin-top: -10px;
+    padding: 0px;
+    border-radius: 4px;
+	color: #333;
+  }
+
+  .dropdown-menu a {
+	color: #333;
+    display: block;
+    padding: 5px;
+    text-decoration: none;
+  }
+
+  .dropdown-menu a:hover {
+    background-color: #f1f1f1;
+  }

@@ -8,7 +8,7 @@ import { faUser } from '@fortawesome/free-solid-svg-icons';
 import SliderSegment from '../../Home/Sliderhome';
 import Downloads from '../Downloads';
 import Blogs from '../blogs';
-import PersonalProfile from './ProfileSection';
+import ProfilePage from './ProfileSection';
 
 function Landingpage() {
 
@@ -42,12 +42,13 @@ const data = {
 };
 
 const styles = {
-  
+  marginLeft: 200,
    bgColor: 'white',
-  rowTitleColor: "blue",
+  rowTitleColor: "Black",
   rowContentColor: 'grey',
+
   // arrowColor: "red",
-  zIndex: 0
+  zIndex: -1000
 };
 
 const config = {
@@ -60,12 +61,12 @@ const config = {
     <div>
     <SidebarL />
     <div className="Landingpage">
-      <section style={{height: "10", overflow: "hidden"}}> 
-      <PersonalProfile/>
+      <section className="welcome"> 
+      <ProfilePage/>
  </section>
 
       
-      <section style={{marginLeft: "200"}}>
+      <section style={{marginLeft: "30"}}>
       <Faq 
                 data={data}
                 styles={styles}
