@@ -190,4 +190,27 @@
   .sidebar .collapsed .sidebar-footer-details {
 	display: none;
   }
+  .submenu {
+	position: absolute;
+	top: 0;
+	left: 100%;
+	display: none;
+	background-color: #fff;
+	padding: 10px;
+	z-index: 100000;
+  }
+  
+  .menu-item:hover .submenu {
+	display: block;
+  }
+  
+  .menu-item-settings {
+	cursor: pointer;
+  }
+  
+  .menu-item-settings::after {
+	content: "\25B6";
+	margin-left: 5px;
+  }
+  
   

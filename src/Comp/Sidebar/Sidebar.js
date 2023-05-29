@@ -4,6 +4,7 @@ import { FaUserCircle, FaShoppingCart } from "react-icons/fa";
 import { MdOutlineMessage } from "react-icons/md";
 import { BsFillBookmarkCheckFill } from "react-icons/bs";
 import { AiFillPieChart } from "react-icons/ai";
+import {GoSettings} from 'react-icons/go';
 import "./Sidebar.css";
 
 const menuItems = [
@@ -31,6 +32,20 @@ const menuItems = [
     text: "Portfolio",
     icon: <AiFillPieChart />,
     lk: "/portfolio",
+  },
+  {
+    text: "Settings",
+    icon: <GoSettings />,
+    submenu: [
+      {
+        text: "Password Change",
+        lk: "/settings/password",
+      },
+      {
+        text: "Demat/Account Closure",
+        lk: "/settings/closure",
+      },
+    ],
   },
   {
     text: "Invest",
@@ -62,15 +77,34 @@ const Sidebar = () => {
           </button>
         </div>
         <div className="sidebar-menu">
-          {menuItems.map(({ text, icon, lk }, index) => (
-            <a
-              key={index}
-              className={`menu-item ${isExpanded ? "" : "collapsed"}`}
-              href={lk}
-            >
-              {icon}
-              {isExpanded && <span>{text}</span>}
-            </a>
+          {menuItems.map(({ text, icon, lk, submenu }, index) => (
+            <div key={index}>
+              {submenu ? (
+                <div className={`menu-item ${isExpanded ? "" : "collapsed"}`}>
+                  {icon}
+                  {isExpanded && (
+                    <span className="menu-item-settings">{text}</span>
+                  )}
+                  {isExpanded && (
+                    <div className="submenu">
+                      {submenu.map((subitem, subindex) => (
+                        <a key={subindex} href={subitem.lk}>
+                          {subitem.text}
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <a
+                  className={`menu-item ${isExpanded ? "" : "collapsed"}`}
+                  href={lk}
+                >
+                  {icon}
+                  {isExpanded && <span>{text}</span>}
+                </a>
+              )}
+            </div>
           ))}
         </div>
       </div>
