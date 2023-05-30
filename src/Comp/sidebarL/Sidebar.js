@@ -1,19 +1,20 @@
 import React, { useState } from "react";
 import { BsDownload } from "react-icons/bs";
 import { FaUserCircle, FaShoppingCart } from "react-icons/fa";
-import { MdOutlineMessage } from "react-icons/md";
 import { BsFillBookmarkCheckFill } from "react-icons/bs";
 import { AiFillPieChart } from "react-icons/ai";
+import {GoSettings} from 'react-icons/go';
+import { BsFillSquareFill } from "react-icons/bs";
+
 import "./Sidebar.css";
 import { Link } from "react-scroll";
 import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
-import { useNavigate } from "react-router";
 
 const menuItems = [
   {
     text: "Profile",
-    icon: <BsDownload />,
+    icon: <FaUserCircle />,
     lk: "welcome-section"
   },
   {
@@ -23,41 +24,29 @@ const menuItems = [
   },
   {
     text: "Segments",
-    icon: <MdOutlineMessage />,
+    icon: <FaShoppingCart />,
     lk: "Segment"
   },
   {
     text: "Blogs",
-    icon: <FaUserCircle />,
+    icon: <BsFillSquareFill />,
     lk: "blogs"
   },
   {
     text: "Downloads",
-    icon: <AiFillPieChart />,
+    icon: <BsDownload />,
     lk: "downloads"
   },
 ];
-const options = [
-  'Bank Mandate Detials', 'Basic Information', 'Login/Change Password', 'Demat/Account Closure'
-];
-const defaultOption = options[0];
 
-const SidebarMF = () => {
-  const nav = useNavigate();
+const SidebarL = () => {
   const [isExpanded, setExpandedState] = useState(false);
 
   const toggleSidebar = () => {
     setExpandedState(!isExpanded);
   };
 
-  const handleDropdownSelect = (selectedOption) => {
-    if (selectedOption.value == "Basic Information"){
-      nav(`/basic`)
-    }
-    else{
-      nav(`/demat`)}
-  };
-
+  
   return (
     <div className={`sidebar ${isExpanded ? "expanded" : ""}`}>
       <div className="sidebar-upper">
@@ -74,12 +63,6 @@ const SidebarMF = () => {
           </button>
         </div>
         <div className="sidebar-menu">
-          <Dropdown
-            options={options}
-            onChange={handleDropdownSelect}
-            value={defaultOption}
-            placeholder="Select an option"
-          />
           {menuItems.map(({ text, icon, lk }, index) => (
             <Link
               key={index}
@@ -113,4 +96,4 @@ const SidebarMF = () => {
   );
 };
 
-export default SidebarMF;
+export default SidebarL;

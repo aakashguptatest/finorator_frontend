@@ -6,7 +6,8 @@ import {
   BsGraphUpArrow,
   BsFileEarmarkPdf,
 } from "react-icons/bs";
-import Sidebar from "../Sidebar/Sidebar";
+import Sidebar from "../MF/Sidebar/Sidebar";
+import MfNavbar from "../MF/nabarmf/MfNavbar";
 
 const LinkItem = ({ link, icon, text, isActive, onClick }) => {
   const [hovered, setHovered] = useState(false);
@@ -58,9 +59,12 @@ const Portfolio = () => {
   };
 
   return (
+    <>
+    <MfNavbar/>
+    <Sidebar/>
+
     <div className="flex">
       <div className="w-1/6 z-10">
-        <Sidebar />
       </div>
       <div className="min-h-screen">
         <div className="flex border-b-2 border-gray-400 flex-wrap gap-3 mt-4 ml-4">
@@ -188,7 +192,7 @@ const Portfolio = () => {
           />
         </div>
       </div>
-    </div>
+    </div></>
   );
 };
 

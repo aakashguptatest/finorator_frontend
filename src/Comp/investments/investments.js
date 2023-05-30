@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
-
+import Sidebar from "../MF/Sidebar/Sidebar";
+import MfNavbar from "../MF/nabarmf/MfNavbar";
 const InvestmentItem = ({ imgSrc, buttonText }) => {
   const formattedButtonText = buttonText.replace(/\s+/g, "").toLowerCase();
 
@@ -20,8 +21,6 @@ const InvestmentItem = ({ imgSrc, buttonText }) => {
     </Link>
   );
 };
-
-
 
 const Investments = () => {
   const items = [
@@ -105,16 +104,19 @@ const Investments = () => {
   return (
     <div>
       <div className="p-5 flex flex-wrap justify-center">
-        {items.map(({ imgSrc, buttonText }, index) => (
-          <div
-            key={index}
-            className="mx-8 my-2 bg-gray-200 rounded-xl shadow-xl px-6 mb-4"
-          >
-            <InvestmentItem imgSrc={imgSrc} buttonText={buttonText} />
-          </div>
-        ))}
+        <MfNavbar />
+        <Sidebar />
+        <div className="p-5 flex bg-slate-300 flex-wrap justify-center">
+          {items.map(({ imgSrc, buttonText }, index) => (
+            <div
+              key={index}
+              className="mx-8 my-2 bg-gray-200 rounded-xl shadow-xl px-6 mb-4"
+            >
+              <InvestmentItem imgSrc={imgSrc} buttonText={buttonText} />
+            </div>
+          ))}
+        </div>
       </div>
-      
     </div>
   );
 };

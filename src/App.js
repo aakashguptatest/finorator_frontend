@@ -24,6 +24,7 @@ import HelpAndSupportPage from "./Comp/helpAndSupport/HelpandSupport";
 import Settingsdemat from "./Comp/settings/settingsdemat";
 import Settingsmain from "./Comp/settings/Settingsmain";
 import InvestmentPage from "./Comp/investments/InvestmentPage";
+import Footer from "./Comp/Footer/footer";
 
 function NavbarWrapper() {
   const location = useLocation();
@@ -33,6 +34,9 @@ function NavbarWrapper() {
 }
 
 function App() {
+  // Session Storage
+  sessionStorage.setItem("username", "");
+
   return (
     <BrowserRouter>
       <NavbarWrapper />
@@ -60,6 +64,7 @@ function App() {
         <Route path="/demat" element={<Settingsdemat />} />
         <Route path="/basic" element={<Settingsmain />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }

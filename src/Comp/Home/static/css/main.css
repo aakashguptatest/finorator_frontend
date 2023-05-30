@@ -63,6 +63,7 @@ body {
     background-size: cover;
     border-bottom-left-radius: 3em;
     border-bottom-right-radius: 3em;
+    background-blend-mode: darken;
 }
 
 .hero img {
@@ -168,6 +169,10 @@ body {
 .features {
     background: #e4e4fa;
 }
+.features-card{
+    justify-content: center;
+    align-items: center;
+}
 
 .feature-bigcard {
     background: #FFFFFF;
@@ -176,12 +181,13 @@ body {
     text-align: center;
     min-height: 290px;
     transition: 0.3s;
+    max-width:100%;
 }
 
 .description {
     font-family: Red Hat Display;
     font-style: normal;
-    font-weight: normal;
+    font-weight: 400;
     font-size: 16px;
     line-height: 24px;
     text-align: center;
@@ -199,13 +205,15 @@ body {
     padding-top: 1em;
 }
 
-
+.feature-smallcard{
+    padding-bottom: 10px;
+}
 
 .feature-smallcard .title {
-    font-family: Avenir;
+    font-family: Georgia,Times, serif; 
     font-style: normal;
-    font-weight: normal;
-    font-size: 20px;
+    font-weight: 300;
+    font-size: 24px;
     line-height: 24px;
     text-align: center;
     color: #000000;
@@ -213,11 +221,21 @@ body {
     padding-bottom: 12px;
 }
 
-.steps {
+.feature-smallcard .description {
+    font-family: Red Verdana, Geneva, Tahoma, sans-serif; 
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: rgba(7, 6, 22, 0.81);
 }
-
 .step-card {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+     justify-content: center;
+    align-items: center;
 }
 
 .step-card .title {
@@ -309,11 +327,7 @@ body {
     margin-right: 70px;
 }
 
-.sm-icons li {
-}
 
-.footer-nav {
-}
 
 .footer-nav li {
     background: transparent;
@@ -345,6 +359,10 @@ body {
 .feature-smallcard {
     margin-bottom: 2em;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .sub-hero {
@@ -369,8 +387,7 @@ body {
     background-color: #e4e4fa;
 }
 
-.about-u .row {
-}
+
 
 .vision-card {
     background: #FFFFFF;
@@ -529,6 +546,7 @@ textarea {
     .hero {
         padding-top: 2em;
         padding-bottom: 2em;
+        height:70vh;
     }
 
     .theme-h1 {
@@ -769,4 +787,26 @@ textarea {
 }
 .social-icons:hover{
     scale: 110%;
+}
+.trucket {
+    display: "-webkit-box";
+    max-width: 100%;
+    height: 1000;
+    line-height: 28px;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    /*position:absolute;*/
+    height: 100%;
+  }
+  .navbar-toggler-icon {
+background-image: url("../assets/ic_baseline-menu.svg");
+}
+body {
+  padding-top: 5rem;
+}
+
+.starter-template {
+  padding: 3rem 1.5rem;
+  text-align: center;
 }
