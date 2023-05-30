@@ -5,6 +5,7 @@ import Chart from "./Graph"
 import {useLocation, useNavigate} from "react-router-dom"
 import axios from "axios";
 const Page3 = () => {
+  const username = sessionStorage.getItem("username");
   const location = useLocation();
   console.log(location.state.results);
   var results = location.state.results;
@@ -14,7 +15,6 @@ const Page3 = () => {
   const [selectedOption, setSelectedOption] = useState('Switch in/out');
   const [formattedDate, setFormattedDate] = useState('');
   const [selectedAmount, setAmount] = useState(0);
-  const [selectedEUIN, setEUIN] = useState('');
 
   const handleOptionChange = (event) => {
     setSelectedOption(event.target.value);
@@ -30,9 +30,6 @@ const Page3 = () => {
   const handleAmountChange = (event) => {
     const amountValue = parseFloat(event.target.value);
     setAmount(amountValue);
-  }
-  const handleEUINChange = (event) => {
-    setEUIN(event.target.value);
   }
 
   const handleGoButtonClick = () => {
@@ -53,7 +50,7 @@ const Page3 = () => {
     // nav("/Page4");
     axios.post('http://127.0.0.1:5000/users/invest', {
         amount: selectedAmount,
-        username: selectedEUIN,
+        username: username,
         results: results,
       }, {
         headers: {
@@ -154,8 +151,8 @@ const Page3 = () => {
     <br />
     <div className="division">
     <label>
-      <h2>EDUN</h2>
-      <input type="text" value={selectedEUIN} onChange={handleEUINChange} placeholder="Enter text" className="text" />
+      <h2>EUIN</h2>
+      <input type="text" placeholder="Enter text" className="text" />
       </label> </div>
     <br />
     <div className="buttons">
