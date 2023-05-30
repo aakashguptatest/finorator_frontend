@@ -4,14 +4,16 @@ import StarRating from "./Star";
 import Chart from "./Graph";
 import { useLocation, useNavigate } from "react-router-dom";
 const Page3 = () => {
+  const username = sessionStorage.getItem("username");
   const location = useLocation();
   console.log(location.state.results);
   var results = location.state.results;
   console.log(results);
   const [checkbox1, setCheckbox1] = useState(false);
   const [checkbox2, setCheckbox2] = useState(false);
-  const [selectedOption, setSelectedOption] = useState("Switch in/out");
-  const [formattedDate, setFormattedDate] = useState("");
+  const [selectedOption, setSelectedOption] = useState('Switch in/out');
+  const [formattedDate, setFormattedDate] = useState('');
+  const [selectedAmount, setAmount] = useState(0);
 
   const handleOptionChange = (event) => {
     setSelectedOption(event.target.value);
@@ -24,6 +26,10 @@ const Page3 = () => {
   const handleCheckbox2Change = () => {
     setCheckbox2(!checkbox2);
   };
+  const handleAmountChange = (event) => {
+    const amountValue = parseFloat(event.target.value);
+    setAmount(amountValue);
+  }
 
   const handleGoButtonClick = () => {
     // Perform some action with the checkbox values
@@ -39,8 +45,21 @@ const Page3 = () => {
     setFormattedDate(formatted);
   }, []);
   const nav = useNavigate();
-  function Go() {
-    nav("/mf/invest/Page4");
+  const Go = () => {
+    // nav("/Page4");
+    axios.post('http://127.0.0.1:5000/users/invest', {
+        amount: selectedAmount,
+        username: username,
+        results: results,
+      }, {
+        headers: {
+          'Content-Type': 'application/json',
+        }
+      })
+      .then(response => {
+        console.log(response.data);
+      })
+      .catch(error => console.error(error));
   }
   function Back() {
     var r = localStorage.getItem("data.scheme");
@@ -125,25 +144,26 @@ const Page3 = () => {
           <b>Total Amount: 0</b>
         </p>
       </div>
-      <br />
-      <div className="division">
-        <label>
-          <h2>Amount</h2>
-          <input type="text" placeholder="Min Amt: 1000" className="text" />
-        </label>
-      </div>
-      <br />
-      <div className="division">
-        <label>
-          <h2>EDUN</h2>
-          <input type="text" placeholder="Apoorv Kathwar" className="text" />
-        </label>{" "}
-      </div>
-      <br />
-      <div className="buttons">
-        <button onClick={Go}>Save and Continue</button>
-        <button onClick={Back}>Back</button>
-      </div>
+      <Chart/> 
+      <p><b>Total Amount: 0</b></p>
+    <br />
+    <div className="division">
+      <label>
+      <h2>Amount</h2>
+      <input type="number" step="0.01" value={selectedAmount} onChange={handleAmountChange} placeholder="Enter text" className="text" />
+      </label>
+    </div>
+    <br />
+    <div className="division">
+    <label>
+      <h2>EUIN</h2>
+      <input type="text" placeholder="Enter text" className="text" />
+      </label> </div>
+    <br />
+    <div className="buttons">
+      <button onClick={Go}>Save and Continue</button>
+      <button onClick={Back}>Back</button>
+    </div>
     </div>
   );
 };
