@@ -13,7 +13,7 @@ import Sidebar from '../MF/Sidebar/Sidebar';
    return (
     <div >
         <Sidebar/>
-    <div className="navbar" style={{marginLeft: "50"}}>
+    <div className="navbar" >
       <Segment
         active={activeSegment === ' basicinfo'}
         onClick={() => handleSegmentClick(' basicinfo')}
@@ -62,34 +62,33 @@ return (
 };
 
 const  Basic = () => {
-return <div style={{display: "flex",     marginleft: "10%"
-}}>
+return <div style={{display: "flex"}}>
     basic
-    <Table style={{width: "45%"}}>
+    <Table style={{width: "45%", marginLeft: "4%"}}>
    
       <Tr>
-        < Td>Client Name</Td>
-        < Td>Min Invt</Td>
+        < Td style = {{padding: 20, fontSize: "large"}}>Client Name</Td>
+        < Td style = {{padding: 20, fontSize: "large"}}>Min Invt</Td>
       </Tr>
       <Tr>
-        < Td>Date of Birth</Td>
-        < Td>Min Invt</Td>
+        < Td style = {{padding: 20, fontSize: "large"}}>Date of Birth</Td>
+        < Td style = {{padding: 20, fontSize: "large"}}>Min Invt</Td>
       </Tr>
       <Tr>
-        < Td>Occupation</Td>
-        < Td>Min Invt</Td>
+        < Td style = {{padding: 20, fontSize: "large"}}>Occupation</Td>
+        < Td style = {{padding: 20, fontSize: "large"}}>Min Invt</Td>
       </Tr>
       <Tr>
-        < Td>Email</Td>
-        < Td>Min Invt</Td>
+        < Td style = {{padding: 20, fontSize: "large"}}>Email</Td>
+        < Td style = {{padding: 20, fontSize: "large"}}>Min Invt</Td>
       </Tr>
       <Tr>
-        < Td>Gender</Td>
-        < Td>Min Invt</Td>
+        < Td style = {{padding: 20, fontSize: "large"}}>Gender</Td>
+        < Td style = {{padding: 20, fontSize: "large"}}>Min Invt</Td>
       </Tr>
       <Tr>
-        < Td>Scheme</Td>
-        < Td>Min Invt</Td>
+        < Td style = {{padding: 20, fontSize: "large"}}>Scheme</Td>
+        < Td style = {{padding: 20, fontSize: "large"}}>Min Invt</Td>
       </Tr>
     
    </Table>
@@ -97,28 +96,28 @@ return <div style={{display: "flex",     marginleft: "10%"
 
       
     <Tr>
-        < Td>Client Name</Td>
-        < Td>Min Invt</Td>
+        < Td style = {{padding: 20, fontSize: "large"}}>Client Name</Td>
+        < Td style = {{padding: 20, fontSize: "large"}}>Min Invt</Td>
       </Tr>
       <Tr>
-        < Td>Date of Birth</Td>
-        < Td>Min Invt</Td>
+        < Td style = {{padding: 20, fontSize: "large"}}>Date of Birth</Td>
+        < Td style = {{padding: 20, fontSize: "large"}}>Min Invt</Td>
       </Tr>
       <Tr>
-        < Td>Occupation</Td>
-        < Td>Min Invt</Td>
+        < Td style = {{padding: 20, fontSize: "large"}}>Occupation</Td>
+        < Td style = {{padding: 20, fontSize: "large"}}>Min Invt</Td>
       </Tr>
       <Tr>
-        < Td>Email</Td>
-        < Td>Min Invt</Td>
+        < Td style = {{padding: 20, fontSize: "large"}}>Email</Td>
+        < Td style = {{padding: 20, fontSize: "large"}}>Min Invt</Td>
       </Tr>
       <Tr>
-        < Td>Gender</Td>
-        < Td>Min Invt</Td>
+        < Td style = {{padding: 20, fontSize: "large"}}>Gender</Td>
+        < Td style = {{padding: 20, fontSize: "large"}}>Min Invt</Td>
       </Tr>
       <Tr>
-        < Td>Scheme</Td>
-        < Td>Min Invt</Td>
+        < Td style = {{padding: 20, fontSize: "large"}}>Scheme</Td>
+        < Td style = {{padding: 20, fontSize: "large"}}>Min Invt</Td>
       </Tr>
     
    </Table></div>;
@@ -130,28 +129,28 @@ return (<div style={{display: "flex"}}>
 <Table style={{width: "45%"}}>
 
   <Tr>
-    < Td>Client Name</Td>
-    < Td>Min Invt</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Client Name</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Min Invt</Td>
   </Tr>
   <Tr>
-    < Td>Date of Birth</Td>
-    < Td>Min Invt</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Date of Birth</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Min Invt</Td>
   </Tr>
   <Tr>
-    < Td>Occupation</Td>
-    < Td>Min Invt</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Occupation</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Min Invt</Td>
   </Tr>
   <Tr>
-    < Td>Email</Td>
-    < Td>Min Invt</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Email</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Min Invt</Td>
   </Tr>
   <Tr>
-    < Td>Gender</Td>
-    < Td>Min Invt</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Gender</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Min Invt</Td>
   </Tr>
   <Tr>
-    < Td>Scheme</Td>
-    < Td>Min Invt</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Scheme</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Min Invt</Td>
   </Tr>
 
 </Table>
@@ -159,28 +158,28 @@ return (<div style={{display: "flex"}}>
 
   
 <Tr>
-    < Td>Client Name</Td>
-    < Td>Min Invt</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Client Name</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Min Invt</Td>
   </Tr>
   <Tr>
-    < Td>Date of Birth</Td>
-    < Td>Min Invt</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Date of Birth</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Min Invt</Td>
   </Tr>
   <Tr>
-    < Td>Occupation</Td>
-    < Td>Min Invt</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Occupation</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Min Invt</Td>
   </Tr>
   <Tr>
-    < Td>Email</Td>
-    < Td>Min Invt</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Email</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Min Invt</Td>
   </Tr>
   <Tr>
-    < Td>Gender</Td>
-    < Td>Min Invt</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Gender</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Min Invt</Td>
   </Tr>
   <Tr>
-    < Td>Scheme</Td>
-    < Td>Min Invt</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Scheme</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Min Invt</Td>
   </Tr>
 
 </Table></div>)
@@ -192,28 +191,28 @@ return(<div style={{display: "flex"}}>
 <Table style={{width: "45%"}}>
 
   <Tr>
-    < Td>Client Name</Td>
-    < Td>Min Invt</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Client Name</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Min Invt</Td>
   </Tr>
   <Tr>
-    < Td>Date of Birth</Td>
-    < Td>Min Invt</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Date of Birth</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Min Invt</Td>
   </Tr>
   <Tr>
-    < Td>Occupation</Td>
-    < Td>Min Invt</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Occupation</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Min Invt</Td>
   </Tr>
   <Tr>
-    < Td>Email</Td>
-    < Td>Min Invt</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Email</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Min Invt</Td>
   </Tr>
   <Tr>
-    < Td>Gender</Td>
-    < Td>Min Invt</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Gender</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Min Invt</Td>
   </Tr>
   <Tr>
-    < Td>Scheme</Td>
-    < Td>Min Invt</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Scheme</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Min Invt</Td>
   </Tr>
 
 </Table>
@@ -221,28 +220,28 @@ return(<div style={{display: "flex"}}>
 
   
 <Tr>
-    < Td>Client Name</Td>
-    < Td>Min Invt</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Client Name</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Min Invt</Td>
   </Tr>
   <Tr>
-    < Td>Date of Birth</Td>
-    < Td>Min Invt</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Date of Birth</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Min Invt</Td>
   </Tr>
   <Tr>
-    < Td>Occupation</Td>
-    < Td>Min Invt</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Occupation</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Min Invt</Td>
   </Tr>
   <Tr>
-    < Td>Email</Td>
-    < Td>Min Invt</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Email</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Min Invt</Td>
   </Tr>
   <Tr>
-    < Td>Gender</Td>
-    < Td>Min Invt</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Gender</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Min Invt</Td>
   </Tr>
   <Tr>
-    < Td>Scheme</Td>
-    < Td>Min Invt</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Scheme</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Min Invt</Td>
   </Tr>
 
 </Table></div>)
@@ -254,28 +253,28 @@ return(<div style={{display: "flex"}}>
 <Table style={{width: "45%"}}>
 
   <Tr>
-    < Td>Client Name</Td>
-    < Td>Min Invt</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Client Name</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Min Invt</Td>
   </Tr>
   <Tr>
-    < Td>Date of Birth</Td>
-    < Td>Min Invt</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Date of Birth</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Min Invt</Td>
   </Tr>
   <Tr>
-    < Td>Occupation</Td>
-    < Td>Min Invt</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Occupation</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Min Invt</Td>
   </Tr>
   <Tr>
-    < Td>Email</Td>
-    < Td>Min Invt</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Email</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Min Invt</Td>
   </Tr>
   <Tr>
-    < Td>Gender</Td>
-    < Td>Min Invt</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Gender</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Min Invt</Td>
   </Tr>
   <Tr>
-    < Td>Scheme</Td>
-    < Td>Min Invt</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Scheme</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Min Invt</Td>
   </Tr>
 
 </Table>
@@ -283,28 +282,28 @@ return(<div style={{display: "flex"}}>
 
   
 <Tr>
-    < Td>Client Name</Td>
-    < Td>Min Invt</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Client Name</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Min Invt</Td>
   </Tr>
   <Tr>
-    < Td>Date of Birth</Td>
-    < Td>Min Invt</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Date of Birth</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Min Invt</Td>
   </Tr>
   <Tr>
-    < Td>Occupation</Td>
-    < Td>Min Invt</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Occupation</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Min Invt</Td>
   </Tr>
   <Tr>
-    < Td>Email</Td>
-    < Td>Min Invt</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Email</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Min Invt</Td>
   </Tr>
   <Tr>
-    < Td>Gender</Td>
-    < Td>Min Invt</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Gender</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Min Invt</Td>
   </Tr>
   <Tr>
-    < Td>Scheme</Td>
-    < Td>Min Invt</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Scheme</Td>
+    < Td style = {{padding: 20, fontSize: "large"}}>Min Invt</Td>
   </Tr>
 
 </Table></div>);

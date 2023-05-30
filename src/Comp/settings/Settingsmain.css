@@ -1,8 +1,8 @@
 .navbar {
     justify-content: space-between;
     background-color: #f2f2f2;
-    padding: 10px;
-    margin-left: 10%;
+    font-size: large;
+    margin-left: 4%;
   }
   
   .segment {
@@ -18,4 +18,16 @@
   .segment.active {
     color: #fff;
   }
+  .Td{
+    padding: 10;
+  }
+  @media (max-width: 600px) {
+    .navbar {
+      justify-content: space-between;
+      background-color: #f2f2f2;
+      font-size: large;
+      padding-left: 20%;
+      margin-left: 4%;
+    }
   
+  }

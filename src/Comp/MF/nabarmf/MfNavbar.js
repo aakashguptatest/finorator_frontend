@@ -70,12 +70,13 @@ const MfNavbar = () => {
                 )}
               </div>
             </div>
-            <div className="hidden md:flex gap-7">
-              <div className="text-2xl px-[6rem] rounded-md mx-2 py-2 font-bold bg-[#4D81B2] hover:bg-[#31688E] cursor-pointer">
-                <a className="text-white" style={{ textDecoration: "none" }} href="/Page1">
+            <div className="hidden md:flex gap-7" >            <a href="mf/invest/Page1">
+
+              <div className="text-2xl px-[6rem] rounded-md mx-2 py-2 font-bold bg-[#4D81B2] hover:bg-[#31688E] cursor-pointer" >
+                <a className="text-white" style={{ textDecoration: "none" }} >
                   INVEST
                 </a>
-              </div>
+              </div></a>
               <div className="text-2xl px-[6rem] rounded-md py-2 mx-2 font-bold bg-[#4D81B2] hover:bg-[#31688E] cursor-pointer">
                 <a className="text-white" style={{ textDecoration: "none" }} href="/iconnect">
                   iConnect

@@ -49,20 +49,20 @@ const SidebarL = () => {
   
   return (
     <div className={`sidebar ${isExpanded ? "expanded" : ""}`}>
-      <div className="sidebar-upper">
-        <div className="sidebar-heading">
-          {isExpanded && (
-            <div className="sidebar-brand">
-              <h2>DashBoard</h2>
-            </div>
-          )}
-          <button className="sidebar-toggle" onClick={toggleSidebar}>
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-        </div>
-        <div className="sidebar-menu">
+    <div className="sidebar-upper">
+      <div className="sidebar-heading">
+        {isExpanded && (
+          <div className="sidebar-brand">
+            <h2>DashBoard</h2>
+          </div>
+        )}
+        <button className = {`sidebar-toggle${isExpanded ? "expanded" : ""}`} onClick={toggleSidebar} >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+         <div className="sidebar-menu">
           {menuItems.map(({ text, icon, lk }, index) => (
             <Link
               key={index}

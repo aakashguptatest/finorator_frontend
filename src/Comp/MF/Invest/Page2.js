@@ -13,7 +13,7 @@ export default function Page2() {
   const nav = useNavigate();
   function handleclick(results) {
     console.log("fghjkl;");
-    nav("/Page3", { state: { results: results } });
+    nav("/mf/invest/Page3", { state: { results: results } });
   }
 
   return (

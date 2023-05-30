@@ -39,7 +39,6 @@ const Profile = () => {
 
   return (
     <>
-    <MfNavbar/>
       <Sidebar/>
     <div style={{display: "flex"}}>
       
