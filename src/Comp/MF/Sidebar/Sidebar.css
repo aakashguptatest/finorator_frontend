@@ -189,6 +189,32 @@
   .sidebar .collapsed .sidebar-footer-details {
 	display: none;
   }
+<<<<<<< HEAD:src/Comp/Sidebar/Sidebar.css
+  .submenu {
+	position: absolute;
+	top: 0;
+	left: 100%;
+	display: none;
+	background-color: #fff;
+	padding: 10px;
+	z-index: 100000;
+  }
+  
+  .menu-item:hover .submenu {
+	display: block;
+  }
+  
+  .menu-item-settings {
+	cursor: pointer;
+  }
+  
+  .menu-item-settings::after {
+	content: "\25B6";
+	margin-left: 5px;
+  }
+  
+  
+=======
   .dropdown-menu {
     /* Styles for the dropdown menu... */
     position: absolute;
@@ -209,3 +235,4 @@
   .dropdown-menu a:hover {
     background-color: #f1f1f1;
   }
+>>>>>>> cdef9ccaa1d2705dd6da83868fbb4e1600ebe9ac:src/Comp/MF/Sidebar/Sidebar.css

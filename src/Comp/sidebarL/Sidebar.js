@@ -3,6 +3,7 @@ import { BsDownload } from "react-icons/bs";
 import { FaUserCircle, FaShoppingCart } from "react-icons/fa";
 import { BsFillBookmarkCheckFill } from "react-icons/bs";
 import { AiFillPieChart } from "react-icons/ai";
+import {GoSettings} from 'react-icons/go';
 import { BsFillSquareFill } from "react-icons/bs";
 
 import "./Sidebar.css";

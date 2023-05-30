@@ -1,149 +1,121 @@
 import React, { useRef } from "react";
-import { useState } from "react";
-import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
-import Table from "./Table";
-import TableB from "./Tablebelow";
+import { Link } from "react-router-dom";
 import Sidebar from "../MF/Sidebar/Sidebar";
 import MfNavbar from "../MF/nabarmf/MfNavbar";
 const InvestmentItem = ({ imgSrc, buttonText }) => {
+  const formattedButtonText = buttonText.replace(/\s+/g, "").toLowerCase();
+
   return (
-    <div className="item flex flex-col items-center">
-      <img className="h-20 w-20 mb-2" src={imgSrc} alt="image" />
-      <button className="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded">
-        {buttonText}
-      </button>
-    </div>
+    <Link
+      style={{ textDecoration: "none" }}
+      to={`/investments/${formattedButtonText}`}
+    >
+      <div className="item cursor-pointer transition-transform duration-300 transform-gpu hover:scale-110">
+        <div className="card-content flex flex-col items-center w-36">
+          <img className="h-20 mx-4 my-2 w-20 mb-2" src={imgSrc} alt="image" />
+          <div className="text-gray-400 font-bold py-2 uppercase text-center px-auto">
+            {buttonText}
+          </div>
+        </div>
+      </div>
+    </Link>
   );
 };
-
-const data = [
-  "Column 1",
-  "Column 2",
-  "Column 3",
-  "Column 4",
-  "Column 5",
-  "Column 6",
-  "Column 7",
-  "Column 8",
-  "Column 9",
-  "Column 10",
-  "Column 11",
-  "Column 12",
-  "Column 13",
-  "Column 14",
-  "Column 15",
-];
 
 const Investments = () => {
   const items = [
     {
-      imgSrc: require("./equity.svg").default,
-      buttonText: "Button",
+      imgSrc: require("./assets/equity.svg").default,
+      buttonText: "Equity Fund",
       tabletext: "Multi Cap",
     },
     {
-      imgSrc: require("./equity.svg").default,
-      buttonText: "Button",
+      imgSrc: require("./assets/debt.svg").default,
+      buttonText: "Debt Fund",
       tabletext: "Large Cap",
     },
     {
-      imgSrc: require("./equity.svg").default,
-      buttonText: "Button",
+      imgSrc: require("./assets/children.svg").default,
+      buttonText: "Children Fund",
       tabletext: "Mid Cap",
     },
     {
-      imgSrc: require("./equity.svg").default,
-      buttonText: "Button",
+      imgSrc: require("./assets/monthly_income.svg").default,
+      buttonText: "Monthly Income Fund",
       tabletext: "Small Cap",
     },
     {
-      imgSrc: require("./equity.svg").default,
-      buttonText: "Button",
+      imgSrc: require("./assets/equity.svg").default,
+      buttonText: "Retirement Fund",
       tabletext: "Sectoral/Thematic",
     },
     {
-      imgSrc: require("./equity.svg").default,
-      buttonText: "Button",
+      imgSrc: require("./assets/equity.svg").default,
+      buttonText: "Hybrid Fund",
       tabletext: "ELSS",
     },
     {
-      imgSrc: require("./equity.svg").default,
-      buttonText: "Button",
+      imgSrc: require("./assets/equity.svg").default,
+      buttonText: "Sectorial Fund",
       tabletext: "International",
     },
     {
-      imgSrc: require("./equity.svg").default,
-      buttonText: "Button",
+      imgSrc: require("./assets/equity.svg").default,
+      buttonText: "Pension Fund",
       tabletext: "Debt",
     },
     {
-      imgSrc: require("./equity.svg").default,
-      buttonText: "Button",
+      imgSrc: require("./assets/equity.svg").default,
+      buttonText: "NOF's",
       tabletext: "Hybrid",
     },
     {
-      imgSrc: require("./equity.svg").default,
-      buttonText: "Button",
+      imgSrc: require("./assets/equity.svg").default,
+      buttonText: "Retirement Fund",
       tabletext: "Value5",
     },
     {
-      imgSrc: require("./equity.svg").default,
-      buttonText: "Button",
+      imgSrc: require("./assets/equity.svg").default,
+      buttonText: "MF + Insurance",
       tabletext: "Value4",
     },
     {
-      imgSrc: require("./equity.svg").default,
-      buttonText: "Button",
+      imgSrc: require("./assets/equity.svg").default,
+      buttonText: "Elss Fund",
       tabletext: "Value3",
     },
     {
-      imgSrc: require("./equity.svg").default,
-      buttonText: "Button",
+      imgSrc: require("./assets/equity.svg").default,
+      buttonText: "Fund of Fund's",
       tabletext: "Value2",
     },
     {
-      imgSrc: require("./equity.svg").default,
-      buttonText: "Button",
+      imgSrc: require("./assets/equity.svg").default,
+      buttonText: "Money Market",
+      tabletext: "Value1",
+    },
+    {
+      imgSrc: require("./assets/equity.svg").default,
+      buttonText: "All Funds",
       tabletext: "Value1",
     },
   ];
-  const [currentPosition, setCurrentPosition] = useState(0);
-  const [displayData, setDisplayData] = useState(data.slice(0, 7));
-
-  const handleLeftArrowClick = () => {
-    setCurrentPosition(currentPosition - 1);
-    setDisplayData(data.slice(currentPosition - 1, currentPosition + 6));
-  };
-
-  const handleRightArrowClick = () => {
-    setCurrentPosition(currentPosition + 1);
-    setDisplayData(data.slice(currentPosition + 1, currentPosition + 8));
-  };
-
-  const tableData = {
-    totalData: data.length,
-    currentPosition: currentPosition,
-    displayData: displayData,
-    handleLeftArrowClick: handleLeftArrowClick,
-    handleRightArrowClick: handleRightArrowClick,
-  };
 
   return (
     <div>
-      <MfNavbar/>
-      <Sidebar/>
-      <div className="p-5 flex bg-slate-300 flex-wrap justify-center">
-        {items.map(({ imgSrc, buttonText }, index) => (
-          <div key={index} className="mx-6 px-4 mb-4">
-            <InvestmentItem imgSrc={imgSrc} buttonText={buttonText} />
-          </div>
-        ))}
-      </div>
-      <div>
-        <Table data={tableData} />
-      </div>
-      <div className="mt-4">
-        <TableB />
+      <div className="p-5 flex flex-wrap justify-center">
+        <MfNavbar />
+        <Sidebar />
+        <div className="p-5 flex bg-slate-300 flex-wrap justify-center">
+          {items.map(({ imgSrc, buttonText }, index) => (
+            <div
+              key={index}
+              className="mx-8 my-2 bg-gray-200 rounded-xl shadow-xl px-6 mb-4"
+            >
+              <InvestmentItem imgSrc={imgSrc} buttonText={buttonText} />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
