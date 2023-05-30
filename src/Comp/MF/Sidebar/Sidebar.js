@@ -92,7 +92,7 @@ const Sidebar = () => {
             <Dropdown style={{marginLeft: "0"}}>
               <Dropdown.Toggle
                 variant="tertiary"
-                style={{backgroundColor: "white", padding: "0", borderColor: "white", fontSize: "larger"}}
+                style={{width: "100%", marginLeft: "0", marginTop: 0, marginBottom: 0}}
                 id="dropdown-button"
                 className={`menu-item ${isExpanded ? "" : "collapsed"}`}
               >
