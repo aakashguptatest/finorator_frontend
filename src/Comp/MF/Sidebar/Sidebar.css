@@ -189,7 +189,6 @@
   .sidebar .collapsed .sidebar-footer-details {
 	display: none;
   }
-<<<<<<< HEAD:src/Comp/Sidebar/Sidebar.css
   .submenu {
 	position: absolute;
 	top: 0;
@@ -214,7 +213,6 @@
   }
   
   
-=======
   .dropdown-menu {
     /* Styles for the dropdown menu... */
     position: absolute;
@@ -235,4 +233,3 @@
   .dropdown-menu a:hover {
     background-color: #f1f1f1;
   }
->>>>>>> cdef9ccaa1d2705dd6da83868fbb4e1600ebe9ac:src/Comp/MF/Sidebar/Sidebar.css
