@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Sidebar from "../Sidebar/Sidebar";
-import MfNavbar from "../nabarmf/MfNavbar";
 const DropdownMenu = () => {
   const nav = useNavigate();
   const [amcCodes, setAmcCodes] = useState([]);
@@ -72,7 +71,7 @@ const DropdownMenu = () => {
           if (data.schemes) {
             setSchemes(data.schemes);
             localStorage.setItem("data.scheme", data.scheme);
-            nav("/Page2", { state: { results: data.schemes } });
+            nav("/mf/invest/Page2", { state: { results: data.schemes } });
           }
         })
         .catch((error) => console.error(error));
@@ -93,7 +92,7 @@ const DropdownMenu = () => {
 
   return (
     <div>
-      <MfNavbar/><Sidebar/>
+      <Sidebar/>
       <div>
         <label className="label">
           Select AMC:

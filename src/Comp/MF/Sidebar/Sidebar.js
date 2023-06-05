@@ -3,6 +3,8 @@ import { FaUserCircle,  FaHandHolding, FaCalculator, FaResearchgate, FaSearch } 
 import { MdOutlineMessage } from "react-icons/md";
 import Dropdown from "react-bootstrap/Dropdown";
 import { FaDownload } from "react-icons/fa";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
 
 import "./Sidebar.css";
 
@@ -11,7 +13,7 @@ const menuItems = [
     text: "Profile",
     icon: <FaUserCircle />,
     dropdownItems: [
-      { text: "Portfolio", lk: "/mf/portfolio" },
+      { text: "Portfolio", lk: "/mf/profile" },
       { text: "Report", lk: "/mf/report" },
       { text: "Transactions", lk: "/mf/transaction" },
       { text: "Watchlist", lk: "/mf/watchlist" }
@@ -24,19 +26,18 @@ const menuItems = [
     lk: "/mf/investments",
   },
   {
+    text: "Research/Blogs",
+    icon: <FaResearchgate />,
+    dropdownItems: [
+      { text: "Research", lk: "/research" },
+      { text: "Blogs", lk: "/mf/blogs" },
+   
+    ],
+  },
+  {
     text: "Plan/Calculator",
     icon: <FaCalculator />,
     lk: "/plan",
-  },
-  {
-    text: "Downloads",
-    icon: <FaDownload />,
-    lk: "/mf/downloads",
-  },
-  {
-    text: "Help & Supports",
-    icon: <FaHandHolding />,
-    lk: "/help",
   },
   {
     text: "Settings",
@@ -48,17 +49,18 @@ const menuItems = [
       { text: "Demat/Account Closure", lk: "/mf/settings/demat" }
 
     ],
+  }
+,
+  {
+    text: "Downloads",
+    icon: <FaDownload />,
+    lk: "/mf/downloads",
   },
   {
-    text: "Research/Blogs",
-    icon: <FaResearchgate />,
-    dropdownItems: [
-      { text: "Research", lk: "/research" },
-      { text: "Blogs", lk: "/mf/blogs" },
-   
-    ],
+    text: "Help & Supports",
+    icon: <FaHandHolding />,
+    lk: "/help",
   }
-
 ];
   
 
@@ -89,17 +91,17 @@ const Sidebar = () => {
         <React.Fragment key={index}>
           {dropdownItems ? (
             <Dropdown style={{marginLeft: "0", fontSize: "large"}}>
-              <Dropdown.Toggle
-              fontSize = "small"
-                variant="tertiary"
-                style={{width: "100%", marginLeft: "0", marginTop: 0, marginBottom: 0, fontSize: "0"}}
-                id="dropdown-button"
-                className={`menu-item ${isExpanded ? "" : "collapsed"}`}
-              >
-                {icon}
-                {isExpanded && <span style={{fontSize: "small"}}>{text}</span>}
-              </Dropdown.Toggle>
-              <Dropdown.Menu>
+      <Dropdown.Toggle
+  fontSize="small"
+  variant="tertiary"
+  style={{ width: "100%", marginLeft: "0", marginTop: 0, marginBottom: 0, fontSize: "0" }}
+  id="dropdown-button"
+  className={`menu-item ${isExpanded ? "" : "collapsed"}`}
+>
+  {icon}
+  {isExpanded && <span style={{ fontSize: "medium" }}>{text}</span>}
+  <FontAwesomeIcon icon={faCaretDown} style={{ marginLeft: "5px" }} />
+</Dropdown.Toggle>        <Dropdown.Menu style={{backgroundColor: "none"}}>
                 {dropdownItems.map((item, index) => (
                   <Dropdown.Item key={index} href={item.lk}>
                     {item.text}
