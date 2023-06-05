@@ -68,8 +68,8 @@ export default function Homepage() {
     }, delta);
   };
   return (
-    <div>
-      <div className="hero">
+    <div className="">
+      <div className="hero" >
         <div className="container">
           <div className="row" style={{ alignItems: "center" }}>
             <div className="col-lg-7 col-md-6 col-xl-6">

@@ -18,13 +18,18 @@
   }
   
   .footer {
-    display: flex;
-    flex-flow: row wrap;
-    padding: 30px 30px 20px 30px;
+    /* position: fixed; */
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 30px;
     color: #ffffff;
     background-color: #000000c7;
     border-top: 1px solid #e5e5e5;
+    box-sizing: border-box;
+    z-index: 9999;
   }
+  
   
   .footer > * {
     flex:  1 100%;
@@ -63,7 +68,7 @@
     align-items: center;
     justify-content: center;
     height: 36px;
-    max-width: max-content;
+    max-width: fit-content;
     background-color: rgba(129, 129, 129, 0.07);
     border-radius: 100px;
     color: #ffffff;

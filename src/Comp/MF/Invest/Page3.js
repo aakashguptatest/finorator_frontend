@@ -40,12 +40,12 @@ const Page3 = () => {
   }, []);
   const nav = useNavigate();
   function Go() {
-    nav("/Page4");
+    nav("/mf/invest/Page4");
   }
   function Back() {
     var r = localStorage.getItem("data.scheme");
     console.log(r);
-    nav("/Page2", { state: { results: r } });
+    nav("/mf/invest/Page2", { state: { results: r } });
   }
 
   return (

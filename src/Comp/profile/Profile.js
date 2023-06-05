@@ -82,21 +82,22 @@ const Profile = () => {
 
   return (
     <>
-      {/* <MfNavbar /> */}
-      <Sidebar />
-      <div style={{ display: "flex" }}>
-        <div className="hidden md:block w-[5.5%]"></div>
-        <div className="flex-grow bg-[#e6f3ff] min-h-screen flex-shrink-0">
-          <div className="flex px-2 bg-[rgb(61,134,176)] bg-opacity-50">
-            <div className="p-2 md:text-xm text-sm">
-              <div>Summary Overview</div>
-              <div>As on Date 27-03-23</div>
+      <Sidebar/>
+    <div style={{display: "flex"}}>
+      
+      <div className="hidden md:block w-[5.5%]">
+        </div>
+      <div className="flex-grow bg-[#e6f3ff] min-h-screen flex-shrink-0">
+        <div className="flex px-2 bg-[rgb(61,134,176)] bg-opacity-50">
+          <div className="p-2 md:text-xm text-sm">
+            <div>Summary Overview</div>
+            <div>As on Date 27-03-23</div>
+          </div>
+          <div className="flex space-x-4 p-2">
+            <div className="flex items-center">
+              <RiFileDownloadLine />
+              <div className="px-2"> Excel</div>
             </div>
-            <div className="flex space-x-4 p-2">
-              <div className="flex items-center">
-                <RiFileDownloadLine />
-                <div className="px-2"> Excel</div>
-              </div>
 
               <div className="flex items-center">
                 <MdOutlineEmail />
