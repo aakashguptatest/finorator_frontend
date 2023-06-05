@@ -115,7 +115,6 @@ const Page3 = () => {
       </div>
     </div>
     </div>
-    </div>
     
     );
 };
