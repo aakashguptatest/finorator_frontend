@@ -3,7 +3,8 @@ import "./Purchase-Invest.css";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-
+import Sidebar from "../Sidebar/Sidebar";
+import MfNavbar from "../nabarmf/MfNavbar";
 const DropdownMenu = () => {
   const nav = useNavigate();
   const [amcCodes, setAmcCodes] = useState([]);
@@ -48,7 +49,7 @@ const DropdownMenu = () => {
           if (data.scheme) {
             setSchemes(data.scheme);
             localStorage.setItem("data.scheme", data.scheme);
-            nav("/Page2", { state: { results: data.scheme } });
+            nav("/mf/invest/Page2", { state: { results: data.scheme } });
           }
         })
         .catch((error) => console.error(error));
@@ -92,7 +93,7 @@ const DropdownMenu = () => {
 
   return (
     <div>
-      {" "}
+      <MfNavbar/><Sidebar/>
       <div>
         <label className="label">
           Select AMC:

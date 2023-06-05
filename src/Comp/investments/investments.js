@@ -1,14 +1,13 @@
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 import Sidebar from "../MF/Sidebar/Sidebar";
-import MfNavbar from "../MF/nabarmf/MfNavbar";
 const InvestmentItem = ({ imgSrc, buttonText }) => {
   const formattedButtonText = buttonText.replace(/\s+/g, "").toLowerCase();
 
   return (
     <Link
       style={{ textDecoration: "none" }}
-      to={`/investments/${formattedButtonText}`}
+      to={`/mf/investments/${formattedButtonText}`}
     >
       <div className="item cursor-pointer transition-transform duration-300 transform-gpu hover:scale-110">
         <div className="card-content flex flex-col items-center w-36">
@@ -103,9 +102,9 @@ const Investments = () => {
 
   return (
     <div>
-      <div className="p-5 flex flex-wrap justify-center">
-        <MfNavbar />
         <Sidebar />
+        
+      <div className="p-5 flex flex-wrap justify-center">
         <div className="p-5 flex bg-slate-300 flex-wrap justify-center">
           {items.map(({ imgSrc, buttonText }, index) => (
             <div

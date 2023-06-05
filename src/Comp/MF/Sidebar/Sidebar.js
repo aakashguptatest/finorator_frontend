@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { FaUserCircle, FaShoppingCart } from "react-icons/fa";
+import { FaUserCircle,  FaHandHolding, FaCalculator, FaResearchgate, FaSearch } from "react-icons/fa";
 import { MdOutlineMessage } from "react-icons/md";
-import { AiFillPieChart } from "react-icons/ai";
 import Dropdown from "react-bootstrap/Dropdown";
-
+import { FaDownload } from "react-icons/fa";
 
 import "./Sidebar.css";
 
@@ -12,9 +11,9 @@ const menuItems = [
     text: "Profile",
     icon: <FaUserCircle />,
     dropdownItems: [
-      { text: "Portfolio", lk: "/portfolio" },
-      { text: "Report", lk: "/report" },
-      { text: "Transactions", lk: "/transaction" },
+      { text: "Portfolio", lk: "/mf/portfolio" },
+      { text: "Report", lk: "/mf/report" },
+      { text: "Transactions", lk: "/mf/transaction" },
       { text: "Watchlist", lk: "/mf/watchlist" }
 
     ],
@@ -22,40 +21,40 @@ const menuItems = [
   {
     text: "Investment",
     icon: <MdOutlineMessage />,
-    lk: "/investments",
+    lk: "/mf/investments",
   },
   {
     text: "Plan/Calculator",
-    icon: <FaUserCircle />,
+    icon: <FaCalculator />,
     lk: "/plan",
   },
   {
     text: "Downloads",
-    icon: <AiFillPieChart />,
+    icon: <FaDownload />,
     lk: "/mf/downloads",
   },
   {
     text: "Help & Supports",
-    icon: <FaShoppingCart />,
+    icon: <FaHandHolding />,
     lk: "/help",
   },
   {
     text: "Settings",
-    icon: <FaShoppingCart />,
+    icon: <FaSearch />,
     dropdownItems: [
-      { text: "Bank Mandate Details", lk: "/demat" },
-      { text: "Basic Information", lk: "/basic" },
-      { text: "Login/Change Password", lk: "/demat" },
-      { text: "Demat/Account Closure", lk: "/demat" }
+      { text: "Bank Mandate Details", lk: "/mf/settings/demat" },
+      { text: "Basic Information", lk: "/mf/settings/basic" },
+      { text: "Login/Change Password", lk: "/mf/settings/demat" },
+      { text: "Demat/Account Closure", lk: "/mf/settings/demat" }
 
     ],
   },
   {
     text: "Research/Blogs",
-    icon: <FaShoppingCart />,
+    icon: <FaResearchgate />,
     dropdownItems: [
       { text: "Research", lk: "/research" },
-      { text: "Blogs", lk: "/blogs" },
+      { text: "Blogs", lk: "/mf/blogs" },
    
     ],
   }
@@ -79,7 +78,7 @@ const Sidebar = () => {
               <h2>DashBoard</h2>
             </div>
           )}
-          <button className="sidebar-toggle" onClick={toggleSidebar}>
+          <button className = {`sidebar-toggle${isExpanded ? "expanded" : ""}`} onClick={toggleSidebar} >
             <span></span>
             <span></span>
             <span></span>
@@ -89,15 +88,16 @@ const Sidebar = () => {
         {menuItems.map(({ text, icon, lk, dropdownItems }, index) => (
         <React.Fragment key={index}>
           {dropdownItems ? (
-            <Dropdown style={{marginLeft: "0"}}>
+            <Dropdown style={{marginLeft: "0", fontSize: "large"}}>
               <Dropdown.Toggle
+              fontSize = "small"
                 variant="tertiary"
-                style={{backgroundColor: "white", padding: "0", borderColor: "white", fontSize: "larger"}}
+                style={{width: "100%", marginLeft: "0", marginTop: 0, marginBottom: 0, fontSize: "0"}}
                 id="dropdown-button"
                 className={`menu-item ${isExpanded ? "" : "collapsed"}`}
               >
                 {icon}
-                {isExpanded && <span style={{fontSize: "large"}}>{text}</span>}
+                {isExpanded && <span style={{fontSize: "small"}}>{text}</span>}
               </Dropdown.Toggle>
               <Dropdown.Menu>
                 {dropdownItems.map((item, index) => (

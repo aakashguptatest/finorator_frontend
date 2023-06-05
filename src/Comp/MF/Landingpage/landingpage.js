@@ -73,7 +73,7 @@ const config = {
                 config={config}
             />
       </section>
-      <section id='Segment' style={{zIndex: 0}}>    <SliderSegment/>
+      <section id='Segment' style={{zIndex: 0}} >    <SliderSegment/>
 </section>
 <section id='blogs'>    <Blogs/>
 </section>

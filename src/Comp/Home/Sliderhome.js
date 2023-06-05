@@ -37,7 +37,7 @@ export default function SliderSegment() {
               </div>
             </div>
             <div className="col-lg-2 col-12 col-sm-6 col-xl-2">
-              <div className="segment-card" onClick={() => {nav("/profile")}}>
+              <div className="segment-card" onClick={() => {nav("mf/profile")}}>
                 <div className="card-holder">
                   <Lottie
                     loop={true}
