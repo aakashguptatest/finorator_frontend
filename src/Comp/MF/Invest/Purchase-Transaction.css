@@ -1,15 +1,15 @@
-.cont {
-  width: 95vw;
-  display: flex;
-  justify-content: space-between;
+
+.right-aligned {
+  text-align: right;
 }
 .scheme-content {
-  display: block;
   flex-direction: column;
   align-items: center;
   text-align: center;
 }
-
+.container{
+  padding: 0;
+}
 .scheme-content > div {
   margin-top: 10px;
 }
@@ -29,6 +29,10 @@
     margin-top: 0;
     margin-left: 20px;
   }
+.rating{
+  display: 'flex'; 
+  justify-Content: 'center';
+}
 }
     /* Container styles */
     .container {
@@ -42,7 +46,8 @@
     .scheme {
       background-color: #fff;
       border: 1px solid #ddd;
-      padding: 20px;
+      padding-left: 20px;
+      padding-top: 0;
     }
     
     .scheme h2 {
