@@ -92,7 +92,6 @@ const DropdownMenu = () => {
 
   return (
     <div>
-      <Sidebar/>
       <div>
         <label className="label">
           Select AMC:
