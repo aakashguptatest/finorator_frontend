@@ -103,15 +103,16 @@ const Page3 = () => {
       </label>
     </div>
     <br />
-    <div className="division">
+      <div className="division">
     <label>
       <h2>EUIN</h2>
       <input type="text" placeholder="Enter text" className="text" />
       </label> </div>
-    <br />
-    <div className="buttons">
+        <br />
+      <div className="buttons">
       <button onClick={Go}>Save and Continue</button>
       <button onClick={Back}>Back</button>
+      </div>
     </div>
     </div>
     </div>
