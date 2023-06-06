@@ -1,4 +1,4 @@
-  import React from "react";
+import React from "react";
 import {
   MDBContainer,
   MDBCol,
@@ -8,11 +8,16 @@ import {
   MDBInput,
   MDBCheckbox,
 } from "mdb-react-ui-kit";
+import {
+  AiFillGoogleCircle,
+  AiFillTwitterCircle,
+  AiFillLinkedin,
+} from "react-icons/ai";
 import "./SignUpPage.css";
 import { useState } from "react";
 import axios from "axios";
 
-function SignUp() { 
+function SignUp() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [firstName, setFirstName] = useState("");
@@ -56,9 +61,9 @@ function SignUp() {
   };
 
   return (
-    <MDBContainer fluid className="p-3 my-5 h-custom">
+    <div className="p-3 max-w-full min-w-fit">
       <MDBRow>
-        <MDBCol col="10" md="6">
+        <MDBCol className="hidden md:block" col="10" md="6">
           <img
             src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
             class="img-fluid"
@@ -68,19 +73,20 @@ function SignUp() {
 
         <MDBCol col="4" md="6">
           <div className="d-flex flex-row align-items-center justify-content-center">
-            <p className="lead fw-normal mb-0 me-3">Sign in with</p>
-
-            <MDBBtn floating size="md" tag="a" className="me-2">
-              <MDBIcon fab icon="facebook-f" />
-            </MDBBtn>
-
-            <MDBBtn floating size="md" tag="a" className="me-2">
-              <MDBIcon fab icon="twitter" />
-            </MDBBtn>
-
-            <MDBBtn floating size="md" tag="a" className="me-2">
-              <MDBIcon fab icon="linkedin-in" />
-            </MDBBtn>
+            <div className="d-flex flex-row align-items-center justify-content-center">
+              <p className="lead fw-normal mb-0 me-3">Sign in with</p>
+              <div className="flex mx-3 justify-between">
+                <div className="mr-6 hover:scale-[3] cursor-pointer scale-[2.5]">
+                  <AiFillGoogleCircle />
+                </div>
+                <div className="mr-6 hover:scale-[3] cursor-pointer scale-[2.5]">
+                  <AiFillLinkedin />
+                </div>
+                <div className="hover:scale-[3] cursor-pointer scale-[2.5]">
+                  <AiFillTwitterCircle />
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="divider d-flex align-items-center my-4">
@@ -151,53 +157,8 @@ function SignUp() {
           </div>
         </MDBCol>
       </MDBRow>
-
-      <div className="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
-        <div className="text-white mb-3 mb-md-0">
-          Copyright © 2020. All rights reserved.
-        </div>
-
-        <div>
-          <MDBBtn
-            tag="a"
-            color="none"
-            className="mx-3"
-            style={{ color: "white" }}
-          >
-            <MDBIcon fab icon="facebook-f" size="md" />
-          </MDBBtn>
-
-          <MDBBtn
-            tag="a"
-            color="none"
-            className="mx-3"
-            style={{ color: "white" }}
-          >
-            <MDBIcon fab icon="twitter" size="md" />
-          </MDBBtn>
-
-          <MDBBtn
-            tag="a"
-            color="none"
-            className="mx-3"
-            style={{ color: "white" }}
-          >
-            <MDBIcon fab icon="google" size="md" />
-          </MDBBtn>
-
-          <MDBBtn
-            tag="a"
-            color="none"
-            className="mx-3"
-            style={{ color: "white" }}
-          >
-            <MDBIcon fab icon="linkedin-in" size="md" />
-          </MDBBtn>
-        </div>
-      </div>
-    </MDBContainer>
+    </div>
   );
 }
- 
 
 export default SignUp;

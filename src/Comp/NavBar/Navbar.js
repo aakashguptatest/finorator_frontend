@@ -13,12 +13,11 @@ const Navbar = () => {
   };
 
   return (
-    <div className="shadow-xl top-0 sticky z-50 bg-white">
-      <div className="flex p-3 pb-4 items-center justify-between">
-        {/* <div className="ml-20 text-2xl font-bold align-middle transition-transform duration-300 transform-gpu hover:scale-110">Homepage</div> */}
-        <div className=" ml-20">
+    <div className="shadow-xl max-w-full top-0 sticky z-50 bg-white">
+      <div className="flex p-1 items-center justify-between">
+        <div className="md:ml-10 ml-2">
           <div className="flex">
-            <div className="text-sm md:text-3xl font-bold">
+            <div className="text-sm md:text-2xl font-bold">
               <a
                 className="text-orange-500 hover:text-orange-600"
                 style={{ textDecoration: "none" }}
@@ -27,7 +26,7 @@ const Navbar = () => {
                 FINO
               </a>
             </div>
-            <div className="text-[#4D81B2] text-sm md:text-3xl font-bold">
+            <div className="text-[#4D81B2] text-sm md:text-2xl font-bold">
               <a
                 style={{ textDecoration: "none" }}
                 href="/"
@@ -42,18 +41,30 @@ const Navbar = () => {
           </div>
         </div>
 
-        <div className="">
-          {/* <div className="text-2xl align-middle font-bold mx-3 px-3 transition-transform duration-300 transform-gpu hover:scale-110"><NavLink to="/partner" label="Become Partner" /></div>
-        <div className="text-2xl align-middle font-bold mx-3 px-3 transition-transform duration-300 transform-gpu hover:scale-110"><NavLink to="/aboutus" label="About Us" /></div>
-        <div className="text-2xl align-middle font-bold mx-3 px-3 transition-transform duration-300 transform-gpu hover:scale-110">Contact Us</div> */}
+        <div className="md:hidden">
+          <IconButton
+            onClick={toggleMenu}
+            edge="end"
+            color="inherit"
+            aria-label="menu"
+          >
+            <MenuIcon />
+          </IconButton>
+        </div>
+        <div className="hidden md:block">
           <NavLinks isMenuOpen={isMenuOpen} />
         </div>
-        <div className="px-4 mr-20 rounded-lg py-2 bg-orange-400 hover:bg-orange-500 cursor-pointer">
-          <div className="align-middle text-2xl text-white transition-transform duration-300 transform-gpu hover:scale-110">
+        <div className="px-4 md:px-2 md:mr-40 mr-2 rounded-lg py-2 bg-orange-400 hover:bg-orange-500 cursor-pointer">
+          <div className="align-middle text-sm md:text-xl text-white transition-transform duration-300 transform-gpu hover:scale-110">
             Login/Register
           </div>
         </div>
       </div>
+      {isMenuOpen && (
+        <div className="md:hidden">
+          <NavLinks isMenuOpen={isMenuOpen} />
+        </div>
+      )}
     </div>
   );
 };
@@ -113,7 +124,7 @@ const NavLink = ({ to, label }) => (
     to={to}
     className="navbar-link transition-transform duration-300 transform-gpu hover:scale-110 font-bold text-2xl text-gray-800 hover:text-gray-600"
   >
-    <div className="text-2xl px-4 font-bold">{label}</div>
+    <div className="text-xl px-4 font-bold">{label}</div>
   </Link>
 );
 
