@@ -94,7 +94,10 @@ const DropdownMenu = () => {
     <div>
       <Sidebar/>
       <div>
+        <br/><br/><br/>
+        <div className="flexbox">
         <label className="label">
+          <div style={{display: "block"}}>
           Select AMC:
           <br /> <br />
           <select
@@ -110,9 +113,11 @@ const DropdownMenu = () => {
               </option>
             ))}
           </select>
+          </div>
         </label>{" "}
-        <br />
         <label className="label">
+            <div style={{display: "block"}}>
+        
           Select Nature:
           <br /> <br />
           <select
@@ -126,8 +131,8 @@ const DropdownMenu = () => {
                 {type}
               </option>
             ))}
-          </select>
-        </label>
+          </select></div>
+        </label></div>
         <br />
         <br />
         <br />
@@ -137,6 +142,7 @@ const DropdownMenu = () => {
           <br />
           <input
             type="text"
+            style={{width: "80%", fontSize: "1.4em"}}
             value={selectedSchemeName}
             onChange={handleSchemeNameChange}
           ></input>
@@ -144,7 +150,7 @@ const DropdownMenu = () => {
         <br />
         <br />
         <br />
-        <button onClick={fetchSchemes}>Get Schemes</button> <br /> <br />
+        <button onClick={fetchSchemes} className="bu">Get Schemes</button> <br /> <br />
         <br /> <br />
         <br />
         <br />

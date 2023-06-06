@@ -109,6 +109,7 @@ const Investments = () => {
           {items.map(({ imgSrc, buttonText }, index) => (
             <div
               key={index}
+              style={{backgroundColor: "white"}}
               className="mx-8 my-2 bg-gray-200 rounded-xl shadow-xl px-6 mb-4"
             >
               <InvestmentItem imgSrc={imgSrc} buttonText={buttonText} />

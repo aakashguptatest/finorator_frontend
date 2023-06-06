@@ -56,7 +56,7 @@ export default function Page2() {
               <Td>{result.scheme_name}</Td>
               <Td>{result.minimum_purchase_amount}</Td>
               <Td>
-                <button
+                <button style={{height: "100"}}
                   onClick={() => {
                     handleclick(result);
                   }}
