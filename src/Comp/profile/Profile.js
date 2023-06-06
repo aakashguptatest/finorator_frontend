@@ -1,56 +1,72 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useState, useRef, useEffect } from "react";
 import { RiFileDownloadLine } from "react-icons/ri";
 import { MdOutlineEmail } from "react-icons/md";
-import Chart from "react-apexcharts";
+// import Chart from "react-apexcharts";
 
 import Sidebar from "../MF/Sidebar/Sidebar";
 import MfNavbar from "../MF/nabarmf/MfNavbar";
+import axios from "axios";
+import Chart  from "chart.js/auto";
+import debounce from "lodash.debounce";
 
 const Profile = () => {
-  useEffect(() => {
-    const fetchData = async () => {
-      const url = "http://127.0.0.1:5000/users/profile";
-      const data = {
-        username:"aditya06"
-      };
-      axios
-      .get(url, data)
-      .then((response) => {
-        console.log(response);
+  const [investments, setInvestments] = useState(0);
+  const [current_value, setCurrentValue] = useState(0);
+  const [unrealised_gain_or_loss, setUnrealisedGainOrLoss] = useState(0);
+  const [data, setData] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
+  const username = sessionStorage.getItem("username");
+  axios.post('http://127.0.0.1:5000/users/profile', {
+        username: username,
+      }, {
+        headers: {
+          'Content-Type': 'application/json',
+        }
       })
-      .catch((error) => {
-        console.error(error.message);
-      });
-      // const options = {
-      //   method: "GET",
-      //   url: "http://127.0.0.1:5000/users/profile",
-      //   headers: { username: "adityadubey" },
-      //   // params: {
-      //   //   q: "tesla",
-      //   //   region: "US",
-      //   // },
-      //   // headers: {
-      //   //   "X-RapidAPI-Key":
-      //   //     "aabe6effecmsh472289794214d00p19c7f5jsna017c136cce0",
-      //   //   "X-RapidAPI-Host": "apidojo-yahoo-finance-v1.p.rapidapi.com",
-      //   // },
-      // };
-
-      // try {
-      //   const response = await axios.request(options);
-      //   console.log(response.data);
-      //   // setNews(response.data.news || []);
-      // } catch (error) {
-      //   console.error(error);
-      // }
-    };
-    // https://sebibcp.webex.com/sebibcp/j.php?MTID=m01ba1bd74ede149cd7b21dc0c89082ff
-
-    fetchData();
-  }, []);
-
+      .then(response => {
+        const data = response.data;
+        console.log(data);
+        if (data.investments){
+            setInvestments(data.investments);
+}       if (data.current_value){
+            setCurrentValue(data.current_value);
+        if (data.unrealised_gain_or_loss){
+          setUnrealisedGainOrLoss(data.unrealised_gain_or_loss);
+        }
+        if (data.data){
+          debouncedDataUpdate(JSON.parse(data.data));
+        }
+}})
+      .catch(error => console.error(error));
   const [selectedOption, setSelectedOption] = useState("landing");
+
+  const chartRef = useRef([]);
+   // Debounce the data update to prevent frequent rendering
+   const debouncedDataUpdate = useRef(
+    debounce((newData) => {
+      setData((prevData) => {
+        // Compare the new data with the existing data
+        if (JSON.stringify(newData) !== JSON.stringify(prevData)) {
+          return newData;
+        }
+        return prevData;
+      });
+    }, 300)
+  ).current;
+  useEffect(() => {
+    const ctx = chartRef.current[0].getContext("2d");
+    const chart = new Chart(ctx, {
+      type: "pie",
+      data: data,
+      options: {
+        fontSize: 14,
+      },
+    });
+    // Cleanup the chart instance when the component unmounts
+    return () => {
+        chart.destroy();
+      };
+  }, [data]);
 
   const handleOptionChange = (event) => {
     setSelectedOption(event.target.value);
@@ -182,101 +198,31 @@ const Profile = () => {
             </div>
           </div>
 
-          {selectedOption === "landing" && (
-            <div className="md:flex md:justify-start justify-center md:flex-wrap">
-              <div className="grid md:justify-items-start justify-items-center mt-4">
-                <Chart
-                  type="donut"
-                  width={1000}
-                  height={450}
-                  series={[45, 15, 40]} // a.percentage of each fund
-                  options={{
-                    dataLabels: {
-                      enabled: true,
-                    },
-                    colors: ["#A7B5DB", "#375DA1", "#4472C4"],
-                    legend: {
-                      show: true,
-                      position: "bottom",
-                      itemMargin: {
-                        horizontal: 5,
-                        vertical: 2,
-                      },
-                      onItemClick: {
-                        toggleDataSeries: true,
-                      },
-                      onItemHover: {
-                        highlightDataSeries: true,
-                      },
-                      fontSize: "14px",
-                      markers: {
-                        width: 14,
-                        height: 14,
-                        strokeWidth: 0,
-                        strokeColor: "#375DA1",
-                        fillColors: undefined,
-                        radius: 16,
-                        customHTML: undefined,
-                        onClick: undefined,
-                        offsetX: 0,
-                        offsetY: 0,
-                      },
-                      horizontalAlign: "center",
-                    },
-                    responsive: [
-                      {
-                        breakpoint: 480,
-                        options: {
-                          chart: {
-                            width: 300,
-                          },
-                          legend: {
-                            position: "bottom",
-                            horizontalAlign: "left",
-                          },
-                        },
-                      },
-                    ],
-                    labels: [
-                      "a.Axis Mutual Fund - Gr", //a.mutual fund name
-                      "a.DSP Equity Opportunities Fund - Gr", //a.mutual fund name
-                      "a.SBI Flexicap Fund - Gr", //a.mutual fund name
-                    ],
-                    plotOptions: {
-                      pie: {
-                        donut: {
-                          labels: {
-                            show: true,
-                            total: {
-                              show: true,
-                              fontSize: 12,
-                            },
-                          },
-                        },
-                      },
-                    },
-                  }}
-                />
-              </div>
+        {selectedOption === "landing" && (
+          <div className="md:flex md:justify-start justify-center md:flex-wrap">
+            <div className="grid md:justify-items-start justify-items-center mt-4">
+            <canvas ref={(el) => (chartRef.current[0] = el)} />
+            </div>
 
-              <div className="grid overflow-x-auto mt-4 gap-6">
-                <div className="md:px-10 px-4 py-2 border border-gray-300 rounded bg-white text-gray-700 shadow-lg">
-                  <div className="text-center text-2xl font-bold">
-                    Investments
-                  </div>
+            <div className="grid overflow-x-auto mt-4 gap-6">
+              <div className="md:px-10 px-4 py-2 border border-gray-300 rounded bg-white text-gray-700 shadow-lg">
+                <div className="text-center text-2xl font-bold">
+                  Investments <br />
+                  {investments}
                 </div>
-                <div className="md:px-10 px-4 border border-gray-300 rounded bg-white text-gray-700 shadow-lg">
-                  <div className="text-center text-2xl font-bold">
-                    Current Value
-                  </div>
+              </div>
+              <div className="md:px-10 px-4 border border-gray-300 rounded bg-white text-gray-700 shadow-lg">
+                <div className="text-center text-2xl font-bold">
+                  Current Value <br />
+                  {current_value}
                 </div>
-                <div className="md:px-10 px-4 border border-gray-300 rounded bg-white text-gray-700 shadow-lg">
-                  <div className="text-center text-2xl font-bold">
-                    Unrealized{" "}
-                  </div>
-                  <div className="text-center text-2xl font-bold">
-                    Gain/Loss
-                  </div>
+              </div>
+              <div className="md:px-10 px-4 border border-gray-300 rounded bg-white text-gray-700 shadow-lg">
+                <div className="text-center text-2xl font-bold">
+                  Unrealized{" "}
+                </div>
+                <div className="text-center text-2xl font-bold">Gain/Loss <br />
+                  {unrealised_gain_or_loss}
                 </div>
               </div>
             </div>
