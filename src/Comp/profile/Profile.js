@@ -6,7 +6,7 @@ import { MdOutlineEmail } from "react-icons/md";
 import Sidebar from "../MF/Sidebar/Sidebar";
 import MfNavbar from "../MF/nabarmf/MfNavbar";
 import axios from "axios";
-import Chart  from "chart.js/auto";
+import Chart from "chart.js/auto";
 import debounce from "lodash.debounce";
 
 const Profile = () => {
@@ -16,33 +16,40 @@ const Profile = () => {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const username = sessionStorage.getItem("username");
-  axios.post('http://127.0.0.1:5000/users/profile', {
+  axios
+    .post(
+      "http://127.0.0.1:5000/users/profile",
+      {
         username: username,
-      }, {
+      },
+      {
         headers: {
-          'Content-Type': 'application/json',
-        }
-      })
-      .then(response => {
-        const data = response.data;
-        console.log(data);
-        if (data.investments){
-            setInvestments(data.investments);
-}       if (data.current_value){
-            setCurrentValue(data.current_value);
-        if (data.unrealised_gain_or_loss){
+          "Content-Type": "application/json",
+        },
+      }
+    )
+    .then((response) => {
+      const data = response.data;
+      console.log(data);
+      if (data.investments) {
+        setInvestments(data.investments);
+      }
+      if (data.current_value) {
+        setCurrentValue(data.current_value);
+        if (data.unrealised_gain_or_loss) {
           setUnrealisedGainOrLoss(data.unrealised_gain_or_loss);
         }
-        if (data.data){
+        if (data.data) {
           debouncedDataUpdate(JSON.parse(data.data));
         }
-}})
-      .catch(error => console.error(error));
+      }
+    })
+    .catch((error) => console.error(error));
   const [selectedOption, setSelectedOption] = useState("landing");
 
   const chartRef = useRef([]);
-   // Debounce the data update to prevent frequent rendering
-   const debouncedDataUpdate = useRef(
+  // Debounce the data update to prevent frequent rendering
+  const debouncedDataUpdate = useRef(
     debounce((newData) => {
       setData((prevData) => {
         // Compare the new data with the existing data
@@ -64,8 +71,8 @@ const Profile = () => {
     });
     // Cleanup the chart instance when the component unmounts
     return () => {
-        chart.destroy();
-      };
+      chart.destroy();
+    };
   }, [data]);
 
   const handleOptionChange = (event) => {
@@ -98,22 +105,20 @@ const Profile = () => {
 
   return (
     <>
-      <Sidebar/>
-    <div style={{display: "flex"}}>
-      
-      <div className="hidden md:block w-[5.5%]">
-        </div>
-      <div className="flex-grow bg-[#e6f3ff] min-h-screen flex-shrink-0">
-        <div className="flex px-2 bg-[rgb(61,134,176)] bg-opacity-50">
-          <div className="p-2 md:text-xm text-sm">
-            <div>Summary Overview</div>
-            <div>As on Date 27-03-23</div>
-          </div>
-          <div className="flex space-x-4 p-2">
-            <div className="flex items-center">
-              <RiFileDownloadLine />
-              <div className="px-2"> Excel</div>
+      <Sidebar />
+      <div style={{ display: "flex" }}>
+        <div className="hidden md:block w-[5.5%]"></div>
+        <div className="flex-grow bg-[#e6f3ff] min-h-screen flex-shrink-0">
+          <div className="flex px-2 bg-[rgb(61,134,176)] bg-opacity-50">
+            <div className="p-2 md:text-xm text-sm">
+              <div>Summary Overview</div>
+              <div>As on Date 27-03-23</div>
             </div>
+            <div className="flex space-x-4 p-2">
+              <div className="flex items-center">
+                <RiFileDownloadLine />
+                <div className="px-2"> Excel</div>
+              </div>
 
               <div className="flex items-center">
                 <MdOutlineEmail />
@@ -198,31 +203,33 @@ const Profile = () => {
             </div>
           </div>
 
-        {selectedOption === "landing" && (
-          <div className="md:flex md:justify-start justify-center md:flex-wrap">
-            <div className="grid md:justify-items-start justify-items-center mt-4">
-            <canvas ref={(el) => (chartRef.current[0] = el)} />
-            </div>
+          {selectedOption === "landing" && (
+            <div className="md:flex md:justify-start justify-center md:flex-wrap">
+              <div className="grid md:justify-items-start justify-items-center mt-4">
+                <canvas ref={(el) => (chartRef.current[0] = el)} />
+              </div>
 
-            <div className="grid overflow-x-auto mt-4 gap-6">
-              <div className="md:px-10 px-4 py-2 border border-gray-300 rounded bg-white text-gray-700 shadow-lg">
-                <div className="text-center text-2xl font-bold">
-                  Investments <br />
-                  {investments}
+              <div className="grid overflow-x-auto mt-4 gap-6">
+                <div className="md:px-10 px-4 py-2 border border-gray-300 rounded bg-white text-gray-700 shadow-lg">
+                  <div className="text-center text-2xl font-bold">
+                    Investments <br />
+                    {investments}
+                  </div>
                 </div>
-              </div>
-              <div className="md:px-10 px-4 border border-gray-300 rounded bg-white text-gray-700 shadow-lg">
-                <div className="text-center text-2xl font-bold">
-                  Current Value <br />
-                  {current_value}
+                <div className="md:px-10 px-4 border border-gray-300 rounded bg-white text-gray-700 shadow-lg">
+                  <div className="text-center text-2xl font-bold">
+                    Current Value <br />
+                    {current_value}
+                  </div>
                 </div>
-              </div>
-              <div className="md:px-10 px-4 border border-gray-300 rounded bg-white text-gray-700 shadow-lg">
-                <div className="text-center text-2xl font-bold">
-                  Unrealized{" "}
-                </div>
-                <div className="text-center text-2xl font-bold">Gain/Loss <br />
-                  {unrealised_gain_or_loss}
+                <div className="md:px-10 px-4 border border-gray-300 rounded bg-white text-gray-700 shadow-lg">
+                  <div className="text-center text-2xl font-bold">
+                    Unrealized{" "}
+                  </div>
+                  <div className="text-center text-2xl font-bold">
+                    Gain/Loss <br />
+                    {unrealised_gain_or_loss}
+                  </div>
                 </div>
               </div>
             </div>
