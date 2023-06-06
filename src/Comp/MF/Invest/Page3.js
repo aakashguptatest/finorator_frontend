@@ -114,7 +114,9 @@ const Page3 = () => {
       <button onClick={Back}>Back</button>
     </div>
     </div>
-    )
-}
+    </div>
+    
+    );
+};
 
 export default Page3;
