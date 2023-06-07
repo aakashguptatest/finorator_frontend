@@ -50,7 +50,6 @@ function App() {
         <Route path="/mf/downloads" element={<Downloads />} />
         <Route path="/mf/watchlist" element={<MFWatchlist />} />
         <Route path="/mf/profile" element={<Profile />} />
-        {/* <Route path="/portfolio" element={<Portfolio />} /> */}
         <Route path="/mf/portfolio" element={<Portfolio />} />
         <Route path="/mf/invest" element={<Purchase />} />
         <Route path="/landing" element={<Landingpage />} />

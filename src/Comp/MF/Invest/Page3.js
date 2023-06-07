@@ -16,6 +16,7 @@ const Page3 = () => {
   const handleOptionChange = (event) => {
     setSelectedOption(event.target.value);
   };
+  const selectedAmount = useState(0);
   useEffect(() => {
     const currentDate = new Date();
     const day = currentDate.getDate();
@@ -99,7 +100,7 @@ const Page3 = () => {
     <div className="division">
       <label>
       <h2>Amount</h2>
-      <input type="number" step="0.01" value={selectedAmount} onChange={handleAmountChange} placeholder="Enter text" className="text" />
+      <input type="number" step="0.01" value={selectedAmount} placeholder="Enter text" className="text" />
       </label>
     </div>
     <br />
