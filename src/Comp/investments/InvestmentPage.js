@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Table from "./Table";
+import Sidebar from "../MF/Sidebar/Sidebar";
 import TableB from "./Tablebelow";
 
 const data = [
@@ -69,15 +70,18 @@ const InvestmentPage = () => {
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
-
   return (
-    <div className="min-h-screen overflow-x-hidden">
-      <div>{buttonText}</div>
-      <div>
+    <div>
+      <Sidebar/>
+      <p style={{backgroundColor: "lightblue", fontSize: "2em", padding: "0.2em", color: "blue", fontWeight: "bold", textAlign: "center"}}>{buttonText.toUpperCase()}</p>
+   
+      <div style={{backgroundColor: "white", fontSize: "large" }}>
+        
         <div className="hidden md:flex justify-center">
           <div
             onClick={handlePrevClick}
             className="cursor-pointer font-bold hover:text-gray-500 mx-12 py-2 "
+            
           >
             Prev
           </div>
