@@ -3,6 +3,7 @@ import './Purchase-Transaction.css';
 import StarRating from './Star';
 import Chart from "./Graph"
 import {useLocation, useNavigate} from "react-router-dom"
+import Sidebar from '../Sidebar/Sidebar';
 import axios from "axios";
 const Page3 = () => {
   const username = sessionStorage.getItem("username");
@@ -50,6 +51,7 @@ const Page3 = () => {
 
   return (
     <div>
+      <Sidebar/>
     <div className="container">
       
         <p style={{backgroundColor: "lightblue", fontSize: "3em", padding: "0.2em", color: "blue", fontWeight: "bold"}}>Scheme</p>
@@ -93,9 +95,9 @@ const Page3 = () => {
               <option value="Redemption">Redemption</option>
               <option value="Purchase">Purchase</option>
             </select>
-      </div>
-      <Chart/> 
-      <p><b>Total Amount: 0</b></p>
+      <br/><br/>
+      <h3>Total Amount: 0</h3>      </div>
+ 
     <br />
     <div className="division">
       <label>
