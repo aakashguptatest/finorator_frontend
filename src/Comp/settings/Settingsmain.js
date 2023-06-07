@@ -64,7 +64,7 @@ return (
 const  Basic = () => {
 return <div style={{display: "flex"}}>
     basic
-    <Table style={{width: "45%", marginLeft: "4%"}}>
+    <Table style={{width: "45%", marginLeft: "12%"}}>
    
       <Tr>
         < Td style = {{padding: 20, fontSize: "large"}}>Client Name</Td>
@@ -92,7 +92,7 @@ return <div style={{display: "flex"}}>
       </Tr>
     
    </Table>
-    <Table style={{width: "45%"}}>
+    <Table style={{width: "45%",marginLeft: "12%"}}>
 
       
     <Tr>
@@ -126,7 +126,7 @@ return <div style={{display: "flex"}}>
 const Address = () => {
 return (<div style={{display: "flex"}}>
     address
-<Table style={{width: "45%"}}>
+<Table style={{width: "45%",marginLeft: "12%"}}>
 
   <Tr>
     < Td style = {{padding: 20, fontSize: "large"}}>Client Name</Td>
@@ -154,7 +154,7 @@ return (<div style={{display: "flex"}}>
   </Tr>
 
 </Table>
-<Table style={{width: "45%"}}>
+<Table style={{width: "45%",marginLeft: "12%"}}>
 
   
 <Tr>
@@ -188,7 +188,7 @@ return (<div style={{display: "flex"}}>
 const Bank = () => {
 return(<div style={{display: "flex"}}>
     bank
-<Table style={{width: "45%"}}>
+<Table style={{width: "45%",marginLeft: "12%"}}>
 
   <Tr>
     < Td style = {{padding: 20, fontSize: "large"}}>Client Name</Td>
@@ -216,7 +216,7 @@ return(<div style={{display: "flex"}}>
   </Tr>
 
 </Table>
-<Table style={{width: "45%"}}>
+<Table style={{width: "45%",marginLeft: "12%"}}>
 
   
 <Tr>
@@ -250,7 +250,7 @@ return(<div style={{display: "flex"}}>
 const Nominee = () => {
 return(<div style={{display: "flex"}}>
     nominee
-<Table style={{width: "45%"}}>
+<Table style={{width: "45%",marginLeft: "12%"}}>
 
   <Tr>
     < Td style = {{padding: 20, fontSize: "large"}}>Client Name</Td>
@@ -278,7 +278,7 @@ return(<div style={{display: "flex"}}>
   </Tr>
 
 </Table>
-<Table style={{width: "45%"}}>
+<Table style={{width: "45%",marginLeft: "12%"}}>
 
   
 <Tr>
