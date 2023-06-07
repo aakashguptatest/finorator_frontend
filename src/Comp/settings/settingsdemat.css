@@ -1,7 +1,7 @@
 .box {
     position: relative;
     width: 100%;
-    max-width: 1166px;
+    max-width: 1500px;
     height: 65px;
     margin: 0 auto;
     background: rgba(237, 129, 48, 0.2);
@@ -12,8 +12,8 @@
     /* DEMAT/ACCOUNT CLOSURE */
     width: 100%;
     max-width: 521px;
-    height: 30px;
-    margin: 0 auto;
+    height: 68px;
+    margin: auto;
     font-family: 'Outfit';
     font-style: normal;
     font-weight: 800;
@@ -30,11 +30,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px 30px;
+    padding: 2px 20px;
+    padding-top: 12px;
     gap: 10px;
     width: 199px;
     height: 40px;
-    margin: 20px auto;
+    margin: 25px auto;
     background: #EE812D;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
@@ -46,7 +47,7 @@
     font-family: 'Outfit';
     font-style: normal;
     font-weight: 800;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 20px;
     display: flex;
     align-items: center;
@@ -67,7 +68,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
+    margin-top: 20px;
   }
   
   .heading {
