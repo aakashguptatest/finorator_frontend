@@ -113,9 +113,9 @@ nav {
   background-color: transparent;
 }
 
-/* .navbar-link {
-  width: 100px;
-} */
+.navbar-link {
+  width: 10   0px;
+}
 
 #loginbutton {
   background-color: #f59e0b;

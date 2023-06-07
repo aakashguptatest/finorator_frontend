@@ -3,6 +3,7 @@ import './Purchase-Transaction.css';
 import StarRating from './Star';
 import Chart from "./Graph"
 import {useLocation, useNavigate} from "react-router-dom"
+import Sidebar from '../Sidebar/Sidebar';
 import axios from "axios";
 const Page3 = () => {
   const username = sessionStorage.getItem("username");
@@ -16,6 +17,7 @@ const Page3 = () => {
   const handleOptionChange = (event) => {
     setSelectedOption(event.target.value);
   };
+  const selectedAmount = useState(0);
   useEffect(() => {
     const currentDate = new Date();
     const day = currentDate.getDate();
@@ -49,6 +51,7 @@ const Page3 = () => {
 
   return (
     <div>
+      <Sidebar/>
     <div className="container">
       
         <p style={{backgroundColor: "lightblue", fontSize: "3em", padding: "0.2em", color: "blue", fontWeight: "bold"}}>Scheme</p>
@@ -92,14 +95,14 @@ const Page3 = () => {
               <option value="Redemption">Redemption</option>
               <option value="Purchase">Purchase</option>
             </select>
-      </div>
-      <Chart/> 
-      <p><b>Total Amount: 0</b></p>
+      <br/><br/>
+      <h3>Total Amount: 0</h3>      </div>
+ 
     <br />
     <div className="division">
       <label>
       <h2>Amount</h2>
-      <input type="number" step="0.01" value={selectedAmount} onChange={handleAmountChange} placeholder="Enter text" className="text" />
+      <input type="number" step="0.01" value={selectedAmount} placeholder="Enter text" className="text" />
       </label>
     </div>
     <br />

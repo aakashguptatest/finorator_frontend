@@ -19,14 +19,14 @@ const Blogs = () => {
         },
         headers: {
           "X-RapidAPI-Key":
-            "aabe6effecmsh472289794214d00p19c7f5jsna017c136cce0",
+            "4f30deea61mshfb6fbc84ac17f2ap102886jsna8ecb6e78c28",
           "X-RapidAPI-Host": "apidojo-yahoo-finance-v1.p.rapidapi.com",
         },
       };
 
       try {
         const response = await axios.request(options);
-        // console.log(response.data);
+        console.log(response.data);
         setNews(response.data.news || []);
       } catch (error) {
         console.error(error);
