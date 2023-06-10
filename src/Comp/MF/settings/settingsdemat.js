@@ -6,7 +6,7 @@ const Settingsdemat = () => {
 
     <div>
       <SidebarMF/>
-<div className="box">
+<div className="box" style={{width: "100%"}}>
   <div className="demat">DEMAT/ACCOUNT CLOSURE</div>
 </div>
 <div>
@@ -43,9 +43,6 @@ const Settingsdemat = () => {
     <br />
   </div>
   <br />
-  <button className="button">
-    <p className="closeacc">Close Account</p>
-  </button>
 </div>
     </div>
   )

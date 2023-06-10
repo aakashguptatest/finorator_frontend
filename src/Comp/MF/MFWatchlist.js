@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Table, Thead, Tr, Th, Td } from 'react-super-responsive-table';
+import { Table, Thead, Tr, Th, Td, Tbody } from 'react-super-responsive-table';
 import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css';
 import './MFWatchlist.css';
 import gif from "../Home/static/assets/icons8-shopping-cart.gif"
@@ -12,7 +12,8 @@ export default function MFWatchlist() {
     const [name, setname] = useState('');
     const [results, setResults] = useState([]);
     const [options, setOptions] = useState([]);
-    const [api, setapi] = useState("https://jsonplaceholder.typicode.com/comments?")
+    const [api, setapi] = useState("https://jsonplaceholder.typicode.com/comments?");
+    const [showTable, setShowTable] = useState(false);
        
     useEffect(() => {
       console.log(api);
@@ -28,11 +29,9 @@ export default function MFWatchlist() {
         .catch((error) => console.log(error));
     }, [api]);
     function init(){
-      setapi("https://jsonplaceholder.typicode.com/comments?");
-      console.log(api + " initialised");
     }
       function changeAMC(i){
-        
+        setapi("https://jsonplaceholder.typicode.com/comments?");
           setAMC(i);
           let a = api ;
              setapi(a+ `postId=${i}`);
@@ -73,76 +72,92 @@ function changename(i) {
       fetch(api)
         .then(response => response.json())
         .then(json => setResults(json, console.log(json)));
+        setShowTable(true);
         
       
+    }
+    function Reset(){
+      setapi("https://jsonplaceholder.typicode.com/comments?");
     }
         return (
       <div style={{ border: '1px solid black', height : "100%", width: "100%" }}>
         <Sidebar/>
         <div>
+        <div className="text-4xl font-bold text-[#EE812D] p-6 bg-opacity-20 bg-[#ED8130]">
+
+          WATCHLIST
+        </div>
+    <div className='line'>
+
           <label className='label'>
-            AMC:<br />
-            <select className = "textip" value={AMC} onClick = {init} onChange={(e) => changeAMC(e.target.value)}> <option value="">Select an option</option>
+            <select className = "selectoptions" value={AMC} onClick = {init} onChange={(e) => changeAMC(e.target.value)}> <option value="">Select AMC</option>
             {options[0]?.map((option,index) => (
               <option key={index} value={option}>{option}</option>
             ))}
           </select>
           </label> <br />
           <label className='label'>
-            Select Nature<br />
-            <select className = "textip" type="text" value={nature} onChange={(e) => changenature(e.target.value)}><option value="">Select an option</option>
+            <select className = "selectoptions" type="text" value={nature} onChange={(e) => changenature(e.target.value)}><option value="">Select Nature</option>
             {options[1]?.map((option,index) => (
               <option key={index} value={option}>{option}</option>
             ))}</select> 
-          </label><br />
+          </label>
+          </div><br />    <div className='line'>
+
           <label className='label'>
-            Select Category:<br />
-            <select className = "textip" type="text" value={category} onChange={(e) => changecategory(e.target.value)}><option value="">Select an option</option>
+            <select className = "selectoptions" type="text" value={category} onChange={(e) => changecategory(e.target.value)}><option value="">Select Category</option>
             {options[2]?.map((option,index) => (
               <option key={index} value={option}>{option}</option>
             ))}</select> 
           </label><br />
           <label className='label'>
-            Name:<br />
-            <select className = "textip" type="text" value={name} onChange={(e) => changename(e.target.value)}><option value="">Select an option</option>
+            <select className = "selectoptions" type="text" value={name} onChange={(e) => changename(e.target.value)}><option value="">Select Name</option>
             {options[3]?.map((option,index) => (
               <option key={index} value={option}>{option}</option>
             ))}</select> 
-          </label><br /> <br/>
-          <button onClick={Search}>Search</button>
+          </label></div><br /> <br/>
+          <div className=" p-2 bg-opacity-20 bg-[#ED8130] text-right">
+
+          <button onClick={Search} className='watchlist'>Search</button>
+          <button onClick={Reset} className='watchlist'> Reset</button>
+          
+          </div>
+
           <div> <br/><br/>
                       </div>
         </div><br/>
-        <Table>
+        <div>
+        {showTable && (   <Table >
       <Thead>
-        <Tr>
-          <Th style= {{width: "40%"}}>Scheme</Th>
-          <Th style= {{width: "10%"}}>Nature</Th>
-          <Th style= {{width: "10%"}}>Category</Th>
-          <Th style= {{width: "10%"}}>NAV(rs)</Th>
-          <Th style= {{width: "10%"}}>Min Invt</Th>
-          <Th style= {{width: "5%"}}>1Yr</Th>
-          <Th style= {{width: "5%"}}>3Yr</Th>
-          <Th style= {{width: "5%"}}>5Yr</Th>
-          <Th style= {{width: "5%"}}>Action</Th>
+        <Tr  style={{ border: '2px solid black' }}>
+          <Th style= {{width: "fit-content"}}>Scheme</Th>
+          <Th style= {{width: "fit-content"}}>Nature</Th>
+          <Th style= {{width: "fit-content"}}>Category</Th>
+          <Th style= {{width: "fit-content"}}>NAV(rs)</Th>
+          <Th style= {{width: "fit-content"}}>Min Invt</Th>
+          <Th style= {{width: "fit-content"}}>1Yr</Th>
+          <Th style= {{width: "fit-content"}}>3Yr</Th>
+          <Th style= {{width: "fit-content"}}>5Yr</Th>
+          <Th style= {{width: "fit-content"}}>Action</Th>
         </Tr>
       </Thead>
-      <tbody>
+      <Tbody>
     {results.map((result) => (
-      <tr key={result.id}>
-        <td>{result.name}</td>
-        <td>{result.email}</td>
-        <td>{result.name}</td>
-        <td>{result.name}</td>
-        <td>{result.name}</td>
-        <td>{result.name}</td>
-        <td>{result.name}</td>
-        <td>{result.name}</td>
-        <td><img src = {gif}/></td>
-      </tr>
+      <Tr key={result.id}  style={{ border: '2px solid black' }}>
+        <Td>{result.name}</Td>
+        <Td>{result.email}</Td>
+        <Td>{result.name}</Td>
+        <Td>{result.name}</Td>
+        <Td>{result.name}</Td>
+        <Td>{result.name}</Td>
+        <Td>{result.name}</Td>
+        <Td>{result.name}</Td>
+        <Td><img src = {gif}/></Td>
+      </Tr>
     ))}
-  </tbody>  
-  </Table>
+  </Tbody>  
+  </Table>)}
+  </div>
       </div>
     );
   }

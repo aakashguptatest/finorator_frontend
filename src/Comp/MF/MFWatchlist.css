@@ -1,38 +1,18 @@
-.textip{
-    width: 70vw;
-    height: 70;
-    font-size: 1.5em;
+.selectoptions{
+  padding: 5px;
+  width: 40vw;
+  font-size: x-large;
   }
-  .label{
-  font-size: 1em;
+  label{
+    margin-top: 2.5vw;
+    margin-left: 120px;
+    font-size: x-large;
+  }
+.line{
+  display: flex;
 }
 
-
-@media (min-width: 768px) {
-    .textip {
-      display: flex;
-      flex-direction: row;
-        
-    }
-    option{
-      display: flex;
-      flex-direction: row;
-      
-    }    
-    .textip label {
-      margin-right: 1rem;
-      font-size: larger;
-    }
-  
-    .textip button {
-      margin-top: 1rem;
-    }
-
-  button {
-    width: fit-content;
-  }
-  }
-  button {
+  .watchlist {
     background-color: orange;
     color: white;
     border: none;
@@ -41,13 +21,13 @@
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 1.5em;
-    margin: 10px;
+    font-size: 2em;
+    margin-right: 50px;
     cursor: pointer;
     transition-duration: 0.5s;
   }
   
-  button:hover {
+  .watchlist:hover {
     background-color: blue;
   }
     .take:hover{
@@ -55,3 +35,30 @@
       color: blue;
       background-color: blue;
     }
+Td{
+  background-color: white;
+  font-size: large;
+  padding: 10px;
+  border: 2px solid black;
+}
+Th{
+  background-color: white;
+  padding: 10px;  
+  border: 2px solid black;
+font-size: x-large;
+}
+@media (max-width: 768px) {
+  .line{
+    display: block;
+  }
+  .selectoptions{
+    padding: 5px;
+    width: 70vw;
+    font-size: x-large;
+    }
+    Th{
+      background-color: white;
+      font-size: x-large;
+    }
+    
+}
