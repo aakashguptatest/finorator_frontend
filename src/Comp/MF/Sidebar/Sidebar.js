@@ -43,9 +43,9 @@ const menuItems = [
     text: "Settings",
     icon: <FaSearch />,
     dropdownItems: [
-      { text: "Bank Mandate Details", lk: "/mf/settings/demat" },
+      { text: "Bank Mandate Details", lk: "/mf/settings/bankmandate" },
       { text: "Basic Information", lk: "/mf/settings/basic" },
-      { text: "Login/Change Password", lk: "/mf/settings/demat" },
+      { text: "Login/Change Password", lk: "/mf/settings/password" },
       { text: "Demat/Account Closure", lk: "/mf/settings/demat" }
 
     ],
