@@ -62,53 +62,52 @@ function Login() {
 
         <MDBCol col="4" md="6">
           <div className="d-flex flex-row align-items-center justify-content-center">
-            <p className="lead fw-normal mb-0 me-3">Sign in with</p>
-            <div className="flex mx-3 justify-between">
-              <div className="mr-6 hover:scale-[3] cursor-pointer scale-[2.5]">
-                <AiFillGoogleCircle />
-              </div>
-              <div className="mr-6 hover:scale-[3] cursor-pointer scale-[2.5]">
-                <AiFillLinkedin />
-              </div>
-              <div className="hover:scale-[3] cursor-pointer scale-[2.5]">
-                <AiFillTwitterCircle />
+            <div className="d-flex flex-row align-items-center justify-content-center">
+              <p className="lead fw-normal mb-0 me-3">Sign in with</p>
+              <div className="flex mx-3 justify-between">
+                <div className="mr-10 scale-[3.5] hover:scale-[4] cursor-pointer ">
+                  <AiFillGoogleCircle />
+                </div>
+                <div className="mr-10 scale-[3.5] hover:scale-[4] cursor-pointer ">
+                  <AiFillLinkedin />
+                </div>
+                <div className="scale-[3.5] hover:scale-[4] cursor-pointer ">
+                  <AiFillTwitterCircle />
+                </div>
               </div>
             </div>
           </div>
-
           <div className="divider d-flex align-items-center my-4">
             <p className="text-center fw-bold mx-3 mb-0">Or</p>
           </div>
-
+          <label htmlFor="formControlLg" className="mr-3">Username</label> 
           <MDBInput
             wrapperClass="mb-4"
-            label="Username"
             id="formControlLg"
             type="username"
             
             onChange={handleUsernameChange}
           />
-
+          <label htmlFor="formControlLg" className="mr-3">Password</label> 
           <MDBInput
             wrapperClass="mb-4"
-            label="Password"
             id="formControlLg"
             type="password"
             
             onChange={handlePasswordChange}
           />
 
-          <div className="d-flex justify-content-between mb-4">
-            <MDBCheckbox
-              name="flexCheck"
-              value=""
-              id="flexCheckDefault"
-              label="Remember me"
-            />
-            <a href="!#">Forgot password?</a>
-          </div>
+<div className="inline-flex items-center align-middle mb-5"> 
+  <label htmlFor="flexCheckDefault" className="mr-3">Remember me</label> 
+  <MDBCheckbox
+    className="h-6 w-6 ml-4"
+    name="flexCheck"
+    value=""
+    id="flexCheckDefault"
+  />
+</div>
 
-          <div className="">
+          <div className="d-flex">
             <div
               onClick={sendLoginRequest}
               className="rounded-lg py-2 mx-auto w-28 transition-transform duration-300 transform-gpu hover:scale-110 shadow-xl bg-blue-400 hover:bg-blue-500 cursor-pointer"

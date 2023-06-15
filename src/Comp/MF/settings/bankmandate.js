@@ -1,13 +1,13 @@
 import React from 'react'
 import "./settingsdemat.css"
-import Sidebar from '../MF/Sidebar/Sidebar'
-const Settingsdemat = () => {
+import Sidebar from '../Sidebar/Sidebar'
+const BankMandate = () => {
   return (
 
     <div>
       <Sidebar/>
 <div className="box">
-  <div className="demat">DEMAT/ACCOUNT CLOSURE</div>
+  <div className="demat">Bank Mandate Details</div>
 </div>
 <div>
   <div className="table">
@@ -40,15 +40,10 @@ const Settingsdemat = () => {
       <div className="heading">Account Type</div>
       <div className="des">sdjk</div>
     </div>
-    <br />
   </div>
-  <br />
-  <button className="button">
-    <p className="closeacc">Close Account</p>
-  </button>
-</div>
+</div>  
     </div>
   )
 }
 
-export default Settingsdemat
+export default BankMandate

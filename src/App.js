@@ -21,10 +21,12 @@ import Page4 from "./Comp/MF/Invest/Page4";
 import Login from "./Comp/Login/Loginpage";
 import SignUp from "./Comp/SignUp/SignUppage";
 import HelpAndSupportPage from "./Comp/helpAndSupport/HelpandSupport";
-import Settingsdemat from "./Comp/settings/settingsdemat";
-import Settingsmain from "./Comp/settings/Settingsmain";
+import Settingsdemat from "./Comp/MF/settings/settingsdemat"
+import Settingsmain from "./Comp/MF/settings/Settingsmain";
 import InvestmentPage from "./Comp/investments/InvestmentPage";
 import Footer from "./Comp/Footer/footer";
+import Changepassword from "./Comp/MF/settings/changepassword";
+import BankMandate from "./Comp/MF/settings/bankmandate";
 
 function NavbarWrapper() {
   const location = useLocation();
@@ -63,7 +65,9 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/mf/settings/demat" element={<Settingsdemat />} />
         <Route path="/mf/settings/basic" element={<Settingsmain />} />
-      </Routes>
+        <Route path="/mf/settings/password" element={<Changepassword />} />
+        <Route path="/mf/settings/bankmandate" element={<BankMandate />} />
+              </Routes>
       <Footer />
     </BrowserRouter>
   );
