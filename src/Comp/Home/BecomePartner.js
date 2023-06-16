@@ -8,7 +8,7 @@ export default function BecomePartner() {
   return (
     <div>
       <div
-        class="partner-hero"
+        class="hero partner-hero"
         style={{ backgroundimage: require("./static/assets/bg_1.png") }}
       >
         <div class="container">

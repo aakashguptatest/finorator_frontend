@@ -1,53 +1,63 @@
 import React, { useState, useRef, useEffect } from "react";
 import { RiFileDownloadLine } from "react-icons/ri";
 import { MdOutlineEmail } from "react-icons/md";
-// import Chart from "react-apexcharts";
-
 import Sidebar from "../MF/Sidebar/Sidebar";
-import MfNavbar from "../MF/nabarmf/MfNavbar";
 import axios from "axios";
 import Chart from "chart.js/auto";
 import debounce from "lodash.debounce";
 
 const Profile = () => {
-  const [investments, setInvestments] = useState(0);
-  const [current_value, setCurrentValue] = useState(0);
-  const [unrealised_gain_or_loss, setUnrealisedGainOrLoss] = useState(0);
+  const [investments, setInvestments] = useState(10);
+  const [current_value, setCurrentValue] = useState(20);
+  const [unrealised_gain_or_loss, setUnrealisedGainOrLoss] = useState(30);
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const username = sessionStorage.getItem("username");
-  axios
-    .post(
-      "http://127.0.0.1:5000/users/profile",
-      {
-        username: username,
-      },
-      {
-        headers: {
-          "Content-Type": "application/json",
+
+  useEffect(() => {
+    axios
+      .post(
+        "http://127.0.0.1:5000/users/profile",
+        {
+          username: username,
         },
-      }
-    )
-    .then((response) => {
-      const data = response.data;
-      console.log(data);
-      if (data.investments) {
-        setInvestments(data.investments);
-      }
-      if (data.current_value) {
-        setCurrentValue(data.current_value);
-        if (data.unrealised_gain_or_loss) {
-          setUnrealisedGainOrLoss(data.unrealised_gain_or_loss);
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
         }
-        if (data.data) {
-          debouncedDataUpdate(JSON.parse(data.data));
+      )
+      .then((response) => {
+        const data = response.data;
+        console.log(data);
+        if (data.investments) {
+          setInvestments(data.investments);
+        } else {
+          setInvestments(30);
         }
-      }
-    })
-    .catch((error) => console.error(error));
+
+        if (data.current_value) {
+          setCurrentValue(data.current_value);
+
+          if (data.unrealised_gain_or_loss) {
+            setUnrealisedGainOrLoss(data.unrealised_gain_or_loss);
+          }
+          if (data.data) {
+            debouncedDataUpdate(JSON.parse(data.data));
+          }
+        } else {
+          setUnrealisedGainOrLoss(60);
+          setCurrentValue(10);
+          debouncedDataUpdate("dsf");
+        }
+      })
+      .catch((error) => console.error(error));
+  }, []);
+
   const [selectedOption, setSelectedOption] = useState("landing");
 
   const chartRef = useRef([]);
+
   // Debounce the data update to prevent frequent rendering
   const debouncedDataUpdate = useRef(
     debounce((newData) => {
@@ -60,15 +70,28 @@ const Profile = () => {
       });
     }, 300)
   ).current;
+
   useEffect(() => {
+    if (Object.keys(data).length === 0) {
+      // Data is empty, show a text instead of the chart
+      return;
+    }
+
     const ctx = chartRef.current[0].getContext("2d");
     const chart = new Chart(ctx, {
       type: "pie",
       data: data,
       options: {
-        fontSize: 14,
+        plugins: {
+          legend: {
+            labels: {
+              fontSize: 14,
+            },
+          },
+        },
       },
     });
+
     // Cleanup the chart instance when the component unmounts
     return () => {
       chart.destroy();
@@ -90,6 +113,7 @@ const Profile = () => {
       window.location.href = "/profile/investors";
     }
   };
+
   const response = {
     "TRAN DATE": "25-02-2022",
     "CLIENT NAME ": "Aproov Kathwar",
@@ -103,7 +127,7 @@ const Profile = () => {
     NAV: 62.53,
   };
 
-  return (
+    return (
     <>
       <Sidebar />
       <div style={{ display: "flex" }}>
@@ -202,8 +226,12 @@ const Profile = () => {
               </div>
             </div>
           </div>
-
-          {selectedOption === "landing" && (
+          {selectedOption === "landing" && Object.keys(data).length === 0 && (
+            <div className="text-center mt-4">
+              <h1 className="text-3xl font-bold">No Data Available</h1>
+            </div>
+          )}
+          {selectedOption === "landing" && Object.keys(data).length !== 0 && (
             <div className="md:flex md:justify-start justify-center md:flex-wrap">
               <div className="grid md:justify-items-start justify-items-center mt-4">
                 <canvas ref={(el) => (chartRef.current[0] = el)} />

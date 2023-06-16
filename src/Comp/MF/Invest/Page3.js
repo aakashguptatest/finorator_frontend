@@ -3,6 +3,7 @@ import './Purchase-Transaction.css';
 import StarRating from './Star';
 import Chart from "./Graph"
 import {useLocation, useNavigate} from "react-router-dom"
+import Sidebar from '../Sidebar/Sidebar';
 import axios from "axios";
 const Page3 = () => {
   const username = sessionStorage.getItem("username");
@@ -10,33 +11,13 @@ const Page3 = () => {
   console.log(location.state.results);
   var results = location.state.results;
   console.log(results);
-  const [checkbox1, setCheckbox1] = useState(false);
-  const [checkbox2, setCheckbox2] = useState(false);
-  const [selectedOption, setSelectedOption] = useState('Switch in/out');
-  const [formattedDate, setFormattedDate] = useState('');
-  const [selectedAmount, setAmount] = useState(0);
+  const [selectedOption, setSelectedOption] = useState("Switch in/out");
+  const [formattedDate, setFormattedDate] = useState("");
 
   const handleOptionChange = (event) => {
     setSelectedOption(event.target.value);
   };
-
-  const handleCheckbox1Change = () => {
-    setCheckbox1(!checkbox1);
-  };
-
-  const handleCheckbox2Change = () => {
-    setCheckbox2(!checkbox2);
-  };
-  const handleAmountChange = (event) => {
-    const amountValue = parseFloat(event.target.value);
-    setAmount(amountValue);
-  }
-
-  const handleGoButtonClick = () => {
-    // Perform some action with the checkbox values
-    console.log("Checkbox 1:", checkbox1);
-    console.log("Checkbox 2:", checkbox2);
-  };
+  const selectedAmount = useState(0);
   useEffect(() => {
     const currentDate = new Date();
     const day = currentDate.getDate();
@@ -70,97 +51,75 @@ const Page3 = () => {
 
   return (
     <div>
+      <Sidebar/>
     <div className="container">
-    <div className="scheme">
-      <h2>Scheme</h2>
-      <div className="scheme-content">
-        <p id="scheme">
-          {results.scheme_name} <br/>  <br/> <br/> Folio Number: {results.unique_no} Amount: 0 Units: 0.00
-        </p> 
-
-        <div style={{display: "block"}}>
-          <label htmlFor="options">Select an option:</label>
-          <select id="options" value={selectedOption} onChange={handleOptionChange}>
-            <option value="Switch in/out">Switch in/out</option>
-            <option value="Redemption">Redemption</option>
-            <option value="Purchase">Purchase</option>
-          </select>
-          <div class="cont">
+      
+        <p style={{backgroundColor: "lightblue", fontSize: "3em", padding: "0.2em", color: "blue", fontWeight: "bold"}}>Scheme</p>
+        <div className="scheme">
+        <div className="scheme-content">
+        <div style={{width: "100%"}}>
+  <div style={{fontSize: "1.4em"}}>
+    category: Large and Mid Cap Fund <br />
+    fundHouse:SBI Mutual Fund<br/>
+    fundSize: 9077 Cr <br />
+    Express Ratio: 1.04%
+  </div>
+</div>
+   
           <div>
-          <p>
-            category: <br />fundHouse: {results.amc_code}
-            </p>  
-            </div>
-            <div>
-            <p >
-            fundSize: <br />Expense Ratio:
-          </p> </div></div>
-        </div>
-  
-        <div>
-          <label>
-            <input type="checkbox" checked={checkbox1} onChange={handleCheckbox1Change} />
-            Checkbox 1
-          </label>
-          <label>
-            <input type="checkbox" checked={checkbox2} onChange={handleCheckbox2Change} />
-            Checkbox 2
-          </label>
-          <button style={{ fontSize: "1em", height: "1.6em", padding: 0, width: "2em" }} onClick={handleGoButtonClick}>
-            Go
-          </button>
-        </div>
-        <div className="nav-rating">
-          <p>
-            NAV: <b>1234</b> ({formattedDate})
-            <span>
-              Crisil Rank - <br /> <StarRating rating={2} />
-            </span>
-            <span>Risk: Very High</span>
-          </p>
-              <div class="cont">
+           
+
+            <div className="nav-rating">
+              <p style={{ fontSize: "2em" }}>
+                NAV: <b>1234</b> ({formattedDate})
                 <div>
-                  <p>
-                    category: Large and Mid Cap Fund <br />
-                    fundHouse:{results.amc_code}
-                  </p>
-                  <p>
-                    fundSize: 9077 Cr <br />
-                    Express Ratio: 1.04%
-                  </p>{" "}
+                  Crisil Rank -
+                  <div className="rating">
+                  <StarRating rating={2}/></div>
+                  Risk: Very High
+                 
                 </div>
-              </div>
+               </p>
+
             </div>
           </div>
         </div>
         <Chart />
-
-        <p>
-          <b>Total Amount: 0</b>
-        </p>
-      </div>
-      <Chart/> 
-      <p><b>Total Amount: 0</b></p>
+<br/>
+         <select
+              id="options"
+              value={selectedOption}
+              onChange={handleOptionChange}
+            >
+              <option value="Switch in/out">Switch in/out</option>
+              <option value="Redemption">Redemption</option>
+              <option value="Purchase">Purchase</option>
+            </select>
+      <br/><br/>
+      <h3>Total Amount: 0</h3>      </div>
+ 
     <br />
     <div className="division">
       <label>
       <h2>Amount</h2>
-      <input type="number" step="0.01" value={selectedAmount} onChange={handleAmountChange} placeholder="Enter text" className="text" />
+      <input type="number" step="0.01" value={selectedAmount} placeholder="Enter text" className="text" />
       </label>
     </div>
     <br />
-    <div className="division">
+      <div className="division">
     <label>
       <h2>EUIN</h2>
       <input type="text" placeholder="Enter text" className="text" />
       </label> </div>
-    <br />
-    <div className="buttons">
+        <br />
+      <div className="buttons">
       <button onClick={Go}>Save and Continue</button>
       <button onClick={Back}>Back</button>
+      </div>
     </div>
     </div>
-    )
-}
+    
+    );
+};
 
 export default Page3;

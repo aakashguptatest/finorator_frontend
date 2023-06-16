@@ -70,10 +70,7 @@ const Navbar = () => {
 };
 
 const Heading = () => (
-  <Link
-    to="/"
-    className="navbar-heading text-gray-800 font-semibold hover:text-gray-600"
-  >
+  <Link to="/" className="navbar-heading text-gray-800 font-semibold hover:text-gray-600">
     Homepage
   </Link>
 );

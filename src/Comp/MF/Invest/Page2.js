@@ -1,7 +1,7 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-
+import Sidebar from "../Sidebar/Sidebar";
 import { Table, Thead, Tr, Th, Td } from "react-super-responsive-table";
 import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css";
 import "./Purchase-Invest.css";
@@ -38,7 +38,9 @@ export default function Page2() {
   }
 
   return (
+    
     <div>
+      <Sidebar/>
       {" "}
       <Table>
         <Thead>
@@ -56,7 +58,7 @@ export default function Page2() {
               <Td>{result.scheme_name}</Td>
               <Td>{result.minimum_purchase_amount}</Td>
               <Td>
-                <button
+                <button style={{height: "100"}}
                   onClick={() => {
                     handleclick(result);
                   }}

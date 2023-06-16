@@ -40,6 +40,7 @@ const HealAndSupportPage = () => {
     rowContentColor: "grey",
     // arrowColor: "red",
     timingFunc: "ease",
+    
   };
 
   const config = {
@@ -54,13 +55,13 @@ const HealAndSupportPage = () => {
     <div className="flex flex-col justify-center items-center min-h-screen py-12">
       {/* <section className="w-full max-w-2xl bg-white rounded-lg p-6"> */}
       <div>
-        <div className="text-2xl border-t-4 border-b-4 py-4 font-bold mb-3">
+        <div className="text-3xl border-t-2 border-b-2 py-4 font-bold mb-10">
           HOW CAN WE HELP YOU?
         </div>
       </div>
-      <div className="flex flex-wrap items-center justify-center m-4 space-x-6 p-6 rounded-lg">
+      <div className="flex flex-wrap items-center justify-center m-4 space-x-6 p-3 rounded-lg">
         <div className="w-full sm:w-auto rounded-lg mb-3 bg-[#EEEEEE] bg-opacity-60 text-white p-6">
-          <div className="text-lg bg-[#DF8744] text-center px-4 py-2 rounded-2xl text-white font-bold mb-2">
+          <div className="text-lg bg-[#DF8744] text-center px-18 py-2 rounded-2xl text-white font-bold mb-2">
             Send Query
           </div>
           <div className="mt-4">
@@ -76,7 +77,7 @@ const HealAndSupportPage = () => {
           </div>
         </div>
         <div className="w-full sm:w-auto rounded-lg mb-3 bg-[#EEEEEE] bg-opacity-60 text-white p-6">
-          <div className="text-lg bg-[#DF8744] text-center px-4 py-2 rounded-2xl text-white font-bold mb-2">
+          <div className="text-lg bg-[#DF8744] text-center px-18 py-2 rounded-2xl text-white font-bold mb-2">
             Give Suggestion
           </div>
           <div className="mt-4">
@@ -92,7 +93,7 @@ const HealAndSupportPage = () => {
           </div>
         </div>
         <div className="w-full sm:w-auto rounded-lg mb-3 bg-[#EEEEEE] bg-opacity-60 text-white p-6">
-          <div className="text-lg bg-[#DF8744] text-center px-4 py-2 rounded-2xl text-white font-bold mb-2">
+          <div className="text-lg bg-[#DF8744] text-center px-18 py-2 rounded-2xl text-white font-bold mb-2">
             Help/Demo Videos
           </div>
           <div className="mt-4">

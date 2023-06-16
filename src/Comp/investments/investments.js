@@ -105,12 +105,13 @@ const Investments = () => {
         <Sidebar />
         
       <div className="p-5 flex flex-wrap justify-center">
-        <div className="p-5 flex bg-slate-300 flex-wrap justify-center">
+        <div className="p-10 flex bg-slate-300 flex-wrap justify-center">
           {items.map(({ imgSrc, buttonText }, index) => (
             <div
               key={index}
-              className="mx-8 my-2 bg-gray-200 rounded-xl shadow-xl px-6 mb-4"
-            >
+              style={{backgroundColor: "white"}}
+              className="mx-8 my-2 bg-gray-200 rounded-xl shadow-xl px-7 mb-4 text-lg"
+              >
               <InvestmentItem imgSrc={imgSrc} buttonText={buttonText} />
             </div>
           ))}

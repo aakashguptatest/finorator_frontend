@@ -21,11 +21,17 @@ import Page4 from "./Comp/MF/Invest/Page4";
 import Login from "./Comp/Login/Loginpage";
 import SignUp from "./Comp/SignUp/SignUppage";
 import HelpAndSupportPage from "./Comp/helpAndSupport/HelpandSupport";
-import Settingsdemat from "./Comp/settings/settingsdemat";
-import Settingsmain from "./Comp/settings/Settingsmain";
+import Settingsdemat from "./Comp/MF/settings/settingsdemat"
+import Settingsmain from "./Comp/MF/settings/Settingsmain";
 import InvestmentPage from "./Comp/investments/InvestmentPage";
 import Footer from "./Comp/Footer/footer";
+<<<<<<< HEAD
 import SliderSegment from "./Comp/Home/Sliderhome";
+=======
+import Changepassword from "./Comp/MF/settings/changepassword";
+import BankMandate from "./Comp/MF/settings/bankmandate";
+
+>>>>>>> c3930af48ffcb7e816def244583c5ca9bf187305
 function NavbarWrapper() {
   const location = useLocation();
   const isMfRoute = location.pathname.startsWith("/mf");
@@ -35,7 +41,7 @@ function NavbarWrapper() {
 
 function App() {
   // Session Storage
-  // sessionStorage.setItem("username", "");
+  sessionStorage.setItem("username", "");
 
   return (
     <BrowserRouter>
@@ -50,8 +56,11 @@ function App() {
         <Route path="/mf/downloads" element={<Downloads />} />
         <Route path="/mf/watchlist" element={<MFWatchlist />} />
         <Route path="/mf/profile" element={<Profile />} />
+<<<<<<< HEAD
         <Route path="/slider" element={<SliderSegment />} />
         {/* <Route path="/portfolio" element={<Portfolio />} /> */}
+=======
+>>>>>>> c3930af48ffcb7e816def244583c5ca9bf187305
         <Route path="/mf/portfolio" element={<Portfolio />} />
         <Route path="/mf/invest" element={<Purchase />} />
         <Route path="/landing" element={<Landingpage />} />
@@ -65,7 +74,9 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/mf/settings/demat" element={<Settingsdemat />} />
         <Route path="/mf/settings/basic" element={<Settingsmain />} />
-      </Routes>
+        <Route path="/mf/settings/password" element={<Changepassword />} />
+        <Route path="/mf/settings/bankmandate" element={<BankMandate />} />
+              </Routes>
       <Footer />
     </BrowserRouter>
   );

@@ -1,13 +1,13 @@
 import React from 'react'
 import "./settingsdemat.css"
 import Sidebar from '../Sidebar/Sidebar'
-const Settingsdemat = () => {
+const Changepassword = () => {
   return (
 
     <div>
       <Sidebar/>
 <div className="box">
-  <div className="demat">DEMAT/ACCOUNT CLOSURE</div>
+  <div className="demat">Login/Change Password</div>
 </div>
 <div>
   <div className="table">
@@ -40,13 +40,13 @@ const Settingsdemat = () => {
       <div className="heading">Account Type</div>
       <div className="des">sdjk</div>
     </div>
-  </div>
-  <br/><br/><br/><div style={{display: "flex", flexDirection: "row-reverse", marginRight: "10px"}}>
-  <button className='changebutton'>Close Account</button>
-</div><br/>
+    <br/><br/><br/><div style={{display: "flex", flexDirection: "row-reverse"}}>
+  <button className='changebutton'>Change Password</button>
 </div>
+  </div>
+</div>  
     </div>
   )
 }
 
-export default Settingsdemat
+export default Changepassword
