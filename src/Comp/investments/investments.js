@@ -9,10 +9,10 @@ const InvestmentItem = ({ imgSrc, buttonText }) => {
       style={{ textDecoration: "none" }}
       to={`/mf/investments/${formattedButtonText}`}
     >
-      <div className="item cursor-pointer transition-transform duration-300 transform-gpu hover:scale-110">
-        <div className="card-content flex flex-col items-center w-36">
-          <img className="h-20 mx-4 my-2 w-20 mb-2" src={imgSrc} alt="image" />
-          <div className="text-gray-400 font-bold py-2 uppercase text-center px-auto">
+      <div className="transition-transform duration-300 cursor-pointer item transform-gpu hover:scale-110">
+        <div className="flex flex-col items-center card-content w-36">
+          <img className="w-20 h-20 mx-4 my-2 mb-2" src={imgSrc} alt="" />
+          <div className="py-2 font-bold text-center text-gray-400 uppercase px-auto">
             {buttonText}
           </div>
         </div>
@@ -104,13 +104,13 @@ const Investments = () => {
     <div>
         <Sidebar />
         
-      <div className="p-5 flex flex-wrap justify-center">
-        <div className="p-10 flex bg-slate-300 flex-wrap justify-center">
+      <div className="flex flex-wrap justify-center">
+        <div className="flex flex-wrap justify-center p-10 bg-slate-300">
           {items.map(({ imgSrc, buttonText }, index) => (
             <div
               key={index}
               style={{backgroundColor: "white"}}
-              className="mx-8 my-2 bg-gray-200 rounded-xl shadow-xl px-7 mb-4 text-lg"
+              className="mx-8 my-2 mb-4 text-lg bg-gray-200 shadow-xl rounded-xl px-7"
               >
               <InvestmentItem imgSrc={imgSrc} buttonText={buttonText} />
             </div>

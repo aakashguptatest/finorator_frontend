@@ -50,21 +50,21 @@ function Login() {
   };
 
   return (
-    <div className="max-w-full min-w-fit p-4">
+    <div className="max-w-full p-4 min-w-fit">
       <MDBRow>
         <MDBCol className="hidden md:block">
           <img
             src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
             class="img-fluid"
-            alt="Sample image"
+            alt=""
           />
         </MDBCol>
 
         <MDBCol col="4" md="6">
-          <div className="d-flex flex-row align-items-center justify-content-center">
-            <div className="d-flex flex-row align-items-center justify-content-center">
-              <p className="lead fw-normal mb-0 me-3">Sign in with</p>
-              <div className="flex mx-3 justify-between">
+          <div className="flex-row d-flex align-items-center justify-content-center">
+            <div className="flex-row d-flex align-items-center justify-content-center">
+              <p className="mb-0 lead fw-normal me-3">Sign in with</p>
+              <div className="flex justify-between mx-3">
                 <div className="mr-10 scale-[3.5] hover:scale-[4] cursor-pointer ">
                   <AiFillGoogleCircle />
                 </div>
@@ -77,8 +77,8 @@ function Login() {
               </div>
             </div>
           </div>
-          <div className="divider d-flex align-items-center my-4">
-            <p className="text-center fw-bold mx-3 mb-0">Or</p>
+          <div className="my-4 divider d-flex align-items-center">
+            <p className="mx-3 mb-0 text-center fw-bold">Or</p>
           </div>
           <label htmlFor="formControlLg" className="mr-3">Username</label> 
           <MDBInput
@@ -97,10 +97,10 @@ function Login() {
             onChange={handlePasswordChange}
           />
 
-<div className="inline-flex items-center align-middle mb-5"> 
+<div className="inline-flex items-center mb-5 align-middle"> 
   <label htmlFor="flexCheckDefault" className="mr-3">Remember me</label> 
   <MDBCheckbox
-    className="h-6 w-6 ml-4"
+    className="w-6 h-6 ml-4"
     name="flexCheck"
     value=""
     id="flexCheckDefault"
@@ -110,9 +110,9 @@ function Login() {
           <div className="d-flex">
             <div
               onClick={sendLoginRequest}
-              className="rounded-lg py-2 mx-auto w-28 transition-transform duration-300 transform-gpu hover:scale-110 shadow-xl bg-blue-400 hover:bg-blue-500 cursor-pointer"
+              className="py-2 mx-auto transition-transform duration-300 bg-blue-400 rounded-lg shadow-xl cursor-pointer w-28 transform-gpu hover:scale-110 hover:bg-blue-500"
             >
-              <div className="text-center text-xl text-white ">Login</div>
+              <div className="text-xl text-center text-white ">Login</div>
             </div>
             <p className="text-right text-[1rem] fw-bold mt-2 pt-1 mb-2">
               Don't have an account?{" "}

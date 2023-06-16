@@ -3,10 +3,9 @@ import Faq from "react-faq-component";
 import "./styles.css"; // Import the CSS file for transitions and effects
 import Sidebar from "../MF/Sidebar/Sidebar";
 const HealAndSupportPage = () => {
-  const [selectedQuestion, setSelectedQuestion] = useState(null);
 
   const data = {
-    title: "FAQ (How it works)",
+    // title: "FAQ (How it works)",
     rows: [
       {
         title: "Lorem ipsum dolor sit amet,",
@@ -39,6 +38,8 @@ const HealAndSupportPage = () => {
     rowTitleColor: "black",
     rowContentColor: "grey",
     // arrowColor: "red",
+    rowContentPaddingLeft:'16px',
+    // rowContentPaddingRight:'16px',
     timingFunc: "ease",
     
   };
@@ -52,15 +53,15 @@ const HealAndSupportPage = () => {
   return (
     <>
     <Sidebar />
-    <div className="flex flex-col justify-center items-center min-h-screen py-12">
-      {/* <section className="w-full max-w-2xl bg-white rounded-lg p-6"> */}
+    <div className="flex flex-col items-center justify-center min-h-screen py-12">
+      {/* <section className="w-full max-w-2xl p-6 bg-white rounded-lg"> */}
       <div>
-        <div className="text-3xl border-t-2 border-b-2 py-4 font-bold mb-10">
+        <div className="py-4 mb-10 text-3xl font-bold border-t-2 border-b-2">
           HOW CAN WE HELP YOU?
         </div>
       </div>
-      <div className="flex flex-wrap items-center justify-center m-4 space-x-6 p-3 rounded-lg">
-        <div className="w-full sm:w-auto rounded-lg mb-3 bg-[#EEEEEE] bg-opacity-60 text-white p-6">
+      <div className="flex flex-wrap items-center justify-center p-3 m-4 space-x-6 rounded-lg">
+        <div className="w-full p-6 mb-3 text-white bg-white rounded-lg sm:w-auto bg-opacity-60">
           <div className="text-lg bg-[#DF8744] text-center px-18 py-2 rounded-2xl text-white font-bold mb-2">
             Send Query
           </div>
@@ -71,12 +72,12 @@ const HealAndSupportPage = () => {
             <div className="text-[#000000] px-4 py-0 text-opacity-50 text-center font-bold">
               you may send us a query
             </div>
-            <div className="text-center mt-8">
+            <div className="mt-8 text-center">
               <a href="/">View Registered Queries</a>
             </div>
           </div>
         </div>
-        <div className="w-full sm:w-auto rounded-lg mb-3 bg-[#EEEEEE] bg-opacity-60 text-white p-6">
+        <div className="w-full p-6 mb-3 text-white bg-white rounded-lg sm:w-auto bg-opacity-60">
           <div className="text-lg bg-[#DF8744] text-center px-18 py-2 rounded-2xl text-white font-bold mb-2">
             Give Suggestion
           </div>
@@ -87,12 +88,12 @@ const HealAndSupportPage = () => {
             <div className="text-[#000000] px-4 py-0 text-opacity-50 text-center font-bold">
               you'd like us to change
             </div>
-            <div className="text-center mt-8">
+            <div className="mt-8 text-center">
               <a href="/">View Posted Suggestions</a>
             </div>
           </div>
         </div>
-        <div className="w-full sm:w-auto rounded-lg mb-3 bg-[#EEEEEE] bg-opacity-60 text-white p-6">
+        <div className="w-full p-6 mb-3 text-white bg-white rounded-lg sm:w-auto bg-opacity-60">
           <div className="text-lg bg-[#DF8744] text-center px-18 py-2 rounded-2xl text-white font-bold mb-2">
             Help/Demo Videos
           </div>
@@ -103,13 +104,16 @@ const HealAndSupportPage = () => {
             <div className="text-[#000000] px-4 py-0 text-opacity-50 text-center font-bold">
               help/ demo video
             </div>
-            <div className="text-center mt-8">
+            <div className="mt-8 text-center">
               <a href="/">View Registered Queries</a>
             </div>
           </div>
         </div>
       </div>
-      <div className="mx-11">
+      <div className="py-3 text-2xl font-bold text-center">
+        FAQ's
+      </div>
+      <div className="px-40">
         <Faq data={data} styles={styles} config={config} />
       </div>
 

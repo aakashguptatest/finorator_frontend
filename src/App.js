@@ -25,13 +25,9 @@ import Settingsdemat from "./Comp/MF/settings/settingsdemat"
 import Settingsmain from "./Comp/MF/settings/Settingsmain";
 import InvestmentPage from "./Comp/investments/InvestmentPage";
 import Footer from "./Comp/Footer/footer";
-<<<<<<< HEAD
-import SliderSegment from "./Comp/Home/Sliderhome";
-=======
 import Changepassword from "./Comp/MF/settings/changepassword";
 import BankMandate from "./Comp/MF/settings/bankmandate";
 
->>>>>>> c3930af48ffcb7e816def244583c5ca9bf187305
 function NavbarWrapper() {
   const location = useLocation();
   const isMfRoute = location.pathname.startsWith("/mf");
@@ -56,11 +52,8 @@ function App() {
         <Route path="/mf/downloads" element={<Downloads />} />
         <Route path="/mf/watchlist" element={<MFWatchlist />} />
         <Route path="/mf/profile" element={<Profile />} />
-<<<<<<< HEAD
-        <Route path="/slider" element={<SliderSegment />} />
+        {/* <Route path="/slider" element={<SliderSegment />} /> */}
         {/* <Route path="/portfolio" element={<Portfolio />} /> */}
-=======
->>>>>>> c3930af48ffcb7e816def244583c5ca9bf187305
         <Route path="/mf/portfolio" element={<Portfolio />} />
         <Route path="/mf/invest" element={<Purchase />} />
         <Route path="/landing" element={<Landingpage />} />
