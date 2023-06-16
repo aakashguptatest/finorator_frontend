@@ -25,7 +25,7 @@ import Settingsdemat from "./Comp/settings/settingsdemat";
 import Settingsmain from "./Comp/settings/Settingsmain";
 import InvestmentPage from "./Comp/investments/InvestmentPage";
 import Footer from "./Comp/Footer/footer";
-
+import SliderSegment from "./Comp/Home/Sliderhome";
 function NavbarWrapper() {
   const location = useLocation();
   const isMfRoute = location.pathname.startsWith("/mf");
@@ -50,6 +50,7 @@ function App() {
         <Route path="/mf/downloads" element={<Downloads />} />
         <Route path="/mf/watchlist" element={<MFWatchlist />} />
         <Route path="/mf/profile" element={<Profile />} />
+        <Route path="/slider" element={<SliderSegment />} />
         {/* <Route path="/portfolio" element={<Portfolio />} /> */}
         <Route path="/mf/portfolio" element={<Portfolio />} />
         <Route path="/mf/invest" element={<Purchase />} />

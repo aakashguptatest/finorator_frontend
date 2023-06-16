@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import Carousel from "react-bootstrap/Carousel";
+// import Carousel from "react-bootstrap/Carousel";
 import "./static/css/main.css";
 import "./static/bootstrap/css/bootstrap.css";
 // import "./static/css/starter-template.css";
 import { Link } from "react-router-dom";
 import Typewriter from "typewriter-effect";
 import SliderAffiliations from "./Affiliations";
+
 import SliderSegment from "./Sliderhome";
 import Sliderreview from "./SliderReview";
 import SliderLearnandexplore from "./SliderLearnandexplore";
@@ -25,7 +26,7 @@ export default function Homepage() {
     setIndex(selectedIndex);
   };
 
-  var TxtType = function(el, toRotate, period) {
+  var TxtType = function (el, toRotate, period) {
     this.toRotate = toRotate;
     this.el = el;
     this.loopNum = 0;
@@ -35,7 +36,7 @@ export default function Homepage() {
     this.isDeleting = false;
   };
 
-  TxtType.prototype.tick = function() {
+  TxtType.prototype.tick = function () {
     var i = this.loopNum % this.toRotate.length;
     var fullTxt = this.toRotate[i];
 
@@ -63,13 +64,15 @@ export default function Homepage() {
       delta = 500;
     }
 
-    setTimeout(function() {
+    setTimeout(function () {
       that.tick();
     }, delta);
   };
+
+
   return (
-    <div className="">
-      <div className="hero" >
+    <div className="max-w-full min-w-fit">
+      <div className="hero">
         <div className="container">
           <div className="row" style={{ alignItems: "center" }}>
             <div className="col-lg-7 col-md-6 col-xl-6">
@@ -110,9 +113,9 @@ export default function Homepage() {
         </div>
       </div>
       <div
-        className="segments section-body"
-        id="segment"
-        style={{ paddingbottom: "3em" }}
+      className="segments section-body"
+      id="segment"
+      style={{ paddingbottom: "3em" }}
       >
         <div className="theme-head text-center">
           Choose your Segment & Compare
@@ -382,7 +385,7 @@ export default function Homepage() {
           data-interval="false"
         >
           <div className="carousel-inner">
-            <Carousel activeIndex={index} onSelect={handleSelect}>
+            {/* <Carousel activeIndex={index} onSelect={handleSelect}>
               <Carousel.Item>
                 <div className="theme-head text-center">
                   Our Mutual Funds Partners
@@ -831,7 +834,7 @@ export default function Homepage() {
                   </marquee>
                 </div>
               </Carousel.Item>
-            </Carousel>
+            </Carousel> */}
           </div>
         </div>
       </div>
@@ -868,7 +871,7 @@ export default function Homepage() {
             Affiliations & Associate Partners
           </div>
 
-          <div className="carousel-inner">
+          <div className="">
             <SliderAffiliations />
           </div>
         </div>
