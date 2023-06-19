@@ -1,18 +1,6 @@
 import React from "react";
-import {
-  MDBContainer,
-  MDBCol,
-  MDBRow,
-  MDBBtn,
-  MDBIcon,
-  MDBInput,
-  MDBCheckbox,
-} from "mdb-react-ui-kit";
-import {
-  AiFillGoogleCircle,
-  AiFillTwitterCircle,
-  AiFillLinkedin,
-} from "react-icons/ai";
+import {FcGoogle} from 'react-icons/fc';
+import {FaTwitter} from 'react-icons/fa'
 import "./SignUpPage.css";
 import { useState } from "react";
 import axios from "axios";
@@ -61,105 +49,142 @@ function SignUp() {
   };
 
   return (
-    <div className="p-3 max-w-full min-w-fit">
-      <MDBRow>
-        <MDBCol className="hidden md:block" col="10" md="6">
-          <img
-            src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
-            class="img-fluid"
-            alt="Sample image"
-          />
-        </MDBCol>
+    <div className="min-h-screen mt-8 flex flex-wrap">
+      <div className="w-1/2 md:block hidden mx-auto mt-12 my-4">
+        <img
+          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/authentication/illustration.svg"
+          alt=""
+        />
+      </div>
+      <div className="md:w-1/2 w-full">
+        <div className="md:mx-16 mx-2 md:mt-8 mt-4">
+          <div className="bg-white pb-8 md:mx-16 mx-2 rounded-xl">
+            <div className="pt-3 mb-0 pb-0 px-4"><span className="text-2xl text-orange-500 font-bold">FINO</span><span className="text-2xl text-blue-600 font-bold">RATOR</span></div>
+            <div className="px-4 mt-0 pt-0  font-light">
+              Make your investments in seconds. Already have an account?
+              <a className="font-medium ml-1" href="/login">
+                 Sign in.
+              </a>
+            </div>
+            <div>
+            <div class="block mx-4 mt-2 mb-2 text-sm font-medium text-gray-900">
+                Your Username
+              </div>
+              <div className="px-4">
+                <input
+                  type="text"
+                  value={username}
+                  name="username"
+                  id="username"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
+                  placeholder="MatserInvest"
+                  onChange={handleUsernameChange}
+                  required=""
+                />
+              </div>
 
-        <MDBCol col="4" md="6">
-          <div className="d-flex flex-row align-items-center justify-content-center">
-            <div className="d-flex flex-row align-items-center justify-content-center">
-              <p className="lead fw-normal mb-0 me-3">Sign in with</p>
-              <div className="flex mx-3 justify-between">
-                <div className="mr-10 scale-[3.5] hover:scale-[4] cursor-pointer ">
-                  <AiFillGoogleCircle />
+              <div className="flex mx-4 flex-wrap">
+                <div className="w-1/2">
+                  <div class="block mt-2 mb-2 text-sm font-medium text-gray-900">
+                    First Name
+                  </div>
+                  <div className="mr-1.5">
+                    <input
+                      type="text"
+                      value={firstName}
+                      name="email"
+                      id="email"
+                      class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-1/2 p-2.5"
+                      placeholder="John"
+                      onChange={handleUsernameChange}
+                      required=""
+                    />
+                  </div>
                 </div>
-                <div className="mr-10 scale-[3.5] hover:scale-[4] cursor-pointer ">
-                  <AiFillLinkedin />
+                <div className="w-1/2">
+                  <div class="block mt-2 mb-2 text-sm font-medium text-gray-900">
+                    Last Name
+                  </div>
+                  <div className="ml-1.5">
+                    <input
+                      type="text"
+                      value={lastName}
+                      name="email"
+                      id="email"
+                      class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-1/2 p-2.5"
+                      placeholder="Doe"
+                      onChange={handleUsernameChange}
+                      required=""
+                    />
+                  </div>
                 </div>
-                <div className="scale-[3.5] hover:scale-[4] cursor-pointer ">
-                  <AiFillTwitterCircle />
+              </div>
+
+
+              <div class="block mx-4 mt-2 mb-2 text-sm font-medium text-gray-900">
+                Your email
+              </div>
+              <div className="px-4">
+                <input
+                  type="email"
+                  value={username}
+                  name="email"
+                  id="email"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
+                  placeholder="name@company.com"
+                  onChange={handleUsernameChange}
+                  required=""
+                />
+              </div>
+            </div>
+            <div>
+              <div class="block mx-4 mt-2 text-sm font-medium text-gray-900">
+                Password
+              </div>
+              <div className="px-4">
+                <input
+                  type="password"
+                  value={password}
+                  name="password"
+                  id="password"
+                  placeholder="••••••••"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
+                  onChange={handlePasswordChange}
+                  required=""
+                />
+              </div>
+            </div>
+            <div className="my-1 text-center font-light">or</div>
+            <div className="border-2 cursor-pointer flex justify-center hover:bg-gray-50 rounded-lg mb-2 mx-4 text-center py-2 px-auto">
+              <FcGoogle size={20}/> <div className="ml-2">Sign in with Google</div>
+            </div>
+            <div className="border-2 flex justify-center cursor-pointer hover:bg-gray-50 rounded-lg mb-4 mx-4 text-center py-2 px-auto">
+            <FaTwitter size={20}/> <div className="ml-2">Sign in with Twitter</div>
+            </div>
+            <div class="flex items-center mx-4 justify-between">
+              <div class="flex items-start">
+                <div class="flex items-center h-5">
+                  <input
+                    id="remember"
+                    aria-describedby="remember"
+                    type="checkbox"
+                    class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300"
+                    required=""
+                  />
+                </div>
+                <div class="ml-1 text-sm">
+                  <div for="remember" class="text-gray-500">
+                    Remember me
+                  </div>
                 </div>
               </div>
             </div>
+            <div onClick={sendLoginRequest} className="text-white cursor-pointer bg-blue-600 hover:bg-blue-700 mt-4 rounded-lg mx-4 text-center py-2 px-auto">
+              Sign up to your account
+            </div>
           </div>
-
-          <div className="divider d-flex align-items-center my-4">
-            <p className="text-center fw-bold mx-3 mb-0 h3">Or</p>
-          </div>
-
-<label htmlFor="formControlLg" className="mb-2">Username</label>
-<MDBInput
-  wrapperClass="mb-4"
-  id="formControlLg"
-  type="username"
-  size="lg"
-  onChange={handleUsernameChange}
-/>
-<label htmlFor="formControlLg" className="mb-2">First Name</label>
-<MDBInput
-  wrapperClass="mb-2"
-  id="formControlLg"
-  type="email"
-  size="lg"
-  onChange={handleFirstnameChange}
-/>
-
-<label htmlFor="formControlLg" className="mb-2">Last Name</label>
-<MDBInput
-  wrapperClass="mb-2"
-  id="formControlLg"
-  type="email"
-  size="lg"
-  onChange={handleLastnameChange}
-/>
-
-<label htmlFor="formControlLg" className="mb-2">Email Address</label>
-<MDBInput
-  wrapperClass="mb-4"
-  id="formControlLg"
-  type="email"
-  size="lg"
-  onChange={handleEmailChange}
-/>
-
-<label htmlFor="formControlLg" className="mb-2">Password</label>
-<MDBInput
-  wrapperClass="mb-4"
-  id="formControlLg"
-  type="password"
-  size="lg"
-  onChange={handlePasswordChange}
-/>
-
-<div className="inline-flex items-center align-middle mt-0"> 
-  <label htmlFor="flexCheckDefault" className="mr-3">Remember me</label> 
-  <MDBCheckbox
-    className="h-6 w-6 ml-4"
-    name="flexCheck"
-    value=""
-    id="flexCheckDefault"
-  />
-</div>
-
-<div className="flex">
-              <MDBBtn className="text-left mb-0 px-5" size="lg" onClick={sendLoginRequest}>
-              Login
-            </MDBBtn>
-            <p className="text-right large fw-bold mt-2 pt-1 mb-2">
-              Aleady have an account?{" "}
-              <a href="/login" className="link-danger">
-                Login
-              </a>
-            </p>
-          </div>
-        </MDBCol>
-      </MDBRow>
+        </div>
+      </div>
     </div>
   );
 }
