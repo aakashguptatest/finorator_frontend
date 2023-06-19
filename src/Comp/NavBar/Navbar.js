@@ -54,9 +54,9 @@ const Navbar = () => {
         <div className="hidden md:block">
           <NavLinks isMenuOpen={isMenuOpen} />
         </div>
-        <div className="px-4 md:px-2 md:mr-40 mr-2 rounded-lg py-2 bg-orange-400 hover:bg-orange-500 cursor-pointer">
-          <div className="align-middle text-sm md:text-xl text-white transition-transform duration-300 transform-gpu hover:scale-110">
-            Login/Register
+        <div className="px-4 md:px-2 md:mr-40 mr-2 rounded-lg py-2 bg-blue-500 hover:bg-blue-600 cursor-pointer">
+          <div className="align-middle text-sm md:text-xl transition-transform duration-300 transform-gpu hover:scale-110">
+            <a style={{textDecoration:"None"}} className="text-white"  href="/login">Login/Register</a>
           </div>
         </div>
       </div>
