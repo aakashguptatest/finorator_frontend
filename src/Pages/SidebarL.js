@@ -6,7 +6,7 @@ import { AiFillPieChart } from "react-icons/ai";
 import {GoSettings} from 'react-icons/go';
 import { BsFillSquareFill } from "react-icons/bs";
 
-import "./Sidebar.css";
+import "../assets/css/SidebarL.css";
 import { Link } from "react-scroll";
 import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';

@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 import Faq from "react-faq-component";
 
 import './landingpage.css';
-import SidebarL from '../../sidebarL/Sidebar';
+import SidebarL from '../../../Pages/SidebarL';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import SliderSegment from '../../Home/Sliderhome';
-import Downloads from '../Downloads';
-import Blogs from '../blogs';
+import Downloads from '../../../Pages/Downloads';
+import Blogs from '../../../Pages/blogs';
 import ProfilePage from './ProfileSection';
 
 function Landingpage() {

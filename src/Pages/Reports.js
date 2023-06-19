@@ -1,5 +1,5 @@
 import React from 'react'
-import "./Reports.css"
+import "../assets/css/Reports.css"
 import "https://kit.fontawesome.com/c77612e695.js"
 import "./static/css/starter-template.css"
 import "./static/css/main.css"

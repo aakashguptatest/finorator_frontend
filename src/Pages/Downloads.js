@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import "./Downloads.css";
-import Landingpage from "./Landingpage/landingpage";
-import Sidebar from "./Sidebar/Sidebar";
+import "../assets/css/Downloads.css";
+import Landingpage from "../Components/MF/Landingpage/landingpage";
+import Sidebar from "../Components/MF/Sidebar/Sidebar";
 import { AiOutlineFolder } from "react-icons/ai";
 
 export default function Downloads() {

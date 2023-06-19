@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Stack, Button, IconButton } from "@mui/material";
 import { Link } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
-import "./Navbar.css";
+import "../assets/css/Navbar.css";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

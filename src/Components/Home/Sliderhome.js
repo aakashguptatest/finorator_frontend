@@ -20,31 +20,37 @@ export default function SliderSegment() {
       lottie: <Lottie loop={true} animationData={a} style={{ height: 200 }} />,
       title: "Shares & Stocks",
       status: "Coming Soon !",
+      link:"/shares/profile"
     },
     {
       lottie: <Lottie loop={true} animationData={b} style={{ height: 200 }} />,
       title: "Mutual Funds",
       status: "Coming Soon !",
+      link:"/mf/profile"
     },
     {
       lottie: <Lottie loop={true} animationData={c} style={{ height: 200 }} />,
       title: "Insurance",
       status: "Live Now !",
+      link:"/insurance/profile"
     },
     {
       lottie: <Lottie loop={true} animationData={d} style={{ height: 200 }} />,
       title: "Loans",
       status: "Coming Soon !",
+      link:"/loans/profile"
     },
     {
       lottie: <Lottie loop={true} animationData={e} style={{ height: 200 }} />,
       title: "Income tax",
       status: "Coming Soon !",
+      link:"/income/profile"
     },
     {
       lottie: <Lottie loop={true} animationData={f} style={{ height: 200 }} />,
       title: "Real Estate",
       status: "Coming Soon !",
+      link:"/restate/profile"
     },
   ];
 
@@ -87,11 +93,13 @@ export default function SliderSegment() {
         {data.slice(startIndex, endIndex).map((item) => (
           <div key={item.title}>
             <div className="flex flex-wrap justify-content gap-4">
-              <div className="bg-white transition-transform duration-300 transform-gpu hover:scale-110 px-12 mx-4 py-2 shadow-xl cursor-pointer rounded-xl text-center">
-                <div className="py-3 text-2xl font-bold">{item.title}</div>
-                <div>{item.lottie}</div>
-                <div className="py-3 text-xl font-bold">{item.status}</div>
-              </div>
+              <a href={item.link} style={{textDecoration:"None"}}>
+                <div className="bg-white transition-transform duration-300 transform-gpu hover:scale-110 px-12 mx-4 py-2 shadow-xl cursor-pointer rounded-xl text-center">
+                  <div className="py-3 text-2xl font-bold">{item.title}</div>
+                  <div>{item.lottie}</div>
+                  <div className="py-3 text-xl font-bold">{item.status}</div>
+                </div>
+              </a>
             </div>
           </div>
         ))}

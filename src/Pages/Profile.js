@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { RiFileDownloadLine } from "react-icons/ri";
 import { MdOutlineEmail } from "react-icons/md";
-import Sidebar from "../MF/Sidebar/Sidebar";
+import Sidebar from "../Components/MF/Sidebar/Sidebar";
 import axios from "axios";
 import Chart from "chart.js/auto";
 import debounce from "lodash.debounce";

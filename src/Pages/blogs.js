@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import { SearchIcon } from "@heroicons/react/outline";
-import SidebarL from "../sidebarL/Sidebar";
+import SidebarL from "./SidebarL";
 
 const Blogs = () => {
   const [news, setNews] = useState([]);

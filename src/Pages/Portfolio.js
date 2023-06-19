@@ -6,8 +6,8 @@ import {
   BsGraphUpArrow,
   BsFileEarmarkPdf,
 } from "react-icons/bs";
-import Sidebar from "../MF/Sidebar/Sidebar";
-import MfNavbar from "../MF/nabarmf/MfNavbar";
+import Sidebar from "../Components/MF/Sidebar/Sidebar";
+import MfNavbar from "../Components/MF/nabarmf/MfNavbar";
 
 const LinkItem = ({ link, icon, text, isActive, onClick }) => {
   const [hovered, setHovered] = useState(false);

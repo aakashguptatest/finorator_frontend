@@ -1,7 +1,6 @@
 import React from "react";
 import {FcGoogle} from 'react-icons/fc';
 import {FaTwitter} from 'react-icons/fa'
-import "./SignUpPage.css";
 import { useState } from "react";
 import axios from "axios";
 

@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import { Table, Thead, Tr, Th, Td, Tbody } from 'react-super-responsive-table';
 import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css';
-import './MFWatchlist.css';
-import gif from "../Home/static/assets/icons8-shopping-cart.gif"
-import Landingpage from './Landingpage/landingpage';
-import Sidebar from './Sidebar/Sidebar';
+import '../assets/css/MFWatchlist.css';
+import gif from "../assets/images/icons8-shopping-cart.gif"
+import Landingpage from '../Components/MF/Landingpage/landingpage';
+import Sidebar from '../Components/MF/Sidebar/Sidebar';
 export default function MFWatchlist() {
     const [AMC, setAMC] = useState('');
     const [nature, setnature] = useState('');
