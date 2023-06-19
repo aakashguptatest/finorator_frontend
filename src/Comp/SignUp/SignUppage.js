@@ -96,7 +96,7 @@ function SignUp() {
                       id="email"
                       class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-1/2 p-2.5"
                       placeholder="John"
-                      onChange={handleUsernameChange}
+                      onChange={handleFirstnameChange}
                       required=""
                     />
                   </div>
@@ -113,7 +113,7 @@ function SignUp() {
                       id="email"
                       class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-1/2 p-2.5"
                       placeholder="Doe"
-                      onChange={handleUsernameChange}
+                      onChange={handleLastnameChange}
                       required=""
                     />
                   </div>
@@ -132,7 +132,7 @@ function SignUp() {
                   id="email"
                   class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
                   placeholder="name@company.com"
-                  onChange={handleUsernameChange}
+                  onChange={handleEmailChange}
                   required=""
                 />
               </div>
