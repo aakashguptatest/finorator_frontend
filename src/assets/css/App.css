@@ -1,0 +1,12 @@
+.card-holder{
+  height: 100;
+  width: 70;
+}
+.carousel-control-next-icon{
+  background-image: url("../static/assets/dashicons_arrow-left-alt1.png")
+  }
+  .carousel-control-prev-icon {
+    background-image: url("../static/assets/dashicons_arrow-left-alt2.png")
+  
+  }
+  

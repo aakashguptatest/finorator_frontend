@@ -1,11 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Faq from "react-faq-component";
 
 import './landingpage.css';
 import SidebarL from '../../../Pages/SidebarL';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
-import SliderSegment from '../../Home/Sliderhome';
+import SliderSegment from '../../../Components/Sliderhome';
 import Downloads from '../../../Pages/Downloads';
 import Blogs from '../../../Pages/blogs';
 import ProfilePage from './ProfileSection';

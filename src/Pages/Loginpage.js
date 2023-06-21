@@ -3,13 +3,12 @@ import {FcGoogle} from 'react-icons/fc';
 import {FaTwitter} from 'react-icons/fa'
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
-function SignUp() {
+function Login() {
+  const nav = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
 
   const handleUsernameChange = (e) => {
     setUsername(e.target.value);
@@ -17,23 +16,11 @@ function SignUp() {
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
   };
-  const handleFirstnameChange = (e) => {
-    setFirstName(e.target.value);
-  };
-  const handleLastnameChange = (e) => {
-    setLastName(e.target.value);
-  };
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
 
   const sendLoginRequest = () => {
-    const url = "http://127.0.0.1:5000/users/signup";
+    const url = "http://127.0.0.1:5000/users/login";
     const data = {
       username: username,
-      firstName: firstName,
-      lastName: lastName,
-      email: email,
       password: password,
     };
 
@@ -41,6 +28,8 @@ function SignUp() {
       .post(url, data)
       .then((response) => {
         console.log(response.data.message);
+        sessionStorage.setItem("username", data.username);
+        nav("/landing");
       })
       .catch((error) => {
         console.error(error.message);
@@ -59,68 +48,15 @@ function SignUp() {
       <div className="md:w-1/2 w-full">
         <div className="md:mx-16 mx-2 md:mt-8 mt-4">
           <div className="bg-white pb-8 md:mx-16 mx-2 rounded-xl">
-            <div className="pt-3 mb-0 pb-0 px-4"><span className="text-2xl text-orange-500 font-bold">FINO</span><span className="text-2xl text-blue-600 font-bold">RATOR</span></div>
-            <div className="px-4 mt-0 pt-0  font-light">
-              Make your investments in seconds. Already have an account?
-              <a className="font-medium ml-1" href="/login">
-                 Sign in.
+            <div className="pt-4 px-4"><span className="text-2xl text-orange-500 font-bold">FINO</span><span className="text-2xl text-blue-600 font-bold">RATOR</span></div>
+            <div className="text-3xl font-bold pt-2 px-4">Welcome back</div>
+            <div className="px-4 font-light">
+              Make your investments in seconds. Don't have an account?{" "}
+              <a className="font-medium" href="/signup">
+                Sign up.
               </a>
             </div>
             <div>
-            <div class="block mx-4 mt-2 mb-2 text-sm font-medium text-gray-900">
-                Your Username
-              </div>
-              <div className="px-4">
-                <input
-                  type="text"
-                  value={username}
-                  name="username"
-                  id="username"
-                  class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
-                  placeholder="MatserInvest"
-                  onChange={handleUsernameChange}
-                  required=""
-                />
-              </div>
-
-              <div className="flex mx-4 flex-wrap">
-                <div className="w-1/2">
-                  <div class="block mt-2 mb-2 text-sm font-medium text-gray-900">
-                    First Name
-                  </div>
-                  <div className="mr-1.5">
-                    <input
-                      type="text"
-                      value={firstName}
-                      name="email"
-                      id="email"
-                      class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-1/2 p-2.5"
-                      placeholder="John"
-                      onChange={handleFirstnameChange}
-                      required=""
-                    />
-                  </div>
-                </div>
-                <div className="w-1/2">
-                  <div class="block mt-2 mb-2 text-sm font-medium text-gray-900">
-                    Last Name
-                  </div>
-                  <div className="ml-1.5">
-                    <input
-                      type="text"
-                      value={lastName}
-                      name="email"
-                      id="email"
-                      class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-1/2 p-2.5"
-                      placeholder="Doe"
-                      onChange={handleLastnameChange}
-                      required=""
-                    />
-                  </div>
-                </div>
-              </div>
-
-
               <div class="block mx-4 mt-2 mb-2 text-sm font-medium text-gray-900">
                 Your email
               </div>
@@ -132,7 +68,7 @@ function SignUp() {
                   id="email"
                   class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
                   placeholder="name@company.com"
-                  onChange={handleEmailChange}
+                  onChange={handleUsernameChange}
                   required=""
                 />
               </div>
@@ -178,9 +114,15 @@ function SignUp() {
                   </div>
                 </div>
               </div>
+              <a
+                href="/forgotpassword"
+                class="text-sm font-medium text-primary-600 hover:underline"
+              >
+                Forgot password?
+              </a>
             </div>
             <div onClick={sendLoginRequest} className="text-white cursor-pointer bg-blue-600 hover:bg-blue-700 mt-4 rounded-lg mx-4 text-center py-2 px-auto">
-              Sign up to your account
+              Sign in to your account
             </div>
           </div>
         </div>
@@ -189,4 +131,6 @@ function SignUp() {
   );
 }
 
-export default SignUp;
+export default Login;
+
+
