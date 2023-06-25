@@ -13,17 +13,17 @@ const MfNavbar = () => {
         <div className="flex justify-between items-center">
           <div>
             <div className="flex cursor-pointer">
-              <div className="text-sm md:text-3xl font-bold">
+              <div className="text-sm md:text-2xl font-bold">
                 <a className="text-orange-500 hover:text-orange-600" style={{ textDecoration: "none" }} href="/">FINO</a>
               </div>
-              <div className="text-[#4D81B2] text-sm md:text-3xl font-bold">
+              <div className="text-[#4D81B2] text-sm md:text-2xl font-bold">
                 <a style={{ textDecoration: "none" }} href="/" className="text-[#4D81B2] hover:text-[#31688E]">RATOR</a> 
               </div>
             </div>
             <div className="hidden md:block mt-0 py-0 text-[0.75rem]">
               Enhancing Financial Decisions
             </div>
-            <div className="pt-2 shadow-inner text-sm md:text-2xl font-bold text-[#4D81B2]">
+            <div className="pt-2 shadow-inner text-sm md:text-xl font-bold text-[#4D81B2]">
               MUTUAL FUNDS
             </div>
           </div>
@@ -31,7 +31,7 @@ const MfNavbar = () => {
             <div className="flex md:hidden">
               <div className="relative">
                 <div
-                  className="text-2xl px-3 py-2 font-bold rounded-lg bg-[#4D81B2] hover:bg-[#31688E] cursor-pointer flex items-center"
+                  className="text-xl px-3 py-2 font-bold rounded-lg bg-[#4D81B2] hover:bg-[#31688E] cursor-pointer flex items-center"
                   onClick={toggleMenu}
                 >
                   <span className="text-white px-3" src = "/Page1">INVEST</span>
@@ -56,7 +56,7 @@ const MfNavbar = () => {
                   <div className="absolute right-0 py-2 w-32 bg-white rounded-md shadow-lg">
                     <a
                       className="block px-4 py-2 text-[#4D81B2] text-sm"
-                      href="/iconnect"
+                      href="/mf/iconnect"
                     >
                       iConnect
                     </a>
@@ -72,17 +72,17 @@ const MfNavbar = () => {
             </div>
             <div className="hidden md:flex gap-7" >            <a href="/mf/invest/Page1">
 
-              <div className="text-2xl px-[6rem] rounded-md mx-2 py-2 font-bold bg-[#4D81B2] hover:bg-[#31688E] cursor-pointer" >
+              <div className="text-xl px-[5rem] rounded-md mx-2 py-2 font-bold bg-[#4D81B2] hover:bg-[#31688E] cursor-pointer" >
                 <a className="text-white" style={{ textDecoration: "none" }} >
                   INVEST
                 </a>
               </div></a>
-              <div className="text-2xl px-[6rem] rounded-md py-2 mx-2 font-bold bg-[#4D81B2] hover:bg-[#31688E] cursor-pointer">
-                <a className="text-white" style={{ textDecoration: "none" }} href="/iconnect">
+              <div className="text-xl px-[5rem] rounded-md py-2 mx-2 font-bold bg-[#4D81B2] hover:bg-[#31688E] cursor-pointer">
+                <a className="text-white" style={{ textDecoration: "none" }} href="/mf/iconnect">
                   iConnect
                 </a>
               </div>
-              <div className="text-2xl px-[6rem] rounded-md shadow-2xl py-2 mx-2 font-bold bg-[#4D81B2] hover:bg-[#31688E] cursor-pointer">
+              <div className="text-xl px-[5rem] rounded-md shadow-2xl py-2 mx-2 font-bold bg-[#4D81B2] hover:bg-[#31688E] cursor-pointer">
                 <a className="text-white" style={{ textDecoration: "none" }} href="/aiselect">
                   AiSelect
                 </a>

@@ -27,6 +27,7 @@ import InvestmentPage from "./Pages/InvestmentPage";
 import Footer from "./Pages/footer";
 import Changepassword from "./Components/MF/settings/changepassword";
 import BankMandate from "./Components/MF/settings/bankmandate";
+import DoorStepConsultancy from "./Pages/iConnect/DoorStepConsultancy";
 
 function NavbarWrapper() {
   const location = useLocation();
@@ -69,7 +70,8 @@ function App() {
         <Route path="/mf/settings/basic" element={<Settingsmain />} />
         <Route path="/mf/settings/password" element={<Changepassword />} />
         <Route path="/mf/settings/bankmandate" element={<BankMandate />} />
-              </Routes>
+        <Route path='/mf/iconnect' element={<DoorStepConsultancy/>}/>
+      </Routes>
       <Footer />
     </BrowserRouter>
   );
