@@ -16,6 +16,7 @@
     "axios": "^1.4.0",
     "chart": "^0.1.2",
     "chart.js": "^4.3.0",
+    "embla-carousel-autoplay": "^8.0.0-rc07",
     "faker": "^6.6.6",
     "google-map-react": "^2.2.0",
     "jquery": "^3.6.4",

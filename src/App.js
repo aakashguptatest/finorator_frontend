@@ -28,7 +28,8 @@ import Footer from "./Pages/footer";
 import Changepassword from "./Components/MF/settings/changepassword";
 import BankMandate from "./Components/MF/settings/bankmandate";
 import DoorStepConsultancy from "./Pages/iConnect/DoorStepConsultancy";
-
+import SliderSegment from "./Components/Sliderhome";
+import AutoPlayCarousel from "./Components/AutoPlayCarousel";
 function NavbarWrapper() {
   const location = useLocation();
   const isMfRoute = location.pathname.startsWith("/mf");
@@ -53,7 +54,7 @@ function App() {
         <Route path="/mf/downloads" element={<Downloads />} />
         <Route path="/mf/watchlist" element={<MFWatchlist />} />
         <Route path="/mf/profile" element={<Profile />} />
-        {/* <Route path="/slider" element={<SliderSegment />} /> */}
+        <Route path="/slider" element={<AutoPlayCarousel />} />
         {/* <Route path="/portfolio" element={<Portfolio />} /> */}
         <Route path="/mf/portfolio" element={<Portfolio />} />
         <Route path="/mf/invest" element={<Purchase />} />
