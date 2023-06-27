@@ -16,7 +16,7 @@ const IConnectNavbar = () => {
                   className="text-sm px-3 py-2 font-bold rounded-lg bg-[#EE812D] hover:bg-[#e27928] cursor-pointer flex items-center"
                   onClick={toggleMenu}
                 >
-                  <span className="text-white px-3" src = "/mf/iconnect">BOOK DOOR STEP CONSULTANCY</span>
+                  <span className="text-white px-3" src = "/mf/iconnect/doorstep">BOOK DOOR STEP CONSULTANCY</span>
                   <svg
                     className={`${
                       isOpen ? "transform rotate-180" : ""
@@ -72,22 +72,22 @@ const IConnectNavbar = () => {
             </div>
         </div>
         <div className='bg-[#FBE6D6] py-2 px-4 md:flex hidden justify-center text-center'>        
-            <div className={`bg-[${currentURL.includes('/mf/iconnect') ? '#e0721e' : '#EE812D'}] px-6 mx-6 py-2 transition-transform duration-300 transform-gpu hover:scale-110 text-center rounded-lg font-bold text-white text-sm`}>
-                <a href="/mf/iconnect" style={{textDecoration: "none"}} className='text-white'>BOOK DOOR STEP CONSULTANCY</a>
+            <div className={`bg-[${currentURL.includes('/mf/iconnect/doorstep') ? '#d36a19' : '#EE812D'}] px-6 mx-6 py-2 transition-transform duration-300 transform-gpu hover:scale-110 text-center rounded-lg font-bold text-white text-sm`}>
+                <a href="/mf/iconnect/doorstep" style={{textDecoration: "none"}} className='text-white'>BOOK DOOR STEP CONSULTANCY</a>
             </div>
-            <div className={`bg-[${currentURL.includes('/mf/iconnect/videoconsult') ? '#e0721e' : '#EE812D'}] px-6 mx-6 py-2 transition-transform duration-300 transform-gpu hover:scale-110 text-center rounded-lg font-bold text-white text-sm`}>
+            <div className={`bg-[${currentURL.includes('/mf/iconnect/videoconsult') ? '#d36a19' : '#EE812D'}] px-6 mx-6 py-2 transition-transform duration-300 transform-gpu hover:scale-110 text-center rounded-lg font-bold text-white text-sm`}>
                 <a href="/mf/iconnect/videoconsult" style={{textDecoration: "none"}} className='text-white'>GET ONLINE VIDEO CONSULT</a>
             </div>
-            <div className={`bg-[${currentURL.includes('/mf/iconnect/callback') ? '#e0721e' : '#EE812D'}] px-6 mx-6 py-2 transition-transform duration-300 transform-gpu hover:scale-110 text-center rounded-lg font-bold text-white text-sm`}>
+            <div className={`bg-[${currentURL.includes('/mf/iconnect/callback') ? '#d36a19' : '#EE812D'}] px-6 mx-6 py-2 transition-transform duration-300 transform-gpu hover:scale-110 text-center rounded-lg font-bold text-white text-sm`}>
                 <a href="/mf/iconnect/callback" style={{textDecoration: "none"}} className='text-white'>GET CALL BACK</a>
             </div>
-            <div className={`bg-[${currentURL.includes('/mf/iconnect/chatbot') ? '#e0721e' : '#EE812D'}] px-6 mx-6 py-2 transition-transform duration-300 transform-gpu hover:scale-110 text-center rounded-lg font-bold text-white text-sm`}>
+            <div className={`bg-[${currentURL.includes('/mf/iconnect/chatbot') ? '#d36a19' : '#EE812D'}] px-6 mx-6 py-2 transition-transform duration-300 transform-gpu hover:scale-110 text-center rounded-lg font-bold text-white text-sm`}>
                 <a href="/mf/iconnect/chatbot" style={{textDecoration: "none"}} className='text-white'>CHATBOT/F.A.Q.</a>
             </div>
-            <div className={`bg-[${currentURL.includes('/mf/iconnect/adviserlist') ? '#e0721e' : '#EE812D'}] px-6 mx-6 py-2 transition-transform duration-300 transform-gpu hover:scale-110 text-center rounded-lg font-bold text-white text-sm`}>
+            <div className={`bg-[${currentURL.includes('/mf/iconnect/adviserlist') ? '#d36a19' : '#EE812D'}] px-6 mx-6 py-2 transition-transform duration-300 transform-gpu hover:scale-110 text-center rounded-lg font-bold text-white text-sm`}>
                 <a href="/mf/iconnect/adviserlist" style={{textDecoration: "none"}} className='text-white'>TOP ADVISER'S LIST</a>
             </div>
-            <div className={`bg-[${currentURL.includes('/mf/iconnect/nearbyoffice') ? '#e0721e' : '#EE812D'}] px-6 mx-6 py-2 transition-transform duration-300 transform-gpu hover:scale-110 text-center rounded-lg font-bold text-white text-sm`}>
+            <div className={`bg-[${currentURL.includes('/mf/iconnect/nearbyoffice') ? '#d36a19' : '#EE812D'}] px-6 mx-6 py-2 transition-transform duration-300 transform-gpu hover:scale-110 text-center rounded-lg font-bold text-white text-sm`}>
                 <a href="/mf/iconnect/nearbyoffice" style={{textDecoration: "none"}} className='text-white '>LOCATE NEARBY OFFICE</a>
             </div>
         </div>

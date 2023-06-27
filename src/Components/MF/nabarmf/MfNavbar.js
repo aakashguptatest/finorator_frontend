@@ -56,7 +56,7 @@ const MfNavbar = () => {
                   <div className="absolute right-0 py-2 w-32 bg-white rounded-md shadow-lg">
                     <a
                       className="block px-4 py-2 text-[#4D81B2] text-sm"
-                      href="/mf/iconnect"
+                      href="/mf/iconnect/doorstep"
                     >
                       iConnect
                     </a>
@@ -78,7 +78,7 @@ const MfNavbar = () => {
                 </a>
               </div></a>
               <div className="text-xl px-[5rem] rounded-md py-2 mx-2 font-bold bg-[#4D81B2] hover:bg-[#31688E] cursor-pointer">
-                <a className="text-white" style={{ textDecoration: "none" }} href="/mf/iconnect">
+                <a className="text-white" style={{ textDecoration: "none" }} href="/mf/iconnect/doorstep">
                   iConnect
                 </a>
               </div>

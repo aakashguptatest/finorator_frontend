@@ -30,6 +30,7 @@ import BankMandate from "./Components/MF/settings/bankmandate";
 import DoorStepConsultancy from "./Pages/iConnect/DoorStepConsultancy";
 import SliderSegment from "./Components/Sliderhome";
 import AutoPlayCarousel from "./Components/AutoPlayCarousel";
+import VideoConsult from "./Pages/iConnect/VideoConsult";
 function NavbarWrapper() {
   const location = useLocation();
   const isMfRoute = location.pathname.startsWith("/mf");
@@ -71,7 +72,8 @@ function App() {
         <Route path="/mf/settings/basic" element={<Settingsmain />} />
         <Route path="/mf/settings/password" element={<Changepassword />} />
         <Route path="/mf/settings/bankmandate" element={<BankMandate />} />
-        <Route path='/mf/iconnect' element={<DoorStepConsultancy/>}/>
+        <Route path='/mf/iconnect/doorstep' element={<DoorStepConsultancy/>}/>
+        <Route path='/mf/iconnect/videoconsult' element={<VideoConsult/>}/>
       </Routes>
       <Footer />
     </BrowserRouter>
