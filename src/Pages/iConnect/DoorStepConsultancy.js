@@ -66,7 +66,7 @@ const DoorStepConsultancy = () => {
       </div>
       <div>
         {experts.map((expert, index) => (
-          <div key={index} className='bg-[#9EC2D8] flex py-4 my-8 mx-8 rounded-xl'>
+          <div key={index} className='bg-[#9EC2D8] justify-center text-center flex py-4 my-8 mx-8 rounded-xl'>
             <div className='px-4'>
               <img className='' height={220} width={240} src={expert.imageSrc} alt='' />
               <div className='my-4 text-xl bg-[#3D86B0] px-4 py-2 font-bold text-white'>{expert.experience}</div>

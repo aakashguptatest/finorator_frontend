@@ -31,6 +31,8 @@ import DoorStepConsultancy from "./Pages/iConnect/DoorStepConsultancy";
 import SliderSegment from "./Components/Sliderhome";
 import AutoPlayCarousel from "./Components/AutoPlayCarousel";
 import VideoConsult from "./Pages/iConnect/VideoConsult";
+import InfiniteCarousel from "./Components/InfiniteCarousel";
+
 function NavbarWrapper() {
   const location = useLocation();
   const isMfRoute = location.pathname.startsWith("/mf");
@@ -44,7 +46,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <NavbarWrapper />
+      {/* <NavbarWrapper /> */}
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/help" element={<HelpAndSupportPage />} />
@@ -56,6 +58,7 @@ function App() {
         <Route path="/mf/watchlist" element={<MFWatchlist />} />
         <Route path="/mf/profile" element={<Profile />} />
         <Route path="/slider" element={<AutoPlayCarousel />} />
+        <Route path="/infinite" element={<InfiniteCarousel />} />
         {/* <Route path="/portfolio" element={<Portfolio />} /> */}
         <Route path="/mf/portfolio" element={<Portfolio />} />
         <Route path="/mf/invest" element={<Purchase />} />
@@ -75,7 +78,7 @@ function App() {
         <Route path='/mf/iconnect/doorstep' element={<DoorStepConsultancy/>}/>
         <Route path='/mf/iconnect/videoconsult' element={<VideoConsult/>}/>
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </BrowserRouter>
   );
 }
