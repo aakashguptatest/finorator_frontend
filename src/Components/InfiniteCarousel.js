@@ -1,58 +1,88 @@
-import React from 'react'
-import Carousel from 'react-grid-carousel'
+import React, { useState, useEffect, useRef } from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { BsFillArrowRightCircleFill, BsFillArrowLeftCircleFill } from 'react-icons/bs';
+import "../assets/css/infinitecarousel.css";
 
-const InfiniteCarousel = () => {
-  const data = [
+function InfiniteCarousel() {
+  const [currentIndex1, setCurrentIndex] = useState(0);
+  const [prevIndex, setPrevIndex] = useState(null);
+  const [nextIndex, setNextIndex] = useState(null);
+  const timeoutRef = useRef(null);
+  const items = [
     {
-        image:"https://upcdn.io/W142hJk/raw/demo/4mM4A9fyA5.png",
-        title:"Stock Trading"
+      title: "STOCK TRADING",
+      image: "https://upcdn.io/W142hJk/raw/demo/4mM2b8A277.png",
     },
     {
-        image:"https://upcdn.io/W142hJk/raw/demo/4mM4A9fyA5.png",
-        title:"Stock Trading"
+      title: "STOCK TRADING",
+      image: "https://upcdn.io/W142hJk/raw/demo/4mM2b8A277.png",
     },
     {
-        image:"https://upcdn.io/W142hJk/raw/demo/4mM4A9fyA5.png",
-        title:"Stock Trading"
+      title: "STOCK TRADING",
+      image: "https://upcdn.io/W142hJk/raw/demo/4mM2b8A277.png",
     },
     {
-        image:"https://upcdn.io/W142hJk/raw/demo/4mM4A9fyA5.png",
-        title:"Stock Trading"
+      title: "STOCK TRADING",
+      image: "https://upcdn.io/W142hJk/raw/demo/4mM2b8A277.png",
     },
     {
-        image:"https://upcdn.io/W142hJk/raw/demo/4mM4A9fyA5.png",
-        title:"Stock Trading"
+      title: "STOCK TRADING",
+      image: "https://upcdn.io/W142hJk/raw/demo/4mM2b8A277.png",
     },
     {
-        image:"https://upcdn.io/W142hJk/raw/demo/4mM4A9fyA5.png",
-        title:"Stock Trading"
-    }
-  ]
+      title: "STOCK TRADING",
+      image: "https://upcdn.io/W142hJk/raw/demo/4mM2b8A277.png",
+    },
+    // Add more items as needed
+  ];
+  const delay = 3500;
+  const slidesToShow = 3;
 
-  const options = [
-    {
-      breakpoint: 800,
-      cols: 3,
-      rows: 1,
-      gap: 10,
-      loop: true,
-      autoplay: 1000
+  const setIndex = (currentIndex) => {
+    setPrevIndex(currentIndex1);
+    setCurrentIndex(currentIndex);
+    setNextIndex((currentIndex + slidesToShow) % items.length);
+  };
+
+  const resetTimeout = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
     }
-  ]
+  };
+
+  useEffect(() => {
+    resetTimeout();
+    timeoutRef.current = setTimeout(
+      () => setCurrentIndex((prevIndex) => (prevIndex + slidesToShow) % items.length),
+      delay
+    );
+
+    return () => {
+      resetTimeout();
+    };
+  }, [currentIndex1]);
+
   return (
-    <div className="mt-24">
-        <Carousel options={options}>
-        {data.map((item) => {
-            return (
-                <Carousel.Item className="mt-8 text-center text-2xl" key={item.title}>
-                    <img src={item.image} alt={item.title} />
-                    <h3>{item.title}</h3>
-                </Carousel.Item>
-            );
-            })}
-        </Carousel>
+    <div className="slideshow h-auto md:w-[1300px] w-[350px] overflow-x-hidden">
+      <div className="arrow prev" onClick={() => setIndex(prevIndex)}>
+        <BsFillArrowLeftCircleFill/>
+      </div>
+      <div className="arrow next" onClick={() => setIndex(nextIndex)}>
+        <BsFillArrowRightCircleFill/>
+      </div>
+      <div
+        className="slideshowSlider"
+        style={{ transform: `translate3d(${-currentIndex1 * 100/3}%, 0, 0)` }}
+      >
+        {items.map((item, idx) => (
+          <div className="slide bg-slate-100 border-blue-400 border-2" key={idx}>
+            <div><img src={item.image} alt="" /></div>
+            <div className="text-center">{item.title}</div>
+          </div>
+        ))}
+      </div>
     </div>
-  )
+  );
 }
 
-export default InfiniteCarousel
+export default InfiniteCarousel;

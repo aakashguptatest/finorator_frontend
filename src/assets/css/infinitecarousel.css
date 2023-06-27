@@ -1,0 +1,60 @@
+.slideshow {
+    margin: 4rem auto;
+    overflow: hidden;
+    /* max-width: 1300px; */
+    padding: 2rem;
+  }
+  
+  .slideshowSlider {
+    white-space: nowrap;
+    transition: ease 1000ms;
+  }
+  
+  .slide {
+    display: inline-block;
+    /* height: 400px; */
+    width: 33.3333%;
+    border-radius: 40px;
+  }
+  
+  /* Buttons */
+  
+  .slideshowDots {
+    text-align: center;
+  }
+  
+  .slideshowDot {
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 16px 3px 0px;
+    background-color: #ffffff;
+  }
+  
+  .slideshowDot.active {
+    background-color: #ffffff;
+    border-radius: 24px;
+    width: 70px;
+    height: 10px;
+  }
+
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1;
+  }
+  
+  .prev {
+    left: 16px;
+  }
+  
+  .next {
+    right: 16px;
+  }
+  
